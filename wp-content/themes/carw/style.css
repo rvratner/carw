@@ -285,14 +285,7 @@ textarea {
   /* Improves readability and alignment in all browsers */
   width: 98%; }
 
-/*
-* Boots & Bones V0.1
-* Lightweight responsive grid framework
-* Joshua Beckman
-* Free to use under the MIT license.
-* http://www.opensource.org/licenses/mit-license.php
-* 11/11/2012
-*/
+
 /* Table of Contents
 ==================================================
     #Fluid Grid
@@ -641,7 +634,8 @@ textarea {
 /* Note: Design for a width of 1200px */
 @media only screen and (min-width: 1281px) {
   body {
-    font-size: 18px/26px; }
+    font-size: 18px/26px; 
+  }
 
   .container {
     width: 1280px; }
@@ -1056,6 +1050,10 @@ select {
   font-size: 18px;
   font-size: 1.8rem; }
 
+body {
+  background-image: url('img/ricepaper2.png');
+  background-repeat: repeat;
+}
 /* typography
 -------------------------------------------------------------- */
 /* Headings */
@@ -1150,57 +1148,99 @@ pre {
 
 /* Links */
 a {
-  color: #007998;
+  color: #2f2b37;
   -webkit-transition: color 0.25s ease-in-out;
   -moz-transition: color 0.25s ease-in-out;
   -o-transition: color 0.25s ease-in-out;
   -ms-transition: color 0.25s ease-in-out;
   transition: color 0.25s ease-in-out;
-  text-decoration: none; }
+  border-bottom: 4px solid #f7c343;
+  text-decoration: none;
+}
 
-a:hover,
-a:focus,
+a:hover {
+    background-color: #f7c343; 
+}
+
+a:focus{
+  background-color: #f7c343; 
+}
+
 a:active {
-  color: rgba(0, 121, 152, 0.5); }
+  background-color: #f7c343; 
+}
 
 /* Header
 -------------------------------------------------------------- */
 .site-title a {
   text-transform: uppercase;
   font-size: 4em;
-  text-align: center; }
-  .site-title a:hover {
-    color: #ff6f4a; }
-
-header {
-  background: #ffb900;
-  position: fixed;
-  width: 100%;
-  box-shadow: 0 0 7px #7d271a; }
-  header #brand {
-    display: inline-block;
-    font-weight: 900;
-    margin-right: 20px; }
-    header #brand h1 {
-      margin: 0; }
-      header #brand h1 a {
-        color: #7d271a;
-        text-decoration: none;
-        font-family: Helvetica; }
-    header #brand img {
-      width: 100%; }
-  header nav {
+  text-align: center; 
+}
+/*.site-title a:hover {
+  color: #ff6f4a; 
+}*/
+.site-description {
+  font-family: "Nunito-Bold", Helvetica;
+  font-size: 1em;
+  color: #2f2b37;
+  font-weight: normal;
+  width: 360px;
+}
+.header-widget {
+  position: absolute;
+  right: 0;
+  top: 45px;
+  width: 445px;
+  height: 189px;
+  color: #2f2b27;
+  font-family: "Nunito-sans", sans-serif;
+  line-height: 1;
+}
+.header-widget .widget_text {
+    width: 220px;
+    padding: 45px 92px;
+    display: block;
+}
+.site-header{
+    height: 450px;
+    background-size: cover;
+}
+.site-header #brand {
+  display: inline-block;
+  font-weight: 900;
+  margin-right: 20px; }
+.site-header #brand h1 {
+  margin: 0; }
+.site-header #brand h1 a {
+  border: none;
+}
+.site-header #brand h1 a:hover, .site-header #brand h1 a:focus {
+  background: none;
+}
+.site-header #brand img {
+  width: 264px; 
+}
+  .main-navigation{
     font-family: "Nunito", Helvetica, sans-serif;
-    display: inline-block; }
-    header nav ul {
+    display: inline-block; 
+      width: 100%;
+    /* border: 1px solid red; */
+    text-align: center;
+    /* margin: auto; */
+  }
+  .main-navigation ul {
       list-style: none;
-      margin: 0; }
-      header nav ul li {
+      margin: 0; 
+      display: inline-block;
+    }
+  .main-navigation ul li {
         float: left;
         margin: 2px 25px 0 0; }
-        header nav ul li a {
-          color: #888888;
-          font-size: 20px; }
+  .main-navigation ul li a {
+          font-size: 20px; 
+          text-transform: lowercase;
+        }
 
 .current-menu-item a {
   color: #4333b7; }
@@ -1208,137 +1248,13 @@ header {
 /* Posts/Articles
 -------------------------------------------------------------- */
 .post {
-  margin-top: 90px; }
-
-article {
-  background: transparent;
-  padding: 0;
-  margin-bottom: 80px;
-  border-bottom: 1px solid #dddddd; }
-  article .title {
-    color: #404040;
-    line-height: 56.24px;
-    font-size: 38px;
-    font-size: 3.8rem;
-    font-weight: 400;
-    text-align: center;
-    letter-spacing: 0.1em; }
-    article .title a {
-      text-decoration: none;
-      color: #404040; }
-      article .title a:hover {
-        color: #007998; }
-  article .post-meta {
-    margin-bottom: 40px;
-    font-size: 14px;
-    text-align: center;
-    font-family: Helvetica, sans-serif;
-    text-transform: uppercase;
-    font-weight: 500; }
-    article .post-meta a {
-      color: #888888;
-      text-decoration: none; }
-      article .post-meta a::hover {
-        color: rgba(136, 136, 136, 0.5); }
-  article .the-content a {
-    font-weight: 900;
-    text-decoration: none; }
-  article .the-content p {
-    color: #191919;
-    text-align: justify; }
-  article .the-content img {
-    width: 100%;
-    height: auto; }
-  article .meta {
-    line-height: 14.8px;
-    font-size: 10px;
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: .9px; }
-    article .meta .post-categories {
-      list-style: none;
-      margin: 0 0 10px 0; }
-      article .meta .post-categories li {
-        display: inline-block;
-        margin-right: 10px; }
-    article .meta div {
-      margin: 1px auto; }
-
-/* Page loop styling */
-.page article {
-  border-bottom: none; }
-  .page article .title {
-    margin-bottom: 80px; }
-
-/* Pagination */
-#pagination {
-  margin-bottom: 40px;
-  width: 100%; }
-  #pagination .past-page {
-    float: right;
-    width: 49%;
-    text-align: right; }
-  #pagination .next-page {
-    float: left;
-    width: 50%;
-    border-right: 1px solid #ccc;
-    height: 200px; }
-  #pagination .next-page a, #pagination .past-page a {
-    font-size: 2em;
-    font-family: "Nunito", Helvetica, sans-serif;
-    font-weight: 400;
-    font-style: italic;
-    padding: 10%; }
-
-/* Comments */
-h3#comments {
-  margin-bottom: 80px;
-  font-size: 16px; }
-
-.commentlist {
-  list-style: none;
-  margin: 0; }
-  .commentlist .comment {
-    margin: 0 0 40px 50px;
-    padding: 20px;
-    position: relative;
-    list-style: none;
-    -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2); }
-    .commentlist .comment .children {
-      margin-top: 40px; }
-    .commentlist .comment .comment-author {
-      float: left;
-      margin-right: 10px; }
-      .commentlist .comment .comment-author img {
-        position: absolute;
-        left: -50px;
-        top: 5px;
-        -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-        -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-        box-shadow: 0 0 3px rgba(0, 0, 0, 0.2); }
-      .commentlist .comment .comment-author .says {
-        display: none; }
-
-.comment-meta {
-  font-size: 12px;
-  margin-bottom: 10px; }
-
-.comment-subscription-form,
-.comment-subscription-form {
-  margin-bottom: 0;
-  font-size: 14px; }
-
-#respond {
-  margin-bottom: 80px; }
-
-#respond > h3 {
-  font-size: 16px;
-  margin-bottom: 20px; }
-
-#respond form label {
-  color: #888888; }
+  margin: 90px auto;
+  max-width: 800px
+}
+.alignright{
+  float: right;
+  display: inline;
+}
 
 /* Misc & mixens
 -------------------------------------------------------------- */
@@ -1371,19 +1287,17 @@ html[xmlns] .clearfix {
 footer {
   padding-bottom: 40px;
   font-size: 12px;
-  color: #fff; }
+ }
 
 .site-footer {
-  background-color: #2f9e1b;
   padding-top: 20px; }
   .site-footer ul, .site-footer li {
     text-decoration: none;
     list-style: none; }
-    .site-footer ul a, .site-footer li a {
-      color: #fff; }
+
 
 .footer-widget {
-  width: 20%;
+  width: 18%;
   padding: 0;
   margin: 0 1% 1% 0;
   float: left; }
@@ -1395,8 +1309,7 @@ footer {
   .footer-widget .textwidget {
     padding-bottom: 4px;
     font-size: 16px; }
-    .footer-widget .textwidget a {
-      color: #fff; }
+
 
 .copywrite {
   clear: both;

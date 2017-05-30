@@ -17,6 +17,10 @@ if ( ! isset( $content_width ) ) $content_width = 900;
 /*-----------------------------------------------------------------------------------*/
 add_theme_support( 'automatic-feed-links' );
 
+/*-----------------------------------------------------------------------------------*/
+/* Add custom thumbnail support
+/*-----------------------------------------------------------------------------------*/
+add_theme_support( 'post-thumbnails' );
 
 /*-----------------------------------------------------------------------------------*/
 /* Register main menu for Wordpress use
@@ -77,6 +81,33 @@ function carw_register_sidebars() {
 		'name' => 'Footer Sidebar 4',
 		'id' => 'footer-sidebar-4',
 		'description' => 'Appears in the footer area',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+	register_sidebar( array(
+		'name' => 'Footer Sidebar 5',
+		'id' => 'footer-sidebar-5',
+		'description' => 'Appears in the footer area',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+	register_sidebar( array(
+		'name' => 'Header Widget Home',
+		'id' => 'header-widget-home',
+		'description' => 'Appears in the header area',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+	register_sidebar( array(
+		'name' => 'Header Widget About',
+		'id' => 'header-widget-about',
+		'description' => 'Appears in the header area',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',

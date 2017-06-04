@@ -61,7 +61,7 @@ $ratio = $thumbnail[2] / $thumbnail[1] * 100;
 			<?php if ( is_front_page() ) : ?>
 				<?php $description = get_bloginfo( 'description', 'display' );
 				if ( $description || is_customize_preview() ) : ?>
-					<p class="site-description"><?php echo $description; ?></p>
+					<p class="site-description desktop"><?php echo $description; ?></p>
 				<?php endif; ?>
 			<?php endif; ?>
 		</div><!-- /brand -->
@@ -97,3 +97,9 @@ $ratio = $thumbnail[2] / $thumbnail[1] * 100;
 	<nav class="site-navigation main-navigation">
 		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); // Display the user-defined menu in Appearance > Menus ?>
 	</nav><!-- .site-navigation .main-navigation -->
+	<?php if ( is_front_page() ) : ?>
+	<?php $description = get_bloginfo( 'description', 'display' );
+		if ( $description || is_customize_preview() ) : ?>
+			<p class="site-description mobile"><?php echo $description; ?></p>
+		<?php endif; ?>
+	<?php endif; ?>

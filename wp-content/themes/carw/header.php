@@ -43,63 +43,35 @@
 	// and the list goes on. Look it up if you want more.
 	?>
 >
-<?php if ( has_post_thumbnail() ) :
-$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-image' );
 
-// Calculate aspect ratio: h / w * 100%.
-$ratio = $thumbnail[2] / $thumbnail[1] * 100;
+<?php if ( has_post_thumbnail() ) :
+	$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-image' );
 ?>
 <header id="masthead" class="site-header" style="background-image: url(<?php echo esc_url( $thumbnail[0] ); ?>);">
+
+	<?php else: ?>
+<header id="masthead" class="site-header">
+
 <?php endif; ?>
+
 	<div class="container">
 		<div id="brand">
 			<h1>
 				<a href="<?php echo esc_url( home_url( '/' ) ); // Link to the home page ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); // Title it with the blog name ?>" rel="home"> 
-				<img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo1.png" alt="logo CARW Coalition for Anti Racist Whites" />
+				<img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo.svg" alt="logo CARW Coalition for Anti Racist Whites" />
 				</a>
 			</h1>
-			<?php if ( is_front_page() ) : ?>
-				<?php $description = get_bloginfo( 'description', 'display' );
-				if ( $description || is_customize_preview() ) : ?>
-					<p class="site-description desktop"><?php echo $description; ?></p>
-				<?php endif; ?>
-			<?php endif; ?>
-		</div><!-- /brand -->
 
-		<!-- Header widget -->
-		<?php if ( is_front_page() ) : ?>
+<?php if ( is_front_page() ) : ?>
 
-		<div class="header-widget" id="header-widget-home" style="background-image: url(<?php bloginfo('stylesheet_directory'); ?>/img/flag.png);"">
-		<?php
-			if(is_active_sidebar('header-widget-home')){
-				dynamic_sidebar('header-widget-home');
-			}
-		?>
-		</div>
-		<?php else: ?>
-
-		<div class="header-widget" id="header-sidebar2">
-			<?php
-				if(is_active_sidebar('header-widget-about')){
-					dynamic_sidebar('header-widget-about');
-				}
-			?>
-		</div>
-		<?php endif; ?>
-
-		<!-- / header widget-->
-
-	</div><!-- /container -->
-		
-</header><!-- #masthead .site-header -->
-
-<main class="main-fluid"><!-- start the page containter -->
-	<nav class="site-navigation main-navigation">
-		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); // Display the user-defined menu in Appearance > Menus ?>
-	</nav><!-- .site-navigation .main-navigation -->
-	<?php if ( is_front_page() ) : ?>
+	<?php get_template_part( 'partials/header', 'page' ); ?>
 	<?php $description = get_bloginfo( 'description', 'display' );
 		if ( $description || is_customize_preview() ) : ?>
 			<p class="site-description mobile"><?php echo $description; ?></p>
 		<?php endif; ?>
-	<?php endif; ?>
+
+<?php else: ?>
+
+	<?php get_template_part( 'partials/general', 'page' ); ?>
+
+<?php endif; ?>

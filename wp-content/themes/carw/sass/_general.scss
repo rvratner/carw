@@ -180,31 +180,108 @@ a:active {
 
 .site-description {
   font-family: "Nunito-Bold", Helvetica;
-  font-size: 1em;
+  font-size: 1.8rem;
   color: #2f2b37;
   font-weight: normal;
-  width: 360px;
+  width: 410px;
+  line-height: 1.2;
+  margin-top: 10px;
 }
 
 .header-widget {
   position: absolute;
   right: 0;
   top: 45px;
-  width: 445px;
+  width: 320px;
   height: 189px;
   color: #2f2b27;
   font-family: "Nunito-sans", sans-serif;
   line-height: 1;
+  
   .widget_text {
-    width: 220px;
-    padding: 45px 92px;
+    width: 240px;
+    padding: 35px;
     display: block;
+  }
+  &#header-widget-home {
+    background-color: #f7c343;
+    .widget-title {
+      font-family: "NunitoSans-Black";
+      font-size: 2.6rem;
+    }
+    .textwidget {
+      font-family: "Nunito-Bold";
+      font-size: 2.6rem;
+    }
+    a {
+      font-size: 1.5rem;
+    }
   }
 }
 
+.scene {
+  pointer-events: none;
+  margin: 0;
+  padding: 0;
+  width: 150%;
+  margin: 0 auto;
+  min-height: 900px;
+  .layer {
+    width: 200%;
+    overflow: visible;
+    margin-left: -300px;
+    div {
+      width: 100%;
+      background-repeat: repeat-x;
+      background-color: transparent;
+      min-height: 600px;
+    }
+  }
+  .layer-1 div {
+    padding-top: 325px;
+    background-position: -730px bottom;
+    background-size: 1000px;
+  }
+  .layer-1-dark div{
+    padding-top: 315px;
+    background-position: -715px bottom;
+    background-size: 1000px;
+    -webkit-filter: brightness(0) blur(1px);
+    filter: brightness(0) blur(1px);
+    opacity: 0.5;
+  }
+  .layer-2-dark div {
+    padding-top: 445px;
+    background-position: 605px bottom;
+    background-size: 1000px;
+    -webkit-filter: brightness(0) blur(1px);
+    filter: brightness(0) blur(1px);
+    opacity: 0.5;
+  }
+
+  .layer-2 div {
+    padding-top: 450px;
+    background-position: 600px bottom;
+    background-size: 1000px;
+  }
+
+  .layer-3-dark div {
+    padding-top: 625px;
+    background-position: 100px bottom;
+    background-size: 1000px;
+    -webkit-filter: brightness(0) blur(1px);
+    filter: brightness(0) blur(1px);
+    opacity: 0.5;
+  }
+  .layer-3 div {
+    padding-top: 630px;
+    background-position: 100px bottom;
+    background-size: 1000px;
+  }
+}
 .site-header{
-    height: 450px;
-    background-size: cover;
+    height: 900px;
+    background-size: 1000px;
     #brand {
     display: inline-block;
     font-weight: 900;

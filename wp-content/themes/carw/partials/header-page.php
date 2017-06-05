@@ -22,7 +22,7 @@
 
 	</div><!-- /container -->
 
-
+<?php $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-image' ); ?>
 
 	<div id="scene" class="scene">
 		<div class="layer layer-1-dark" data-depth="0"><div style="background-image: url(<?php echo esc_url( $thumbnail[0] ); ?>);"></div></div>
@@ -41,10 +41,3 @@
 	</script>
 
 		
-</header><!-- #masthead .site-header -->
-
-<main class="main-fluid"><!-- start the page containter -->
-	<nav class="site-navigation main-navigation">
-		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); // Display the user-defined menu in Appearance > Menus ?>
-	</nav><!-- .site-navigation .main-navigation -->
-	

@@ -1098,13 +1098,14 @@ h1 {
 h2 {
   line-height: 50px;
   font-size: 34px;
-  font-size: 3.4rem;
+  font-size: 4rem;
   font-family: "Knewave-Regular", Helvetica, sans-serif; }
 
 h3 {
   line-height: 41px;
   font-size: 28px;
-  font-size: 2.8rem; }
+  font-size: 2.8rem;
+  font-family: "Knewave-Regular", Helvetica, sans-serif; }
 
 h4 {
   line-height: 26px;
@@ -1191,7 +1192,7 @@ a:hover {
 a:focus {
   background-color: #f7c343; }
 
-a:active {
+a:active, .current-menu-item a {
   background-color: #f7c343; }
 
 /* Header
@@ -1215,23 +1216,26 @@ a:active {
 .header-widget {
   position: absolute;
   right: 0;
-  top: 45px;
-  width: 320px;
-  height: 189px;
-  color: #2f2b27;
   font-family: "Nunito-sans", sans-serif;
   line-height: 1; }
-  .header-widget .widget_text {
-    width: 240px;
-    padding: 35px;
-    display: block; }
+  .header-widget .textwidget {
+    font-family: "Nunito-Bold";
+    font-size: 2.6rem; }
+  .header-widget#header-widget-about {
+    width: 50%;
+    max-width: 500px; }
   .header-widget#header-widget-home {
-    background-color: #f7c343; }
+    background-color: #f7c343;
+    top: 45px;
+    width: 320px;
+    height: 189px;
+    color: #2f2b27; }
+    .header-widget#header-widget-home .widget_text {
+      width: 240px;
+      padding: 35px;
+      display: block; }
     .header-widget#header-widget-home .widget-title {
       font-family: "NunitoSans-Black";
-      font-size: 2.6rem; }
-    .header-widget#header-widget-home .textwidget {
-      font-family: "Nunito-Bold";
       font-size: 2.6rem; }
     .header-widget#header-widget-home a {
       font-size: 1.5rem; }
@@ -1242,7 +1246,9 @@ a:active {
   padding: 0;
   width: 150%;
   margin: 0 auto;
-  min-height: 900px; }
+  min-height: 900px;
+  position: absolute;
+  top: 0; }
   .scene .layer {
     width: 200%;
     overflow: visible;
@@ -1253,42 +1259,48 @@ a:active {
       background-color: transparent;
       min-height: 600px; }
   .scene .layer-1 div {
-    padding-top: 325px;
+    padding-top: 125px;
     background-position: -730px bottom;
     background-size: 1000px; }
   .scene .layer-1-dark div {
-    padding-top: 315px;
+    padding-top: 115px;
     background-position: -715px bottom;
     background-size: 1000px;
     -webkit-filter: brightness(0) blur(1px);
     filter: brightness(0) blur(1px);
     opacity: 0.5; }
   .scene .layer-2-dark div {
-    padding-top: 445px;
+    padding-top: 245px;
     background-position: 605px bottom;
     background-size: 1000px;
     -webkit-filter: brightness(0) blur(1px);
     filter: brightness(0) blur(1px);
     opacity: 0.5; }
   .scene .layer-2 div {
-    padding-top: 450px;
+    padding-top: 250px;
     background-position: 600px bottom;
     background-size: 1000px; }
   .scene .layer-3-dark div {
-    padding-top: 625px;
+    padding-top: 425px;
     background-position: 100px bottom;
     background-size: 1000px;
     -webkit-filter: brightness(0) blur(1px);
     filter: brightness(0) blur(1px);
     opacity: 0.5; }
   .scene .layer-3 div {
-    padding-top: 630px;
+    padding-top: 430px;
     background-position: 100px bottom;
     background-size: 1000px; }
 
 .site-header {
-  height: 900px;
-  background-size: 1000px; }
+  height: 640px;
+  background-size: 100%;
+  overflow: hidden;
+  position: relative;
+  background-repeat: no-repeat; }
+  .site-header.homepage {
+    height: 900px;
+    background-size: 1000px; }
   .site-header #brand {
     display: inline-block;
     font-weight: 900;
@@ -1319,9 +1331,6 @@ a:active {
         font-size: 20px;
         text-transform: lowercase; }
 
-.current-menu-item a {
-  color: #4333b7; }
-
 .mobile {
   display: none; }
 
@@ -1330,6 +1339,12 @@ a:active {
 
 /* Posts/Articles
 -------------------------------------------------------------- */
+#primary {
+  max-width: 900px;
+  margin: auto; }
+  #primary img {
+    margin: 20px; }
+
 .post {
   margin-top: 90px; }
 
@@ -1368,7 +1383,10 @@ article {
     text-decoration: none; }
   article .the-content p {
     color: #191919;
-    text-align: justify; }
+    text-align: justify;
+    font-family: "Nunito-Bold"; }
+  article .the-content blockquote {
+    margin: 0 10rem; }
   article .meta {
     line-height: 14.8px;
     font-size: 10px;
@@ -1441,9 +1459,11 @@ html[xmlns] .clearfix {
 footer {
   padding-bottom: 40px;
   font-size: 12px; }
+  footer .copywrite {
+    clear: both; }
 
 .site-footer {
-  padding-top: 20px; }
+  padding-top: 50px; }
   .site-footer ul, .site-footer li {
     text-decoration: none;
     list-style: none; }
@@ -1451,7 +1471,7 @@ footer {
       color: #fff; }
 
 .footer-widget {
-  width: 20%;
+  width: 18%;
   padding: 0;
   margin: 0 1% 1% 0;
   float: left; }

@@ -1,6 +1,6 @@
 <?php 
 /**
- * 	Template Name: = Home Page
+ * 	Template Name: Home Page
  *
  *	This page template has a sidebar built into it, 
  * 	and can be used as a home page, in which case the title will not show up.
@@ -19,13 +19,7 @@
 				?>
 
 					<article class="post">
-
-						<?php if (!is_front_page()) : // Only if this page is NOT being used as a home page, display the title ?>
-							<h1 class='title'>
-								<?php the_title(); // Display the page title ?>
-							</h1>
-						<?php endif; ?>
-										
+			
 						<div class="the-content">
 							<?php the_content(); 
 							// This call the main content of the page, the stuff in the main text box while composing.

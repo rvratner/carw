@@ -44,15 +44,10 @@
 	?>
 >
 
-<?php if ( has_post_thumbnail() ) :
-	$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-image' );
-?>
-<header id="masthead" class="site-header" style="background-image: url(<?php echo esc_url( $thumbnail[0] ); ?>);">
+<?php if ( is_front_page() ) : ?>
 
-	<?php else: ?>
-<header id="masthead" class="site-header">
 
-<?php endif; ?>
+	<header id="masthead" class="site-header homepage">
 
 	<div class="container">
 		<div id="brand">
@@ -62,8 +57,6 @@
 				</a>
 			</h1>
 
-<?php if ( is_front_page() ) : ?>
-
 	<?php get_template_part( 'partials/header', 'page' ); ?>
 	<?php $description = get_bloginfo( 'description', 'display' );
 		if ( $description || is_customize_preview() ) : ?>
@@ -71,7 +64,33 @@
 		<?php endif; ?>
 
 <?php else: ?>
+	<?php if ( has_post_thumbnail() ) :
+	$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-image' );
+?>
+	<header id="masthead" class="site-header" style="background-image: url(<?php echo esc_url( $thumbnail[0] ); ?>);">
+
+	<?php else: ?>
+	<header id="masthead" class="site-header">
+
+	<?php endif; ?>
+
+	<div class="container">
+		<div id="brand">
+			<h1>
+				<a href="<?php echo esc_url( home_url( '/' ) ); // Link to the home page ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); // Title it with the blog name ?>" rel="home"> 
+				<img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo.svg" alt="logo CARW Coalition for Anti Racist Whites" />
+				</a>
+			</h1>
+
 
 	<?php get_template_part( 'partials/general', 'page' ); ?>
 
 <?php endif; ?>
+</header><!-- #masthead .site-header -->
+
+<main class="main-fluid"><!-- start the page containter -->
+	<nav class="site-navigation main-navigation">
+		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); // Display the user-defined menu in Appearance > Menus ?>
+	</nav><!-- .site-navigation .main-navigation -->
+	
+

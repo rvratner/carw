@@ -44,26 +44,6 @@
 	?>
 >
 
-<?php if ( is_front_page() ) : ?>
-
-
-	<header id="masthead" class="site-header homepage">
-
-	<div class="container">
-		<div id="brand">
-			<h1>
-				<a href="<?php echo esc_url( home_url( '/' ) ); // Link to the home page ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); // Title it with the blog name ?>" rel="home"> 
-				<img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo.svg" alt="logo CARW Coalition for Anti Racist Whites" />
-				</a>
-			</h1>
-
-	<?php get_template_part( 'partials/header', 'page' ); ?>
-	<?php $description = get_bloginfo( 'description', 'display' );
-		if ( $description || is_customize_preview() ) : ?>
-			<p class="site-description mobile"><?php echo $description; ?></p>
-		<?php endif; ?>
-
-<?php else: ?>
 	<?php if ( has_post_thumbnail() ) :
 	$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-image' );
 ?>
@@ -73,6 +53,24 @@
 	<header id="masthead" class="site-header">
 
 	<?php endif; ?>
+
+
+<?php if ( is_front_page() ) : ?>
+
+
+<!-- 	<header id="masthead" class="site-header homepage">
+ -->
+	<div class="container">
+		<div id="brand">
+			<h1>
+				<a href="<?php echo esc_url( home_url( '/' ) ); // Link to the home page ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); // Title it with the blog name ?>" rel="home"> 
+				<img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo.svg" alt="logo CARW Coalition for Anti Racist Whites" />
+				</a>
+			</h1>
+
+	<?php get_template_part( 'partials/header', 'page' ); ?>
+
+<?php else: ?>
 
 	<div class="container">
 		<div id="brand">
@@ -87,7 +85,10 @@
 
 <?php endif; ?>
 </header><!-- #masthead .site-header -->
-
+	<?php $description = get_bloginfo( 'description', 'display' );
+		if ( $description || is_customize_preview() ) : ?>
+			<p class="site-description mobile"><?php echo $description; ?></p>
+		<?php endif; ?>
 <main class="main-fluid"><!-- start the page containter -->
 	<nav class="site-navigation main-navigation">
 		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); // Display the user-defined menu in Appearance > Menus ?>

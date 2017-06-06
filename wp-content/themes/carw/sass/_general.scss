@@ -63,7 +63,7 @@ h3 {
 h4 {
   line-height: 26px;
   font-size: 18px;
-  font-size: 1.8rem;
+  font-size: 2.3rem;
 }
 
 hr {
@@ -180,6 +180,10 @@ a:active, .current-menu-item a {
   }
 }
 
+// header {
+//   background-size: 0;
+// }
+
 .site-description {
   font-family: "Nunito-Bold", Helvetica;
   font-size: 1.8rem;
@@ -225,7 +229,9 @@ a:active, .current-menu-item a {
     }
   }
 }
-
+.home .site-header {
+  background-size: 0;
+}
 .scene {
   pointer-events: none;
   margin: 0;
@@ -288,6 +294,7 @@ a:active, .current-menu-item a {
     background-size: 1000px;
   }
 }
+
 .site-header{
     height: 640px;
     background-size: 100%;
@@ -295,14 +302,16 @@ a:active, .current-menu-item a {
     position: relative;
     background-repeat: no-repeat;
     &.homepage {
+      background-size: 0;
       height: 900px;
-      background-size: 1000px;
+      // background-size: 1000px;
     }
 
     #brand {
     display: inline-block;
     font-weight: 900;
     margin-right: 20px;
+    padding-top: 20px;
     img {
       width: 264px; 
     } 
@@ -418,10 +427,40 @@ article {
       margin: 0 10rem;
     }
 
-    // img {
-    //   width: 100%;
-    //   height: auto;
-    // }
+    ol {
+        list-style: none;
+        counter-reset: li;
+      > li {
+        counter-increment: step;
+        position: relative;
+        font-family: "Knewave-Regular", Helvetica, sans-serif;
+        font-size: 4rem;
+        line-height: 1.3;
+        &:before {
+          content: counter(step,decimal);
+          color: #00ecd1;
+          position: absolute;
+          top: -30px;
+          left: -23px;
+          font-family: "NunitoSans-Black";
+          font-size: 14rem;
+          text-shadow: -6px 4px 0px #059681;
+          z-index: -1;
+        }
+        > ol {
+            > li {
+              counter-increment: initial;
+              font-family: "Nunito-Bold";
+              font-size: 2rem;
+              &:before {
+                content: '';
+                width: 0;
+                height: 0;
+              }
+            }
+          }
+      }
+    }
   }
 
   .meta {
@@ -551,7 +590,7 @@ footer {
 
   h3 {
     font-size: 18px;
-    font-size: 1.4vw;
+    font-size: 1.4rem;
     text-transform: uppercase;
     line-height: 1em;
   }
@@ -611,9 +650,65 @@ footer {
 
 /* All Mobile Sizes (devices and browser) */
 @media only screen and (max-width: 767px) {
-
-  header {
-      position: relative;
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  button#responsive-menu-button:hover {
+    box-shadow: none;
+  }
+  #primary img {
+    margin: 0;
+  }
+  #responsive-menu-container #responsive-menu-wrapper {
+    text-align: center;
+  }
+  #responsive-menu-container #responsive-menu a {
+      -webkit-transition: color 0.25s ease-in-out;
+      -moz-transition: color 0.25s ease-in-out;
+      -o-transition: color 0.25s ease-in-out;
+      -ms-transition: color 0.25s ease-in-out;
+      transition: color 0.25s ease-in-out;
+      border-bottom: 4px solid #f7c343 !important;
+      text-decoration: none;
+  }
+  #responsive-menu-container li.responsive-menu-item a {
+    display: inline !important;
+  }
+  .site-header {
+    position: relative;
+    background-size: 100%;
+    height: 360px;
+    margin-top: 0px;
+    background-position: 0px 200px;
+  }
+  .site-description {
+    width: 100%;
+  }
+  .site-header #brand img {
+    width: 200px;
+  }
+  .header-widget#header-widget-home {
+    background-color: #f7c343;
+    top: 135px;
+    width: 240px;
+    height: 109px;
+    color: #2f2b27;
+  }
+  .header-widget#header-widget-home .widget-title {
+    font-size: 2rem;
+  }
+  .header-widget .textwidget {
+    font-size: 2rem;
+  }
+  .header-widget#header-widget-home .widget_text {
+    padding: 5px;
+  }
+  .scene {
+    display: none;
+  }
+  .container {
+    width: 100%;
   }
   .main-navigation {
     display: none;
@@ -646,6 +741,7 @@ footer {
     font-size: 1.2em;
     line-height: 1.5em;
   }
+
   article .title{
     font-size: 2em;
     line-height: 1.5em;

@@ -1,28 +1,25 @@
 === Social Share Buttons - Social Pug ===
 Contributors: iova.mihai
 Donate link: https://www.devpups.com/social-pug/
-Tags: social, social share, social media, social network, social share buttons, share buttons, share button, facebook button, pin button, share counter, social network share, floating sidebar, floating share buttons, content share buttons, share counts, social share icon
-
-
+Tags: social, social share, social sharing buttons, social network, social share buttons, share buttons, share button, facebook button, pin button, share counter, social network share, floating sidebar, floating share buttons, content share buttons, share counts, social share icon
 Requires at least: 3.1
-Tested up to: 4.7.2
-Stable tag: 1.3.1
+Tested up to: 4.8.1
+Stable tag: 1.3.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Social share buttons with style that will increase your social shares and user interaction with your website.
+Social share buttons with style that will increase your social share count and user interaction on your website.
 
 == Description ==
+**Social Shareing Buttons with Style**
 
-**Social Share Buttons with Style**
+Add highly customizable social share buttons to your website to increase the interaction on your website. Place the share buttons before and after the post content or have them follow your readers as they scroll up and down the page, in the form of a floating sidebar.
 
-Add social share buttons to your website to increase the interaction on your website. Place the buttons before and after the post content or have them follow your readers in the form of a floating sidebar.
+**Supported social media share networks**: Facebook, Twitter, Google+ and Pinterest
 
-**Supported social media networks**: Facebook, Twitter, Google+, Pinterest
+**Social Share Count**: Display the posts social share count **( including Twitter )** to provide social media proof and increase your website's credibility.
 
-**Social Shares**: Display the posts social share counts **( including Twitter )** to provide social proof and increase your website's credibility.
-
-**Buttons Locations**: You can place the buttons in 4 different locations of your website. You can opt in to display them before and/or after the content of your posts on whichever post type you want. Also you can choose to display the buttons in a floating sidebar that follows the user as he/she scrolls the page. The floating sidebar can be placed on the left or on the right side of the screen.
+**Buttons Locations**: You can place the share buttons in 4 different locations of your website. You can opt in to display them before and/or after the content of your posts on whichever post type you want. Also you can choose to display the buttons in a floating sidebar that follows the user as he/she scrolls the page. The floating sidebar can be placed on the left or on the right side of the screen.
 
 = Main Features =
 * **Before and After Content Share Buttons** - Place the share buttons right before your content, after your content or both
@@ -70,12 +67,28 @@ http://www.devpups.com/
 
 
 == Changelog ==
+= 1.3.6 =
+* Misc: Added support for Twitter summary card with large image
+
+= 1.3.5 =
+* New: Added option to set a custom value for the mobile device screen width in order to display or hide the social media share buttons
+* Misc: Updated the social media icon font
+
+= 1.3.4 =
+* New: Added Facebook App Secret field in the settings page in order to unlock Facebook's default limitations when trying to grab the share counts for a post
+
+= 1.3.3 =
+* New: Added Facebook App ID field in the settings page in order for posts to pass Facebook's App ID validation
+
+= 1.3.2 =
+* Fixed: Performed a security audit and fixed security issues
+
 = 1.3.1 =
 * Fixed: Fatal error on some websites.
 
 = 1.3.0 =
-* New: Social share counts are pulled asynchronous for each post after the post loads
-* Misc: Refactored social share system
+* New: Social media share count values are pulled asynchronous for each post after the post loads
+* Misc: Refactored social media share system
 
 = 1.2.6 =
 * Fixed: XSS vulnerability in plugin settings pages

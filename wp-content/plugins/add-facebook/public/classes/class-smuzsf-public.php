@@ -1,7 +1,5 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) exit;
-
 class Smuzsf_Public {
 
 	function __construct() {
@@ -58,8 +56,11 @@ class Smuzsf_Public {
 				'id' => null
 			), $atts ) );
 
-		if ( ! $id || !intval($id) || ( get_post_status( $id ) !== 'publish' ) )
-            return FALSE;
+		if ( ! $id )
+			return FALSE;
+
+		if ( get_post_status( $id ) !== 'publish' )
+			return FALSE;
 
 		$theme = smuzsf_get_option( $id, 'wssf_select_layout' );
 
@@ -200,10 +201,12 @@ class Smuzsf_Public {
 
 		$response = wp_remote_get( $url );
 
+		$js = json_decode( $response['body'] );
+
 		if ( ! is_array( $response ) )
 			return false;
 
-		$response['body'] = str_replace( 'access_token=', '', $response['body']);
+		$response['body'] = $js->access_token;
 
 		return $response['body'];
 

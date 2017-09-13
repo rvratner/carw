@@ -45,6 +45,8 @@
 
 			<?php dpsp_settings_field( 'checkbox', 'dpsp_location_sidebar[display][show_mobile]', ( isset( $dpsp_location_sidebar['display']['show_mobile']) ? $dpsp_location_sidebar['display']['show_mobile'] : '' ), __( 'Show on mobile', 'social-pug' ), array('yes') ); ?>
 
+			<?php dpsp_settings_field( 'text', 'dpsp_location_sidebar[display][screen_size]', ( isset( $dpsp_location_sidebar['display']['screen_size']) ? $dpsp_location_sidebar['display']['screen_size'] : '' ), __( 'Mobile screen width (pixels)', 'social-pug' ), '', __( 'For screen widths smaller than this value ( in pixels ) the buttons will be displayed on screen if the show on mobile option is checked.', 'social-pug' ) ); ?>
+
 		</div>
 
 		<!-- Share Counts -->

@@ -156,7 +156,7 @@
 
 		global $post;
 
-		$output = '<ul class="dpsp-networks-btns-wrapper ' . ( !empty($location) ? 'dpsp-networks-btns-' . $location : '' ) . '">';
+		$output = '<ul class="dpsp-networks-btns-wrapper ' . ( !empty($location) ? 'dpsp-networks-btns-' . esc_attr( $location ) : '' ) . '">';
 
 		// Set current network and networks count		
 		$current_network = 1;
@@ -276,6 +276,54 @@
 		// Styling default
 		$output = '';
 
+		/**
+		 * Handle locations
+		 *
+		 */
+		$locations = dpsp_get_network_locations();
+
+		foreach( $locations as $location ) {
+
+			$location_settings = dpsp_get_location_settings( $location );
+
+			// Jump to next one if location is not active
+			if( empty( $location_settings['active'] ) )
+				continue;
+
+			/**
+			 * Mobile display
+			 *
+			 */
+			switch( $location ) {
+
+				case 'sidebar':
+					$tool_html_selector = '#dpsp-floating-sidebar';
+					break;
+
+				case 'content':
+					$tool_html_selector = '.dpsp-content-wrapper';
+					break;
+
+				default:
+					$tool_html_selector = '';
+					break;
+
+			}
+
+			if( ! empty( $tool_html_selector ) && empty( $location_settings['display']['show_mobile'] ) ) {
+
+				$mobile_screen_width = ( ! empty( $location_settings['display']['screen_size'] ) ? (int)$location_settings['display']['screen_size'] : 720 );
+
+				$output .= '
+					@media screen and ( max-width : ' . $mobile_screen_width . 'px ) {
+						' . $tool_html_selector . '.dpsp-hide-on-mobile { display: none !important; }
+					}
+				';
+
+			}
+
+		}
+
 		// Actually outputting the styling
 		echo '<style type="text/css" data-source="Social Pug">' . apply_filters( 'dpsp_output_inline_style', $output ) . '</style>';
 
@@ -302,8 +350,12 @@
 		if( !is_singular() )
 			return;
 
+		// Facebook specific
+		if( ! empty( $settings['facebook_app_id'] ) )
+			echo '<meta property="fb:app_id" 	content ="' . esc_attr( $settings['facebook_app_id'] ) . '" />';
+
 		// Twitter specific
-		echo '<meta name="twitter:card" 		content="summary" />';
+		echo '<meta name="twitter:card" 		content="summary_large_image" />';
 
 		// Meta tags for Open Graph
 		echo '<meta property="og:url"			content="' . esc_attr( dpsp_get_post_url() ) . '" />';
@@ -329,6 +381,10 @@
 			return;
 
 		global $post;
+
+		// Filter to disable the output of the ajax pull share counts js data variables
+		if( ! apply_filters( 'dpsp_output_ajax_pull_post_share_counts', true ) )
+			return;
 
 		// Check last updated timestamp and output the script only
 		// if at least 3 hours have passed

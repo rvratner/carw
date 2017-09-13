@@ -10,11 +10,6 @@ $primary-color: #333;
 /* styles
 -------------------------------------------------------------- */
 
-body {
-  background-image: url('img/ricepaper2.png');
-  background-repeat: repeat;
-}
-
 body,
 button,
 input,
@@ -37,6 +32,7 @@ h5,
 h6 {
   clear: both;
   font-family: "Nunito", Helvetica, sans-serif;
+  color: #2F2B37;
 }
 
 h1 {
@@ -143,29 +139,6 @@ pre {
   float: right;
 }
 
-/* Links */
-a {
-  color: #2f2b37;
-  -webkit-transition: color 0.25s ease-in-out;
-  -moz-transition: color 0.25s ease-in-out;
-  -o-transition: color 0.25s ease-in-out;
-  -ms-transition: color 0.25s ease-in-out;
-  transition: color 0.25s ease-in-out;
-  border-bottom: 4px solid #f7c343;
-  text-decoration: none;
-}
-
-a:hover {
-  background-color: #f7c343; 
-}
-
-a:focus{
-  background-color: #f7c343; 
-}
-
-a:active, .current-menu-item a {
-  background-color: #f7c343; 
-}
 
 /* Header
 -------------------------------------------------------------- */
@@ -179,10 +152,6 @@ a:active, .current-menu-item a {
     }
   }
 }
-
-// header {
-//   background-size: 0;
-// }
 
 .site-description {
   font-family: "Nunito-Bold", Helvetica;
@@ -355,6 +324,8 @@ a:active, .current-menu-item a {
 .desktop {
   display: block;
 }
+
+
 /* Posts/Articles
 -------------------------------------------------------------- */
 
@@ -426,6 +397,7 @@ article {
     blockquote {
       margin: 0 10rem;
     }
+
 
     ol {
         list-style: none;

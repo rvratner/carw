@@ -2049,6 +2049,10 @@ if (typeof Object.create !== 'function') {
                     prepareAttachment: function(element) {
 
                         var image_url = element.picture;
+
+                        if ( image_url === undefined )
+                        	return;
+                        
                         if (image_url.indexOf('_b.') !== -1) {
                             //do nothing it is already big
                         } else if (image_url.indexOf('safe_image.php') !== -1) {

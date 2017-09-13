@@ -127,7 +127,8 @@ function carw_scripts()  {
 	wp_enqueue_style('style.css', get_stylesheet_directory_uri() . '/style.css');
 	wp_enqueue_style('style.css', 'https://fonts.googleapis.com/css?family=Nunito');
 	wp_enqueue_script('parallax.min.js', get_stylesheet_directory_uri() . '/js/parallax.min.js');
-
+	wp_enqueue_script('scrollPollyfill.js', get_stylesheet_directory_uri() . '/js/scrollPollyfill.js');
+	wp_enqueue_script('custom.js', get_stylesheet_directory_uri() . '/js/custom.js');
 	  
 }
 add_action( 'wp_enqueue_scripts', 'carw_scripts' ); // Register this fxn and allow Wordpress to call it automatcally in the header

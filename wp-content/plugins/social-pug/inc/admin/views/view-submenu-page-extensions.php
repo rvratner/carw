@@ -4,7 +4,7 @@
 
 	<h1 class="dpsp-page-title"><?php echo __( 'Available Tools', 'social-pug' ); ?></h1>
 
-	<p><?php _e( 'These are various tools available for Social Pug which further enhance the functionality of the plugin.', 'social-pug' ); ?></p>
+	<p><?php _e( 'These are the various tools available for Social Pug which further enhance the functionality of the plugin.', 'social-pug' ); ?></p>
 
 	<p><?php _e( 'To gain immediate access to the tools below, <a href="https://devpups.com/social-pug/pricing/">have a look at our pricing.</a>', 'social-pug' ); ?></p>
 
@@ -31,6 +31,13 @@
 			'img'		 		 => 'assets/img/tool-pop-up.png',
 			'desc'				 => __( 'Add a simple share pop-up that has custom triggers.', 'social-pug' ),
 			'url'				 => 'https://devpups.com/social-pug/features/?utm_source=plugin-extensions&amp;utm_medium=share-pop-up&amp;utm_campaign=social-pug#share-pop-up'
+		);
+
+		$tools['share_image'] = array(
+			'name' 		 		 => __( 'Image Hover Pinterest Button', 'social-pug' ),
+			'img'		 		 => 'assets/img/tool-image-hover-pinterest.png',
+			'desc'				 => __( 'Add a Pinterest button to your single posts images when a user hovers on them.', 'social-pug' ),
+			'url'				 => 'https://devpups.com/social-pug/features/?utm_source=plugin-extensions&amp;utm_medium=share-image&amp;utm_campaign=social-pug#share-pinterest-hover'
 		);
 
 		$tools['follow_widget'] = array(
@@ -65,5 +72,26 @@
 			dpsp_output_tool_box( $tool_slug, $tool );
 	?>
 	</div><!-- End of Share Tools -->
+
+
+	<?php /* 
+	<h1 class="dpsp-page-title" style="margin-top: 25px;"><?php echo __( 'Recommended Plugins', 'social-pug' ); ?></h1>
+
+	<div class="dpsp-row dpsp-m-padding">
+	<?php 
+		$tools = array();
+
+		$tools['premium_networks'] = array(
+			'name' 		 		 => __( 'SkyePress - Auto Post and Schedule to Social Media', 'social-pug' ),
+			'img'		 		 => 'assets/img/skyepress-social-pug-promo.png',
+			'desc'				 => __( 'Auto Post to your Twitter, Facebook and LinkedIn profiles and much more...', 'social-pug' ),
+			'url'				 => admin_url( 'admin.php?page=dpsp-extensions&sub-page=skyepress' )
+		);
+
+		foreach( $tools as $tool_slug => $tool )
+			dpsp_output_tool_box( $tool_slug, $tool );
+	?>
+	</div><!-- End of Our Plugins -->
+	*/ ?>
 
 </div>

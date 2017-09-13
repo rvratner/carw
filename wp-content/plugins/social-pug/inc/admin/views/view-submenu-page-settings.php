@@ -14,6 +14,15 @@
 		<!-- General Settings Tab Content -->
 		<div id="dpsp-tab-general-settings">
 
+			<!-- Social Networks -->
+			<div class="dpsp-section">
+				<h3 class="dpsp-section-title"><?php _e( 'Social Networks', 'social-pug' ); ?></h3>
+
+				<?php dpsp_settings_field( 'text', 'dpsp_settings[facebook_app_id]', ( isset($dpsp_settings['facebook_app_id']) ? $dpsp_settings['facebook_app_id'] : '' ), __( 'Facebook App ID', 'social-pug' ), '' ); ?>
+				<?php dpsp_settings_field( 'text', 'dpsp_settings[facebook_app_secret]', ( isset($dpsp_settings['facebook_app_secret']) ? $dpsp_settings['facebook_app_secret'] : '' ), __( 'Facebook App Secret', 'social-pug' ), '' ); ?>
+
+			</div>
+
 			<!-- Misc -->
 			<div class="dpsp-section">
 				<h3 class="dpsp-section-title"><?php _e( 'Misc', 'social-pug' ); ?></h3>

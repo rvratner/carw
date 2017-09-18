@@ -1056,26 +1056,33 @@ or wrap each row of columns in a <div class="row"> */
 Theme Name: CARW
 Author: rvratner
 
-
-
-$font-stack:    Helvetica, sans-serif;
-$primary-color: #333;
-
 /* styles
 -------------------------------------------------------------- */
-body,
-button,
-input,
-select {
-  padding: 0;
-  margin: 0;
-  font-family: Helvetica, sans-serif;
-  line-height: 26.64px;
-  font-size: 18px;
-  font-size: 1.8rem; }
+body {
+  background-image: url("img/ricepaper2.png");
+  background-repeat: repeat;
+  color: #2F2B37; }
 
-/* typography
--------------------------------------------------------------- */
+/* Links */
+a {
+  color: #2f2b37;
+  -webkit-transition: color 0.25s ease-in-out;
+  -moz-transition: color 0.25s ease-in-out;
+  -o-transition: color 0.25s ease-in-out;
+  -ms-transition: color 0.25s ease-in-out;
+  transition: color 0.25s ease-in-out;
+  border-bottom: 4px solid #f7c343;
+  text-decoration: none; }
+
+a:hover {
+  background-color: #f7c343; }
+
+a:focus {
+  background-color: #f7c343; }
+
+a:active, .current-menu-item a {
+  background-color: #f7c343; }
+
 /* Headings */
 h1,
 h2,
@@ -1093,7 +1100,7 @@ h1 {
   font-size: 4.8rem; }
 
 h2 {
-  line-height: 50px;
+  line-height: 65px;
   font-size: 34px;
   font-size: 4rem;
   font-family: "Knewave-Regular", Helvetica, sans-serif; }
@@ -1117,7 +1124,8 @@ hr {
 
 /* Text elements */
 p {
-  margin-bottom: 1.5em; }
+  margin-bottom: 1.5em;
+  margin-top: .5em; }
 
 ul,
 ol {
@@ -1153,7 +1161,9 @@ i {
   font-style: italic; }
 
 blockquote {
-  margin: 0 1.5em; }
+  margin: 0 1.5em;
+  width: 60%;
+  margin: auto; }
 
 address {
   margin: 0 0 1.5em; }
@@ -1171,6 +1181,9 @@ pre {
 
 .alignright {
   float: right; }
+
+.alignleft {
+  float: left; }
 
 /* Header
 -------------------------------------------------------------- */
@@ -1190,32 +1203,52 @@ pre {
   line-height: 1.2;
   margin-top: 10px; }
 
+.site-header {
+  position: relative;
+  background-size: 100%;
+  height: 360px;
+  margin-top: 0px;
+  background-position: 0px 200px;
+  padding: 20px; }
+  .site-header #brand img {
+    width: 200px; }
+
 .header-widget {
   position: absolute;
   right: 0;
   font-family: "Nunito-sans", sans-serif;
   line-height: 1; }
-  .header-widget .textwidget {
+  .header-widget .post-meta {
     font-family: "Nunito-Bold";
+    font-size: 16px;
+    list-style: none;
+    margin: 0; }
+    .header-widget .post-meta .post-meta-key {
+      display: none; }
+    .header-widget .post-meta li:first-child {
+      line-height: 41px;
+      font-size: 28px;
+      font-size: 2.8rem;
+      font-family: "Knewave-Regular", Helvetica, sans-serif; }
+
+.header-widget#header-widget-about {
+  width: 50%;
+  max-width: 500px; }
+.header-widget#header-widget-home {
+  background-color: #f7c343;
+  top: 45px;
+  width: 320px;
+  height: 189px;
+  color: #2f2b27; }
+  .header-widget#header-widget-home .widget_text {
+    width: 240px;
+    padding: 35px;
+    display: block; }
+  .header-widget#header-widget-home .widget-title {
+    font-family: "Knewave-Regular";
     font-size: 2.6rem; }
-  .header-widget#header-widget-about {
-    width: 50%;
-    max-width: 500px; }
-  .header-widget#header-widget-home {
-    background-color: #f7c343;
-    top: 45px;
-    width: 320px;
-    height: 189px;
-    color: #2f2b27; }
-    .header-widget#header-widget-home .widget_text {
-      width: 240px;
-      padding: 35px;
-      display: block; }
-    .header-widget#header-widget-home .widget-title {
-      font-family: "NunitoSans-Black";
-      font-size: 2.6rem; }
-    .header-widget#header-widget-home a {
-      font-size: 1.5rem; }
+  .header-widget#header-widget-home a {
+    font-size: 1.5rem; }
 
 .home .site-header {
   background-size: 0; }
@@ -1300,7 +1333,8 @@ pre {
   font-family: "Nunito-Bold", Helvetica, sans-serif;
   display: inline-block;
   width: 100%;
-  text-align: center; }
+  text-align: center;
+  position: static; }
   .main-navigation ul {
     list-style: none;
     margin: 0;
@@ -1311,12 +1345,25 @@ pre {
       .main-navigation ul li a {
         font-size: 20px;
         text-transform: lowercase; }
+  .main-navigation.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url("img/ricepaper2.png");
+    box-shadow: 1px 1px 3px #ccc;
+    z-index: 1; }
 
 .mobile {
   display: none; }
 
 .desktop {
   display: block; }
+
+.otcAccess .open {
+  background: #fdc12d; }
+
+#glt-translate-trigger, #glt-translate-trigger span {
+  background: #fdc12d; }
 
 /* Posts/Articles
 -------------------------------------------------------------- */
@@ -1365,7 +1412,9 @@ article {
   article .the-content p {
     color: #191919;
     text-align: justify;
-    font-family: "Nunito-Bold"; }
+    font-family: "Nunito-Regular";
+    font-size: 18px;
+    line-height: 1.5; }
   article .the-content blockquote {
     margin: 0 10rem; }
   article .the-content ol {
@@ -1415,6 +1464,9 @@ article {
   border-bottom: none; }
   .page article .title {
     margin-bottom: 80px; }
+
+.title {
+  display: none; }
 
 /* Pagination */
 #pagination {
@@ -1479,7 +1531,7 @@ footer {
       color: #fff; }
 
 .footer-widget {
-  width: 18%;
+  width: 32%;
   padding: 0;
   margin: 0 1% 1% 0;
   float: left; }
@@ -1491,6 +1543,81 @@ footer {
   .footer-widget .textwidget {
     padding-bottom: 4px;
     font-size: 16px; }
+
+.toggle-list {
+  margin: 55px 0;
+  position: relative;
+  font-size: 18px;
+  line-height: 1.5; }
+
+.toggle-list .toggle-list-item {
+  display: none;
+  position: relative; }
+
+.toggle-list.open .toggle-list-item {
+  display: block;
+  font-size: 18px; }
+
+.toggle-list:after {
+  content: "";
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #f00;
+  border-bottom: 0px solid transparent;
+  position: absolute;
+  right: -5px;
+  top: 20px; }
+
+.toggle-list.open:after {
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid #f00;
+  border-top: 0px solid transparent; }
+
+#primary img.social-share {
+  margin: 0; }
+
+.Resources p {
+  margin: 0; }
+.Resources ul, .Resources li {
+  list-style: none;
+  margin: 0; }
+.Resources ul {
+  margin: 0 0 20px 0; }
+.Resources li {
+  margin-left: 20px; }
+.Resources a {
+  color: #585653;
+  border-bottom: none; }
+.Resources h4 {
+  font-size: 3rem;
+  line-height: 3rem;
+  margin-top: 30px;
+  font-weight: bold; }
+.Resources article .the-content ol > li {
+  font-size: 3rem;
+  font-family: Helvetica; }
+  .Resources article .the-content ol > li:before {
+    text-shadow: -6px 4px 0px #bbf931;
+    color: #bbf931; }
+.Resources .toggle-list {
+  position: relative; }
+  .Resources .toggle-list:after {
+    top: 120px;
+    border-top: 20px solid #f7c343; }
+  .Resources .toggle-list.open:after {
+    border-bottom: 20px solid #f7c343;
+    border-top: 20px solid transparent;
+    top: 95px; }
+
+.Solidarity .left {
+  float: left;
+  width: 45%; }
+.Solidarity h4 {
+  font-size: 3rem;
+  line-height: 3rem;
+  margin-top: 30px;
+  font-weight: bold; }
 
 /* #Media Queries
 ================================================== */
@@ -1526,11 +1653,20 @@ footer {
     max-width: 100%;
     height: auto; }
 
+  h2 {
+    line-height: 1.2; }
+
   button#responsive-menu-button:hover {
     box-shadow: none; }
 
   #primary img {
     margin: 0; }
+
+  .responsive-menu-open button#responsive-menu-button .responsive-menu-box {
+    color: #fff !important; }
+
+  #responsive-menu-container {
+    width: 100%  !important; }
 
   #responsive-menu-container #responsive-menu-wrapper {
     text-align: center; }
@@ -1544,37 +1680,12 @@ footer {
     border-bottom: 4px solid #f7c343 !important;
     text-decoration: none; }
 
+  #responsive-menu-container #responsive-menu li.responsive-menu-item .responsive-menu-item-link {
+    font-size: 30px !important;
+    line-height: 2; }
+
   #responsive-menu-container li.responsive-menu-item a {
     display: inline !important; }
-
-  .site-header {
-    position: relative;
-    background-size: 100%;
-    height: 360px;
-    margin-top: 0px;
-    background-position: 0px 200px; }
-
-  .site-description {
-    width: 100%; }
-
-  .site-header #brand img {
-    width: 200px; }
-
-  .header-widget#header-widget-home {
-    background-color: #f7c343;
-    top: 135px;
-    width: 240px;
-    height: 109px;
-    color: #2f2b27; }
-
-  .header-widget#header-widget-home .widget-title {
-    font-size: 2rem; }
-
-  .header-widget .textwidget {
-    font-size: 2rem; }
-
-  .header-widget#header-widget-home .widget_text {
-    padding: 5px; }
 
   .scene {
     display: none; }
@@ -1619,6 +1730,9 @@ footer {
     line-height: 1.5em; } }
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width: 479px) {
+  button#responsive-menu-button {
+    display: block !important; }
+
   body, article .post-meta {
     font-size: 1.2em;
     line-height: 1.5em; }
@@ -1637,113 +1751,5 @@ footer {
 
   #footer-widgets .footer-widget:nth-child(n), .footer-widget {
     margin-bottom: 11.5%; } }
-body {
-  background-image: url("img/ricepaper2.png");
-  background-repeat: repeat;
-  color: #2F2B37; }
-
-/* Links */
-a {
-  color: #2f2b37;
-  -webkit-transition: color 0.25s ease-in-out;
-  -moz-transition: color 0.25s ease-in-out;
-  -o-transition: color 0.25s ease-in-out;
-  -ms-transition: color 0.25s ease-in-out;
-  transition: color 0.25s ease-in-out;
-  border-bottom: 4px solid #f7c343;
-  text-decoration: none; }
-
-a:hover {
-  background-color: #f7c343; }
-
-a:focus {
-  background-color: #f7c343; }
-
-a:active, .current-menu-item a {
-  background-color: #f7c343; }
-
-.title {
-  display: none; }
-
-h2 {
-  line-height: 65px; }
-
-#primary img.social-share {
-  margin: 0; }
-
-p {
-  margin-top: .5em; }
-
-.toggle-list {
-  margin: 55px 0;
-  position: relative; }
-
-.toggle-list .toggle-list-item {
-  display: none;
-  position: relative; }
-
-.toggle-list.open .toggle-list-item {
-  display: block; }
-
-.toggle-list:after {
-  content: "";
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-top: 20px solid #f00;
-  border-bottom: 0px solid transparent;
-  position: absolute;
-  right: -5px;
-  top: 20px; }
-
-.toggle-list.open:after {
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-bottom: 20px solid #f00;
-  border-top: 0px solid transparent; }
-
-.social-share {
-  margin: 0; }
-
-.Resources p {
-  margin: 0; }
-.Resources ul, .Resources li {
-  list-style: none;
-  margin: 0; }
-.Resources ul {
-  margin: 0 0 20px 0; }
-.Resources li {
-  margin-left: 20px; }
-.Resources a {
-  color: #585653;
-  border-bottom: none; }
-.Resources h4 {
-  font-size: 3rem;
-  line-height: 3rem;
-  margin-top: 30px;
-  font-weight: bold; }
-.Resources article .the-content ol > li {
-  font-size: 3rem;
-  font-family: Helvetica; }
-  .Resources article .the-content ol > li:before {
-    text-shadow: -6px 4px 0px #bbf931;
-    color: #bbf931; }
-.Resources .toggle-list {
-  position: relative; }
-  .Resources .toggle-list:after {
-    top: 120px;
-    border-top: 20px solid #f7c343; }
-  .Resources .toggle-list.open:after {
-    border-bottom: 20px solid #f7c343;
-    border-top: 20px solid transparent;
-    top: 95px; }
-
-.Solidarity .left {
-  float: left;
-  width: 45%; }
-.Solidarity h4 {
-  font-size: 3rem;
-  line-height: 3rem;
-  margin-top: 30px;
-  font-weight: bold; }
 
 /*# sourceMappingURL=style.css.map */

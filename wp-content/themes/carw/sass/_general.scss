@@ -2,27 +2,40 @@
 Theme Name: CARW
 Author: rvratner
 
-
-
-$font-stack:    Helvetica, sans-serif;
-$primary-color: #333;
-
 /* styles
 -------------------------------------------------------------- */
 
-body,
-button,
-input,
-select {
-  padding: 0;
-  margin: 0;
-  font-family: Helvetica, sans-serif;
-  line-height: 26.64px;
-  font-size: 18px;
-  font-size: 1.8rem;
+body {
+  background-image: url('img/ricepaper2.png');
+  background-repeat: repeat;
+  color: #2F2B37;
 }
-/* typography
--------------------------------------------------------------- */
+
+/* Links */
+a {
+  color: #2f2b37;
+  -webkit-transition: color 0.25s ease-in-out;
+  -moz-transition: color 0.25s ease-in-out;
+  -o-transition: color 0.25s ease-in-out;
+  -ms-transition: color 0.25s ease-in-out;
+  transition: color 0.25s ease-in-out;
+  border-bottom: 4px solid #f7c343;
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: #f7c343; 
+}
+
+a:focus{
+  background-color: #f7c343; 
+}
+
+a:active, .current-menu-item a {
+  background-color: #f7c343; 
+}
+
+
 /* Headings */
 h1,
 h2,
@@ -42,7 +55,7 @@ h1 {
 }
 
 h2 {
-  line-height: 50px;
+  line-height: 65px;
   font-size: 34px;
   font-size: 4rem;
   font-family: "Knewave-Regular", Helvetica, sans-serif;
@@ -72,6 +85,7 @@ hr {
 /* Text elements */
 p {
   margin-bottom: 1.5em;
+  margin-top: .5em;
 }
 
 ul,
@@ -117,6 +131,8 @@ i {
 
 blockquote {
   margin: 0 1.5em;
+  width: 60%;
+  margin: auto;
 }
 
 address {
@@ -139,11 +155,15 @@ pre {
   float: right;
 }
 
+.alignleft {
+  float: left;
+}
+
 
 /* Header
 -------------------------------------------------------------- */
 .site-title {
-  a{
+  a {
     text-transform: uppercase;
     font-size: 4em;
     text-align: center;
@@ -163,15 +183,43 @@ pre {
   margin-top: 10px;
 }
 
-.header-widget {
-  position: absolute;
-  right: 0;
-  font-family: "Nunito-sans", sans-serif;
-  line-height: 1;
-  .textwidget {
-      font-family: "Nunito-Bold";
-      font-size: 2.6rem;
+.site-header {
+    position: relative;
+    background-size: 100%;
+    height: 360px;
+    margin-top: 0px;
+    background-position: 0px 200px;
+    padding: 20px;
+    #brand img {
+      width: 200px;
     }
+  }
+
+  // header widgets
+  .header-widget {
+    position: absolute;
+    right: 0;
+    font-family: "Nunito-sans", sans-serif;
+    line-height: 1;
+
+    .post-meta {
+      font-family: "Nunito-Bold";
+      font-size: 16px;
+      list-style: none;
+      margin: 0;
+      .post-meta-key {
+        display: none;
+      }
+      li:first-child {
+        line-height: 41px;
+        font-size: 28px;
+        font-size: 2.8rem;
+        font-family: "Knewave-Regular", Helvetica, sans-serif;
+        }
+    }
+  }
+
+.header-widget {
 
   &#header-widget-about{
     width: 50%;
@@ -184,13 +232,14 @@ pre {
     width: 320px;
     height: 189px;
     color: #2f2b27;
+
     .widget_text {
       width: 240px;
       padding: 35px;
       display: block;
     }
     .widget-title {
-      font-family: "NunitoSans-Black";
+      font-family: "Knewave-Regular";
       font-size: 2.6rem;
     }
     a {
@@ -198,9 +247,12 @@ pre {
     }
   }
 }
+
+// parallax header
 .home .site-header {
   background-size: 0;
 }
+
 .scene {
   pointer-events: none;
   margin: 0;
@@ -297,11 +349,15 @@ pre {
   background: none;
 }
 
+
+// navigation
+
 .main-navigation{
   font-family: "Nunito-Bold", Helvetica, sans-serif;
   display: inline-block; 
   width: 100%;
   text-align: center;
+  position: static;
   ul {
     list-style: none;
     margin: 0; 
@@ -315,6 +371,14 @@ pre {
       }
     }
   }
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url('img/ricepaper2.png');
+    box-shadow: 1px 1px 3px #ccc;
+    z-index: 1;
+  }
 }
 
 
@@ -326,6 +390,15 @@ pre {
 }
 
 
+// widgets
+
+.otcAccess .open {
+  background: #fdc12d;
+}
+
+#glt-translate-trigger, #glt-translate-trigger span {
+  background: #fdc12d;
+}
 /* Posts/Articles
 -------------------------------------------------------------- */
 
@@ -392,7 +465,9 @@ article {
     p {
       color: #191919;
       text-align: justify;
-      font-family: "Nunito-Bold";
+      font-family: "Nunito-Regular";
+      font-size: 18px;
+      line-height: 1.5;
     }
     blockquote {
       margin: 0 10rem;
@@ -469,6 +544,11 @@ article {
       margin-bottom: 80px;
     }
   }
+}
+
+
+.title {
+  display: none;
 }
 
 
@@ -555,7 +635,7 @@ footer {
 }
 
 .footer-widget {
-  width: 18%;
+  width: 32%;
   padding: 0;
   margin: 0 1% 1% 0;
   float: left;
@@ -574,6 +654,108 @@ footer {
   }
 }
 
+// toggle interaction
+
+.toggle-list {
+  margin: 55px 0;
+  position: relative;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.toggle-list .toggle-list-item {
+  display: none;
+  position: relative;
+}
+
+.toggle-list.open .toggle-list-item {
+  display: block;
+  font-size: 18px;
+}
+
+.toggle-list:after {
+    content:"";
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #f00;
+    border-bottom: 0px solid transparent;
+    position: absolute;
+    right: -5px;
+    top: 20px;
+}
+
+.toggle-list.open:after {
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid #f00;
+  border-top: 0px solid transparent;
+}
+
+#primary img.social-share {
+  margin: 0;
+}
+
+// Resources page
+.Resources {
+  p {
+    margin: 0;
+  }
+  ul, li {
+    list-style: none;
+    margin: 0;
+  }
+  ul {
+    margin: 0 0 20px 0;
+  }
+  li {
+    margin-left: 20px;
+  }
+  a {
+    color: #585653;
+    border-bottom: none;
+  }
+  h4 {
+    font-size: 3rem;
+    line-height: 3rem;
+    margin-top: 30px;
+    font-weight: bold;
+  }
+  article .the-content ol > li {
+    font-size: 3rem;
+    font-family: Helvetica;
+    &:before {
+      text-shadow: -6px 4px 0px #bbf931;
+      color: #bbf931;
+    }
+  }
+
+  .toggle-list {
+    position: relative;
+    &:after {
+      top: 120px;
+      border-top: 20px solid #f7c343;
+    }
+    &.open:after {
+      border-bottom: 20px solid #f7c343;
+      border-top: 20px solid transparent;
+      top: 95px;
+    }
+  }
+}
+
+// joing page
+.Solidarity {
+  .left {
+    float: left;
+    width: 45%;
+  }
+  h4 {
+    font-size: 3rem;
+    line-height: 3rem;
+    margin-top: 30px;
+    font-weight: bold;
+  }
+}
 
 /* #Media Queries
 ================================================== */
@@ -626,15 +808,29 @@ footer {
     max-width: 100%;
     height: auto;
   }
+
+  h2 {
+    line-height: 1.2;
+  }
   button#responsive-menu-button:hover {
     box-shadow: none;
   }
   #primary img {
     margin: 0;
   }
+
+  .responsive-menu-open button#responsive-menu-button .responsive-menu-box {
+    color: #fff !important;
+  }
+
+  #responsive-menu-container {
+    width: 100%  !important;
+  }
+
   #responsive-menu-container #responsive-menu-wrapper {
     text-align: center;
   }
+
   #responsive-menu-container #responsive-menu a {
       -webkit-transition: color 0.25s ease-in-out;
       -moz-transition: color 0.25s ease-in-out;
@@ -644,38 +840,15 @@ footer {
       border-bottom: 4px solid #f7c343 !important;
       text-decoration: none;
   }
+  #responsive-menu-container #responsive-menu li.responsive-menu-item .responsive-menu-item-link {
+    font-size: 30px !important;
+    line-height: 2;
+  }
+
   #responsive-menu-container li.responsive-menu-item a {
     display: inline !important;
   }
-  .site-header {
-    position: relative;
-    background-size: 100%;
-    height: 360px;
-    margin-top: 0px;
-    background-position: 0px 200px;
-  }
-  .site-description {
-    width: 100%;
-  }
-  .site-header #brand img {
-    width: 200px;
-  }
-  .header-widget#header-widget-home {
-    background-color: #f7c343;
-    top: 135px;
-    width: 240px;
-    height: 109px;
-    color: #2f2b27;
-  }
-  .header-widget#header-widget-home .widget-title {
-    font-size: 2rem;
-  }
-  .header-widget .textwidget {
-    font-size: 2rem;
-  }
-  .header-widget#header-widget-home .widget_text {
-    padding: 5px;
-  }
+
   .scene {
     display: none;
   }
@@ -729,6 +902,9 @@ footer {
 }
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width: 479px) {
+  button#responsive-menu-button {
+    display: block !important;
+  }
   body, article .post-meta{
     font-size: 1.2em;
     line-height: 1.5em;

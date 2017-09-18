@@ -57,9 +57,6 @@
 
 <?php if ( is_front_page() ) : ?>
 
-
-<!-- 	<header id="masthead" class="site-header homepage">
- -->
 	<div class="container">
 		<div id="brand">
 			<h1>

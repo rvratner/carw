@@ -14,13 +14,29 @@ const anchorScroll = function(){
 		item.onclick = function(e) {
 			e.preventDefault();
 			console.log(e);
-			// use scrollto
-			// document.getElementById(e.target.dataset.href).scrollTo({behavior: 'smooth'});
 			document.getElementById(e.target.dataset.href).scrollIntoView({behavior: 'smooth'});
 		};
 	});
 };
 
+
+var scrollTimeout;
+var throttle = 250;
+
+
+jQuery(window).on( 'scroll', function(){
+	if (scrollTimeout) return false;
+	 scrollTimeout = setTimeout(function () {
+	var nav = jQuery('.main-navigation')
+	if (this.scrollY > 681) {
+	    nav.addClass("fixed");
+	} else {
+	    nav.removeClass("fixed");
+	}	  
+	    scrollTimeout = null;
+    }, throttle);
+	
+});
 
 document.onready = function(){
 	toggleList();

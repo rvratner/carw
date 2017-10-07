@@ -15,87 +15,7 @@
   src: url(fonts/Nunito_Sans/NunitoSans-Black.ttf); }
 /* Reset
 -------------------------------------------------------------- */
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -104,17 +24,7 @@ video {
   font-size: 100%; }
 
 /* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block; }
 
 html {
@@ -127,21 +37,16 @@ html {
   -ms-text-size-adjust: 100%;
   /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */ }
 
-ol,
-ul {
+ol, ul {
   list-style: none; }
 
 blockquote {
   font-family: 'Knewave', cursive; }
 
-blockquote,
-q {
+blockquote, q {
   quotes: none; }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+blockquote:before, blockquote:after, q:before, q:after {
   content: '';
   content: none; }
 
@@ -149,24 +54,18 @@ table {
   border-spacing: 0;
   border-collapse: collapse; }
 
-code,
-kbd,
-tt,
-var {
+code, kbd, tt, var {
   font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace; }
 
-abbr,
-acronym {
+abbr, acronym {
   border-bottom: 1px dotted #666;
   cursor: help; }
 
-mark,
-ins {
+mark, ins {
   background: #fff9c0;
   text-decoration: none; }
 
-sup,
-sub {
+sup, sub {
   font-size: 75%;
   height: 0;
   line-height: 0;
@@ -195,10 +94,7 @@ table {
 th {
   font-weight: bold; }
 
-button,
-input,
-select,
-textarea {
+button, input, select, textarea {
   font-size: 100%;
   /* Corrects font size not being inherited in all browsers */
   margin: 0;
@@ -207,17 +103,13 @@ textarea {
   *vertical-align: middle;
   /* Improves appearance and consistency in all browsers */ }
 
-button,
-input {
+button, input {
   line-height: normal;
   /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
   *overflow: visible;
   /* Corrects inner spacing displayed oddly in IE6/7 */ }
 
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
   border: none;
   border-radius: 10px;
   background: #ccc;
@@ -231,28 +123,17 @@ input[type="submit"] {
   line-height: 1;
   padding: 1.12em 1.5em 1em; }
 
-button:hover,
-html input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
+button:hover, html input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {
   -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5); }
 
-button:focus,
-html input[type="button"]:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus,
-button:active,
-html input[type="button"]:active,
-input[type="reset"]:active,
-input[type="submit"]:active {
+button:focus, html input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, button:active, html input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active {
   -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5); }
 
-input[type="checkbox"],
-input[type="radio"] {
+input[type="checkbox"], input[type="radio"] {
   box-sizing: border-box;
   /* Addresses box sizing set to content-box in IE8/9 */
   padding: 0;
@@ -270,26 +151,20 @@ input[type="search"]::-webkit-search-decoration {
   /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
   -webkit-appearance: none; }
 
-button::-moz-focus-inner,
-input::-moz-focus-inner {
+button::-moz-focus-inner, input::-moz-focus-inner {
   /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
   border: 0;
   padding: 0; }
 
-input[type=text],
-input[type=email],
-textarea {
+input[type=text], input[type=email], textarea {
   color: #888888;
   border: 1px solid #dddddd;
   border-radius: 5px; }
 
-input[type=text]:focus,
-input[type=email]:focus,
-textarea:focus {
+input[type=text]:focus, input[type=email]:focus, textarea:focus {
   color: #101010; }
 
-input[type=text],
-input[type=email] {
+input[type=text], input[type=email] {
   padding: 3px; }
 
 textarea {
@@ -324,8 +199,7 @@ textarea {
   width: 100%;
   *zoom: 1; }
 
-.row-fluid:before,
-.row-fluid:after {
+.row-fluid:before, .row-fluid:after {
   display: table;
   line-height: 0;
   content: ""; }
@@ -499,8 +373,7 @@ textarea {
   padding-left: 20px;
   *zoom: 1; }
 
-.container-fluid:before,
-.container-fluid:after {
+.container-fluid:before, .container-fluid:after {
   display: table;
   content: "";
   line-height: 0; }
@@ -515,8 +388,7 @@ textarea {
   max-width: 1300px;
   *zoom: 1; }
 
-.main-fluid:before,
-.main-fluid:after {
+.main-fluid:before, .main-fluid:after {
   display: table;
   content: "";
   line-height: 0; }
@@ -532,8 +404,7 @@ textarea {
   margin: 0 auto;
   padding: 0; }
 
-.container .column,
-.container .columns {
+.container .column, .container .columns {
   float: left;
   display: inline;
   padding-left: 10px;
@@ -550,8 +421,7 @@ textarea {
   margin-right: 0; }
 
 /* Base Grid */
-.container .one.column,
-.container .one.columns {
+.container .one.column, .container .one.columns {
   width: 40px; }
 
 .container .two.columns {
@@ -661,8 +531,7 @@ textarea {
   .container {
     width: 1280px; }
 
-  .container .column,
-  .container .columns {
+  .container .column, .container .columns {
     padding-left: 10px;
     padding-right: 10px; }
 
@@ -678,8 +547,7 @@ textarea {
     padding-left: 0;
     padding-right: 0; }
 
-  .container .one.column,
-  .container .one.columns {
+  .container .one.column, .container .one.columns {
     width: 60px; }
 
   .container .two.columns {
@@ -785,8 +653,7 @@ textarea {
   .container {
     width: 768px; }
 
-  .container .column,
-  .container .columns {
+  .container .column, .container .columns {
     padding-left: 10px;
     padding-right: 10px; }
 
@@ -802,8 +669,7 @@ textarea {
     padding-left: 0;
     padding-right: 0; }
 
-  .container .one.column,
-  .container .one.columns {
+  .container .one.column, .container .one.columns {
     width: 28px; }
 
   .container .two.columns {
@@ -918,57 +784,22 @@ textarea {
   .container {
     width: 300px; }
 
-  .container .columns,
-  .container .column {
+  .container .columns, .container .column {
     padding-left: 0;
     padding-right: 0; }
 
-  .row-fluid [class*="span"],
-  .row-fluid [class*="span"]:first-child {
+  .row-fluid [class*="span"], .row-fluid [class*="span"]:first-child {
     width: 96%;
     margin-left: 2%; }
 
-  .row-fluid [class*="offset"],
-  .row-fluid [class*="offset"]:first-child {
+  .row-fluid [class*="offset"], .row-fluid [class*="offset"]:first-child {
     margin-left: 2%; }
 
-  .container .one.column,
-  .container .one.columns,
-  .container .two.columns,
-  .container .three.columns,
-  .container .four.columns,
-  .container .five.columns,
-  .container .six.columns,
-  .container .seven.columns,
-  .container .eight.columns,
-  .container .nine.columns,
-  .container .ten.columns,
-  .container .eleven.columns,
-  .container .twelve.columns,
-  .container .thirteen.columns,
-  .container .fourteen.columns,
-  .container .fifteen.columns,
-  .container .sixteen.columns,
-  .container .one-third.column,
-  .container .two-thirds.column {
+  .container .one.column, .container .one.columns, .container .two.columns, .container .three.columns, .container .four.columns, .container .five.columns, .container .six.columns, .container .seven.columns, .container .eight.columns, .container .nine.columns, .container .ten.columns, .container .eleven.columns, .container .twelve.columns, .container .thirteen.columns, .container .fourteen.columns, .container .fifteen.columns, .container .sixteen.columns, .container .one-third.column, .container .two-thirds.column {
     width: 300px; }
 
   /* Offsets */
-  .container .offset-by-one,
-  .container .offset-by-two,
-  .container .offset-by-three,
-  .container .offset-by-four,
-  .container .offset-by-five,
-  .container .offset-by-six,
-  .container .offset-by-seven,
-  .container .offset-by-eight,
-  .container .offset-by-nine,
-  .container .offset-by-ten,
-  .container .offset-by-eleven,
-  .container .offset-by-twelve,
-  .container .offset-by-thirteen,
-  .container .offset-by-fourteen,
-  .container .offset-by-fifteen {
+  .container .offset-by-one, .container .offset-by-two, .container .offset-by-three, .container .offset-by-four, .container .offset-by-five, .container .offset-by-six, .container .offset-by-seven, .container .offset-by-eight, .container .offset-by-nine, .container .offset-by-ten, .container .offset-by-eleven, .container .offset-by-twelve, .container .offset-by-thirteen, .container .offset-by-fourteen, .container .offset-by-fifteen {
     margin-left: 0; } }
 /* #Mobile (Landscape)
 ================================================== */
@@ -980,8 +811,7 @@ textarea {
   .container {
     width: 420px; }
 
-  .container .columns,
-  .container .column {
+  .container .columns, .container .column {
     padding-left: 0;
     padding-right: 0; }
 
@@ -992,25 +822,7 @@ textarea {
   .row-fluid [class*="offset"], .row-fluid [class*="offset"]:first-child {
     margin-left: 2%; }
 
-  .container .one.column,
-  .container .one.columns,
-  .container .two.columns,
-  .container .three.columns,
-  .container .four.columns,
-  .container .five.columns,
-  .container .six.columns,
-  .container .seven.columns,
-  .container .eight.columns,
-  .container .nine.columns,
-  .container .ten.columns,
-  .container .eleven.columns,
-  .container .twelve.columns,
-  .container .thirteen.columns,
-  .container .fourteen.columns,
-  .container .fifteen.columns,
-  .container .sixteen.columns,
-  .container .one-third.column,
-  .container .two-thirds.column {
+  .container .one.column, .container .one.columns, .container .two.columns, .container .three.columns, .container .four.columns, .container .five.columns, .container .six.columns, .container .seven.columns, .container .eight.columns, .container .nine.columns, .container .ten.columns, .container .eleven.columns, .container .twelve.columns, .container .thirteen.columns, .container .fourteen.columns, .container .fifteen.columns, .container .sixteen.columns, .container .one-third.column, .container .two-thirds.column {
     width: 420px; } }
 /* #Clearing
 ================================================== */
@@ -1023,11 +835,8 @@ textarea {
   visibility: hidden; }
 
 /* Use clearfix class on parent to clear nested columns,
-or wrap each row of columns in a <div class="row"> */
-.clearfix:before,
-.clearfix:after,
-.row:before,
-.row:after {
+    or wrap each row of columns in a <div class="row"> */
+.clearfix:before, .clearfix:after, .row:before, .row:after {
   content: '\0020';
   display: block;
   overflow: hidden;
@@ -1035,12 +844,10 @@ or wrap each row of columns in a <div class="row"> */
   width: 0;
   height: 0; }
 
-.row:after,
-.clearfix:after {
+.row:after, .clearfix:after {
   clear: both; }
 
-.row,
-.clearfix {
+.row, .clearfix {
   zoom: 1; }
 
 /* You can also use a <br class="clear" /> to clear columns */
@@ -1071,7 +878,7 @@ a {
   -o-transition: color 0.25s ease-in-out;
   -ms-transition: color 0.25s ease-in-out;
   transition: color 0.25s ease-in-out;
-  border-bottom: 4px solid #f7c343;
+  border-bottom: 2px solid #f7c343;
   text-decoration: none; }
 
 a:hover {
@@ -1084,12 +891,7 @@ a:active, .current-menu-item a {
   background-color: #f7c343; }
 
 /* Headings */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   clear: both;
   font-family: "Nunito", Helvetica, sans-serif;
   color: #2F2B37; }
@@ -1127,8 +929,7 @@ p {
   margin-bottom: 1.5em;
   margin-top: .5em; }
 
-ul,
-ol {
+ul, ol {
   margin: 0 0 1.5em 3em; }
 
 ul {
@@ -1137,10 +938,7 @@ ul {
 ol {
   list-style: decimal; }
 
-ul ul,
-ol ol,
-ul ol,
-ol ul {
+ul ul, ol ol, ul ol, ol ul {
   margin-bottom: 0;
   margin-left: 1.5em; }
 
@@ -1150,14 +948,10 @@ dt {
 dd {
   margin: 0 1.5em 1.5em; }
 
-b,
-strong {
+b, strong {
   font-weight: bold; }
 
-dfn,
-cite,
-em,
-i {
+dfn, cite, em, i {
   font-style: italic; }
 
 blockquote {
@@ -1203,21 +997,56 @@ pre {
   line-height: 1.2;
   margin-top: 10px; }
 
+.site-header #brand h1 a:hover, .site-header #brand h1 a:focus {
+  background: none; }
+
 .site-header {
-  position: relative;
+  height: 640px;
   background-size: 100%;
-  height: 360px;
-  margin-top: 0px;
-  background-position: 0px 200px;
-  padding: 20px; }
-  .site-header #brand img {
-    width: 200px; }
+  overflow: hidden;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: 0px 0px; }
+  .site-header.homepage {
+    background-size: 0;
+    height: 900px; }
+  .site-header #brand {
+    display: inline-block;
+    font-weight: 900;
+    margin-right: 20px;
+    padding-top: 20px; }
+    .site-header #brand img {
+      width: 264px; }
+    .site-header #brand h1 {
+      margin: 0; }
+      .site-header #brand h1 a {
+        border: none; }
 
 .header-widget {
   position: absolute;
   right: 0;
   font-family: "Nunito-sans", sans-serif;
   line-height: 1; }
+  .header-widget#header-widget-about {
+    width: 50%;
+    max-width: 500px;
+    background: #fff;
+    padding: 10px; }
+  .header-widget#header-widget-home {
+    background-color: #f7c343;
+    top: 45px;
+    width: 320px;
+    height: 189px;
+    color: #2f2b27; }
+    .header-widget#header-widget-home .widget_text {
+      width: 240px;
+      padding: 35px;
+      display: block; }
+    .header-widget#header-widget-home .widget-title {
+      font-family: "Knewave-Regular";
+      font-size: 2.6rem; }
+    .header-widget#header-widget-home a {
+      font-size: 1.5rem; }
   .header-widget .post-meta {
     font-family: "Nunito-Bold";
     font-size: 16px;
@@ -1231,27 +1060,15 @@ pre {
       font-size: 2.8rem;
       font-family: "Knewave-Regular", Helvetica, sans-serif; }
 
-.header-widget#header-widget-about {
-  width: 50%;
-  max-width: 500px; }
-.header-widget#header-widget-home {
-  background-color: #f7c343;
-  top: 45px;
-  width: 320px;
-  height: 189px;
-  color: #2f2b27; }
-  .header-widget#header-widget-home .widget_text {
-    width: 240px;
-    padding: 35px;
-    display: block; }
-  .header-widget#header-widget-home .widget-title {
-    font-family: "Knewave-Regular";
-    font-size: 2.6rem; }
-  .header-widget#header-widget-home a {
-    font-size: 1.5rem; }
-
 .home .site-header {
-  background-size: 0; }
+  position: relative;
+  background-size: 0;
+  height: 640px;
+  margin-top: 0px;
+  background-position: 0px 200px;
+  padding: 20px; }
+  .home .site-header #brand img {
+    width: 200px; }
 
 .scene {
   pointer-events: none;
@@ -1305,36 +1122,16 @@ pre {
     background-position: 100px bottom;
     background-size: 1000px; }
 
-.site-header {
-  height: 640px;
-  background-size: 100%;
-  overflow: hidden;
-  position: relative;
-  background-repeat: no-repeat; }
-  .site-header.homepage {
-    background-size: 0;
-    height: 900px; }
-  .site-header #brand {
-    display: inline-block;
-    font-weight: 900;
-    margin-right: 20px;
-    padding-top: 20px; }
-    .site-header #brand img {
-      width: 264px; }
-    .site-header #brand h1 {
-      margin: 0; }
-      .site-header #brand h1 a {
-        border: none; }
-
-.site-header #brand h1 a:hover, .site-header #brand h1 a:focus {
-  background: none; }
+.logged-in .main-navigation.fixed {
+  top: 0px; }
 
 .main-navigation {
   font-family: "Nunito-Bold", Helvetica, sans-serif;
   display: inline-block;
   width: 100%;
   text-align: center;
-  position: static; }
+  position: static;
+  height: 50px; }
   .main-navigation ul {
     list-style: none;
     margin: 0;
@@ -1344,14 +1141,17 @@ pre {
       margin: 2px 25px 0 0; }
       .main-navigation ul li a {
         font-size: 20px;
-        text-transform: lowercase; }
-  .main-navigation.fixed {
+        text-transform: lowercase;
+        border-bottom: 4px solid #f7c343; }
+  .main-navigation .menu-main-container.fixed {
     position: fixed;
     top: 0;
     left: 0;
+    right: 0;
+    margin: auto;
     background-image: url("img/ricepaper2.png");
     box-shadow: 1px 1px 3px #ccc;
-    z-index: 1; }
+    z-index: 10; }
 
 .mobile {
   display: none; }
@@ -1534,7 +1334,8 @@ footer {
   width: 32%;
   padding: 0;
   margin: 0 1% 1% 0;
-  float: left; }
+  float: left;
+  text-align: center; }
   .footer-widget h3 {
     font-size: 18px;
     font-size: 1.4rem;
@@ -1548,7 +1349,8 @@ footer {
   margin: 55px 0;
   position: relative;
   font-size: 18px;
-  line-height: 1.5; }
+  line-height: 1.5;
+  min-height: 110px; }
 
 .toggle-list .toggle-list-item {
   display: none;
@@ -1586,9 +1388,6 @@ footer {
   margin: 0 0 20px 0; }
 .Resources li {
   margin-left: 20px; }
-.Resources a {
-  color: #585653;
-  border-bottom: none; }
 .Resources h4 {
   font-size: 3rem;
   line-height: 3rem;
@@ -1610,6 +1409,12 @@ footer {
     border-top: 20px solid transparent;
     top: 95px; }
 
+.Solidarity .left ul, .Solidarity .left li, .Solidarity .right ul, .Solidarity .right li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+  .Solidarity .left ul a, .Solidarity .left li a, .Solidarity .right ul a, .Solidarity .right li a {
+    font-weight: 300; }
 .Solidarity .left {
   float: left;
   width: 45%; }
@@ -1654,10 +1459,43 @@ footer {
     height: auto; }
 
   h2 {
-    line-height: 1.2; }
+    line-height: 1.5;
+    font-size: 2rem; }
 
-  button#responsive-menu-button:hover {
-    box-shadow: none; }
+  button#responsive-menu-button {
+    box-shadow: none !important;
+    background-color: #f5c250 !important;
+    top: 0 !important;
+    right: 0 !important;
+    border-radius: 0 !important;
+    color: #000 !important; }
+
+  #octAccess {
+    top: 82px !important;
+    background-color: #f5c250 !important; }
+
+  #octAccess .open, #octAccess .octContainer {
+    background-color: #f5c250 !important;
+    padding: 7px 7px 7px 8px; }
+
+  #glt-translate-trigger, #glt-translate-trigger span {
+    top: 55px;
+    bottom: auto;
+    right: 0;
+    width: 49px;
+    border-radius: 0;
+    font-size: 10px;
+    margin: 0;
+    padding: 3px;
+    background-color: #f5c250;
+    color: #000; }
+
+  .header-widget#header-widget-home {
+    top: 120px; }
+
+  .site-description.mobile {
+    padding: 20px;
+    width: 340px; }
 
   #primary img {
     margin: 0; }
@@ -1666,7 +1504,7 @@ footer {
     color: #fff !important; }
 
   #responsive-menu-container {
-    width: 100%  !important; }
+    width: 100% !important; }
 
   #responsive-menu-container #responsive-menu-wrapper {
     text-align: center; }
@@ -1707,10 +1545,7 @@ footer {
 
   .side-title {
     font-size: 1em;
-    line-height: 1.5em; }
-
-  .footer-widget {
-    width: 100%; } }
+    line-height: 1.5em; } }
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
   body, article .post-meta {
@@ -1740,6 +1575,17 @@ footer {
   article .title {
     font-size: 2em;
     line-height: 1.5em; }
+
+  article .the-content ol > li {
+    font-size: 2rem; }
+
+  article .the-content ul a {
+    font-size: 1.5rem;
+    line-height: 2;
+    font-weight: lighter; }
+
+  .site-header {
+    height: 320px; }
 
   .site-title {
     font-size: 6px !important;

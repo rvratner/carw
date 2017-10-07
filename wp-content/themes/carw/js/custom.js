@@ -3,7 +3,7 @@ const toggleList = function(){
 	var toggleList = document.querySelectorAll('.toggle-list');
 	toggleList.forEach(function(item){
 		item.onclick = function(e) {
-			this.classList.toggle('open');
+			if (jQuery(e.target).hasClass('toggle-list')) this.classList.toggle('open');
 		};
 	});
 };
@@ -13,33 +13,28 @@ const anchorScroll = function(){
 	anchorScroll.forEach(function(item){
 		item.onclick = function(e) {
 			e.preventDefault();
-			console.log(e);
 			document.getElementById(e.target.dataset.href).scrollIntoView({behavior: 'smooth'});
 		};
 	});
 };
 
 
-var scrollTimeout;
-var throttle = 250;
-
-
-jQuery(window).on( 'scroll', function(){
-	if (scrollTimeout) return false;
-	 scrollTimeout = setTimeout(function () {
-	var nav = jQuery('.main-navigation')
-	if (this.scrollY > 681) {
+const navScroll = function() {
+	var nav = jQuery('.menu-main-container');
+	jQuery(window).on( 'scroll', function(){
+	var scrollTop = jQuery(window).scrollTop();
+	if (scrollTop > 640) {
 	    nav.addClass("fixed");
 	} else {
 	    nav.removeClass("fixed");
 	}	  
-	    scrollTimeout = null;
-    }, throttle);
 	
 });
+}
 
 document.onready = function(){
 	toggleList();
 	anchorScroll();
+	navScroll();
 };
 

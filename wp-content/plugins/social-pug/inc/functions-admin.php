@@ -93,7 +93,7 @@
 					if( isset( $tool['admin_page'] ) ) {
 
 						// Tool admin page
-						echo '<a class="dpsp-tool-settings" href="' . admin_url( $tool['admin_page'] ) . '"><i class="dashicons dashicons-admin-generic"></i></a>';
+						echo '<a class="dpsp-tool-settings" href="' . admin_url( $tool['admin_page'] ) . '"><i class="dashicons dashicons-admin-generic"></i>' . __( 'Settings', 'social-pug' ) . '</a>';
 
 						// Tool activation switch
 						echo '<div class="dpsp-switch small">';
@@ -481,11 +481,15 @@
 
 			echo '<br /><hr />';
 
-			echo '<h3>' . __( 'Start Growing Your Email List', 'social-pug' ) . '</h3>';
+			echo '<div id="dpsp-settings-sidebar-opt-in-hound">';
 
-			echo '<p>' . sprintf( __( '%sOpt-In Hound%s is the easiest way for you to create beautiful popup and widget email optin forms and start growing your email subscriber lists.', 'social-pug' ), '<a href="https://devpups.com/opt-in-hound/?utm_source=plugin-sidebar&amp;utm_medium=opt-in-hound-crosspromo&amp;utm_campaign=social-pug" target="_blank">', '</a>' ) . '</p>';
+				echo '<h3><img src="' . DPSP_PLUGIN_DIR_URL . 'assets/img/opt-in-hound-icon-256x256.png" />' . __( 'Start Growing Your Email List', 'social-pug' ) . '</h3>';
 
-			echo '<a href="https://devpups.com/opt-in-hound/?utm_source=plugin-sidebar&amp;utm_medium=opt-in-hound-crosspromo&amp;utm_campaign=social-pug" target="_blank" class="button button-secondary">Learn More</a>';
+				echo '<p>' . sprintf( __( '%sOpt-In Hound%s is the easiest way for you to create beautiful popup and widget email optin forms and start growing your email subscriber lists.', 'social-pug' ), '<a href="https://devpups.com/opt-in-hound/?utm_source=plugin-sidebar&amp;utm_medium=opt-in-hound-crosspromo&amp;utm_campaign=social-pug" target="_blank">', '</a>' ) . '</p>';
+
+				echo '<a href="https://devpups.com/opt-in-hound/?utm_source=plugin-sidebar&amp;utm_medium=opt-in-hound-crosspromo&amp;utm_campaign=social-pug" target="_blank" class="button button-secondary">Learn More</a>';
+
+			echo '</div>';
 
 		echo '</div>';
 
@@ -591,7 +595,7 @@
 		if( ! current_user_can( 'activate_plugins' ) )
 			return;
 
-		if( time() <= $first_activation + 5 * DAY_IN_SECONDS )
+		if( time() <= $first_activation + 2 * DAY_IN_SECONDS )
 			return;
 
 		// Do not display this notice for users that have dismissed it
@@ -599,13 +603,15 @@
 			return;
 
 		// Echo the admin notice
-		echo '<div class="dpsp-admin-notice dpsp-admin-notice-wp-rating notice">';
+		echo '<div class="dpsp-admin-notice dpsp-admin-notice-opt-in-hound notice">';
 
-        	echo '<p>' . __( 'You have been using <strong>Social Pug</strong> for some time now to grow your website by helping your users share your content with ease.', 'social-pug' ) . '</p>';
+			echo '<img src="' . DPSP_PLUGIN_DIR_URL . 'assets/img/opt-in-hound-icon-256x256.png" />';
 
-        	echo '<p>' . __( 'Now we want to help you reach even more people by growing your email list in a simple and beautiful way.', 'social-pug' ) . '</p>';
+			echo '<h3>' . __( 'Start Growing Your Email List', 'social-pug' ) . '</h3>';
 
-        	echo '<p><a class="button-primary" href="' . admin_url( 'admin.php?page=dpsp-extensions&sub-page=opt-in-hound&dpsp_admin_notice_promo_opt_in_hound=1' ) . '">' . __( 'Learn More About the Email Subscribe Tools', 'social-pug' ) . '</a></p>';
+        	echo '<p>' . __( 'We, the team behind <strong>Social Pug</strong>, have been working hard the past months to create a brand new plugin. We would love to hear your thoughts!', 'social-pug' ) . '</p>';
+
+        	echo '<p><a class="button-primary" href="' . admin_url( 'admin.php?page=dpsp-extensions&sub-page=opt-in-hound&dpsp_admin_notice_promo_opt_in_hound=1' ) . '">' . __( 'Check It Out!', 'social-pug' ) . '</a></p>';
 
         	echo '<a href="' . add_query_arg( array( 'dpsp_admin_notice_promo_opt_in_hound' => 1 ) ) . '" type="button" class="notice-dismiss"><span class="screen-reader-text">Dismiss this notice.</span></a>'; 
 

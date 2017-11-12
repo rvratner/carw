@@ -780,19 +780,22 @@ h1.dpsp-page-title {
 .dpsp-tool-wrapper img { max-width: 100%; height: auto; }
 .dpsp-tool-wrapper a { color: #777; text-decoration: none; }
 .dpsp-tool-wrapper a:hover { color: rgba(52,152,219,0.75); }
-.dpsp-tool-wrapper h4 { font-size: 1.1em; border-bottom: 1px solid #f1f1f1; margin-bottom: 0; margin-top: 0; padding: 10px; }
+.dpsp-tool-wrapper h4 { font-size: 15px; border-bottom: 1px solid #f1f1f1; margin-bottom: 0; margin-top: 0; padding: 10px; text-align: center; }
 
-.dpsp-tool-wrapper .dpsp-tool-actions { position: relative; padding: 10px; }
+.dpsp-tool-wrapper .dpsp-tool-actions { position: relative; padding: 12px 10px; background: #f9f9f9; }
 .dpsp-tool-wrapper .dpsp-tool-actions:after { content: ''; display: block; clear: both; }
 
 .dpsp-tool-wrapper .dpsp-tool-actions-overlay { z-index: 1; position: absolute; top: 0; left: 0; height: 100%; width: 100%; background: rgba(255,255,255,0.6); opacity: 0; }
-.dpsp-tool-wrapper .dpsp-tool-actions-overlay .spinner { float: none; visibility: visible; opacity: 1; margin: 10px; }
+.dpsp-tool-wrapper .dpsp-tool-actions-overlay .spinner { float: none; visibility: visible; opacity: 1; margin: 12px 10px; }
 
-.dpsp-tool-wrapper .dpsp-tool-actions.dpsp-active span { color: #64D671; }
+.dpsp-tool-wrapper .dpsp-tool-actions.dpsp-active span { opacity: 0; }
 .dpsp-tool-wrapper .dpsp-tool-actions.dpsp-inactive span { opacity: 0.4; }
 
+.dpsp-tool-wrapper .dpsp-tool-actions .dpsp-tool-settings { line-height: 1; vertical-align: middle; }
 .dpsp-tool-wrapper .dpsp-tool-actions .dpsp-tool-settings:focus { box-shadow: none; }
 .dpsp-tool-wrapper .dpsp-tool-actions.dpsp-inactive .dpsp-tool-settings { display: none; }
+
+.dpsp-tool-wrapper .dpsp-tool-actions .dpsp-tool-settings i { margin-right: 3px; }
 
 .dpsp-tool-wrapper .dpsp-switch span { text-transform: uppercase; font-size: 0.85em; margin-right: 5px; }
 .dpsp-tool-wrapper .dpsp-switch label { display: inline-block !important; }
@@ -804,7 +807,7 @@ h1.dpsp-page-title {
 .dpsp-page-extensions { max-width: 1000px; }
 
 .dpsp-unavailable > a { display: block; line-height: 0; }
-.dpsp-unavailable h4 { padding-bottom: 0; border-bottom: 0; border-top: 1px solid #f1f1f1; }
+.dpsp-unavailable h4 { padding-bottom: 0; border-bottom: 0; border-top: 1px solid #f1f1f1; text-align: left; }
 .dpsp-unavailable p.dpsp-description { margin: 0; padding: 10px; }
 .dpsp-unavailable .dpsp-tool-actions { padding: 15px 10px; overflow: hidden; text-align: center; background: #f9f9f9; border-top: 1px solid #f1f1f1; }
 .dpsp-unavailable .dpsp-tool-actions .button { padding-left: 25px; padding-right: 25px; }
@@ -836,6 +839,8 @@ h1.dpsp-page-title {
 	}
 
 }
+
+#dpsp-settings-sidebar-opt-in-hound img { max-width: 35px; height: auto; margin-right: 10px; border-radius: 50px; vertical-align: middle; }
 
 /**********************************************/
 /* Settings page sidebar: MailChimp Subscribe
@@ -937,13 +942,11 @@ h1.dpsp-page-title {
 .dpsp-admin-notice-wp-rating .dpsp-admin-notice-link:hover { color: #fff; background: rgba(52,152,219,0.75); }
 .dpsp-admin-notice-wp-rating .dashicons-star-filled { position: relative; top: 1px; width: 15px; height: 15px; font-size: 15px; }
 
-.dpsp-admin-notice-subscribe-discount { border-color: rgba(52,152,219,0.75); }
-.dpsp-admin-notice-subscribe-discount h4 { font-size: 1.05em; }
-.dpsp-admin-notice-subscribe-discount a { text-decoration: none; }
-.dpsp-admin-notice-subscribe-discount .mc-field-group { display: inline-block; width: 225px; margin-right: 15px; }
-.dpsp-admin-notice-subscribe-discount .mc-field-group input { width: 100%; margin-bottom: 20px; }
-.dpsp-admin-notice-subscribe-discount .clear { display: inline-block; position: relative; top: -6px; }
-.dpsp-admin-notice-subscribe-discount .clear input { width: 175px; }
+.dpsp-admin-notice-opt-in-hound { position: relative; padding-left: 140px; border-color: rgba(52,152,219,0.75); }
+.dpsp-admin-notice-opt-in-hound h4 { font-size: 1.05em; }
+.dpsp-admin-notice-opt-in-hound p:last-of-type { margin-bottom: 20px; }
+.dpsp-admin-notice-opt-in-hound a { text-decoration: none; }
+.dpsp-admin-notice-opt-in-hound img { position: absolute; top: 20px; left: 20px; border-radius: 50px; max-width: 100px; height: auto; }
 
 
 /**********************************************/

@@ -1,0 +1,10 @@
+*.DS_Store
+wp-admin
+wp-includes
+wp-content/upgrade
+wp-content/uploads
+wp-content/plugins
+wp-config.php
+wp theme
+*.map
+*.codekit3

@@ -4,7 +4,7 @@ Donate link: https://www.devpups.com/social-pug/
 Tags: social, social share, social sharing buttons, social network, social share buttons, share buttons, share button, facebook button, pin button, share counter, social network share, floating sidebar, floating share buttons, content share buttons, share counts, social share icon
 Requires at least: 3.1
 Tested up to: 4.8.1
-Stable tag: 1.3.6
+Stable tag: 1.3.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,18 +13,18 @@ Social share buttons with style that will increase your social share count and u
 == Description ==
 **Social Shareing Buttons with Style**
 
-Add highly customizable social share buttons to your website to increase the interaction on your website. Place the share buttons before and after the post content or have them follow your readers as they scroll up and down the page, in the form of a floating sidebar.
+Add highly customizable social share buttons to your website to increase the interaction on your website. Place the share buttons before and after the post content or have them follow your readers as they scroll up and down the page, in the form of a social media floating sidebar.
 
 **Supported social media share networks**: Facebook, Twitter, Google+ and Pinterest
 
-**Social Share Count**: Display the posts social share count **( including Twitter )** to provide social media proof and increase your website's credibility.
+**Social Media Share Count**: Display the posts social share count **( including Twitter )** to provide social media proof and increase your website's credibility.
 
 **Buttons Locations**: You can place the share buttons in 4 different locations of your website. You can opt in to display them before and/or after the content of your posts on whichever post type you want. Also you can choose to display the buttons in a floating sidebar that follows the user as he/she scrolls the page. The floating sidebar can be placed on the left or on the right side of the screen.
 
 = Main Features =
 * **Before and After Content Share Buttons** - Place the share buttons right before your content, after your content or both
 * **Floating Sidebar Share Buttons** - Make the share buttons follow the user as he/she scrolls up and down your webpage by adding floating buttons on the left or right side of the screen
-* **Share Counts and Total Share Counts** - Display share counts for all social networks, including Twitter
+* **Share Counts and Total Share Counts** - Display social media share counts for all social networks, including Twitter
 * **Editable Button Labels** - Edit the labels that appear in the share buttons, to maximize your engagement
 * **Retina Ready Sharp Share Icons** - Social Pug uses an icon font to display the best looking icons
 
@@ -59,6 +59,17 @@ http://www.devpups.com/
 1. Activate each location where you wish the buttons to appear
 
 
+== Frequently Asked Questions ==
+
+= What social media platforms are supported? =
+
+We currently support Facebook, Twitter, Google+ and Pinterest in the free version. The Pro version adds many more social media networks for both social share and social follow.
+
+= Can I place the social share buttons only on posts and pages? =
+
+You can place both the inline share buttons and the floating sidebar buttons on any custom post type that your WordPress installation has registered. You are not limited to only posts and pages.
+
+
 == Screenshots ==
 1. Content Share Buttons Output
 2. Floating Sidebar Buttons Output
@@ -67,6 +78,9 @@ http://www.devpups.com/
 
 
 == Changelog ==
+= 1.3.7 =
+* Misc: Code clean-up and small usability improvements in the admin area
+
 = 1.3.6 =
 * Misc: Added support for Twitter summary card with large image
 

@@ -2,11 +2,11 @@
 
 <div class="dpsp-page-wrapper dpsp-page-extensions wrap">
 
-	<h1 class="dpsp-page-title"><?php echo __( 'Available Tools', 'social-pug' ); ?></h1>
+	<h1 class="dpsp-page-title"><?php echo __( 'All The Social Share Tools That You Need In One Plugin', 'social-pug' ); ?></h1>
 
-	<p><?php _e( 'These are the various tools available for Social Pug which further enhance the functionality of the plugin.', 'social-pug' ); ?></p>
+	<p><?php echo __( 'Get <a href="https://devpups.com/social-pug/features/" target="_blank">Social Pug Pro</a> to have access to even more tools and offer your users a beautiful social sharing experience.', 'social-pug' ); ?></p>
 
-	<p><?php _e( 'To gain immediate access to the tools below, <a href="https://devpups.com/social-pug/pricing/">have a look at our pricing.</a>', 'social-pug' ); ?></p>
+	<p><?php echo __( 'To gain immediate access to the tools below, <a href="https://devpups.com/social-pug/" target="_blank">have a look at our pricing.</a>', 'social-pug' ); ?></p>
 
 	<div class="dpsp-row dpsp-m-padding">
 	<?php 

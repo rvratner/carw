@@ -61,7 +61,7 @@
 		<div id="brand">
 			<h1>
 				<a href="<?php echo esc_url( home_url( '/' ) ); // Link to the home page ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); // Title it with the blog name ?>" rel="home"> 
-				<img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo.svg" alt="logo CARW Coalition for Anti Racist Whites" />
+				<img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo1.svg" alt="logo CARW Coalition for Anti Racist Whites" />
 				</a>
 			</h1>
 

@@ -5,36 +5,56 @@
  */
 
 get_header(); // This fxn gets the header.php file and renders it ?>
+
+	<header id="masthead" class="site-header"<?php if ( has_post_thumbnail() ) :
+	$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-image' );
+	echo 'style="background-image: url('. esc_url( $thumbnail[0] ) .');"';
+	endif; ?>>
+		<div class="container">
+			<div id="brand">
+				<h1>
+					<a href="<?php echo esc_url( home_url( '/' ) ); // Link to the home page ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); // Title it with the blog name ?>" rel="home">
+					<img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo.svg" alt="logo CARW Coalition for Anti Racist Whites" />
+					</a>
+				</h1>
+			</div><!-- /brand -->
+
+			<div class="header-widget" id="header-widget-home">
+
+			</div>
+		</div><!-- /container -->
+	</header>
+
 	<div id="primary" class="<?php the_title();?> row-fluid">
 		<div id="content" role="main" class="span12">
 
-			<?php if ( have_posts() ) : 
+			<?php if ( have_posts() ) :
 			// Do we have any posts/pages in the databse that match our query?
 			?>
 
-				<?php while ( have_posts() ) : the_post(); 
+				<?php while ( have_posts() ) : the_post();
 				// If we have a page to show, start a loop that will display it
 				?>
 
 					<article class="post">
-					
+
 						<h1 class="title"><?php the_title(); // Display the title of the page ?></h1>
-						
+
 						<div class="the-content">
-							<?php the_content(); 
+							<?php the_content();
 							// This call the main content of the page, the stuff in the main text box while composing.
 							// This will wrap everything in p tags
 							?>
-							
+
 							<?php wp_link_pages(); // This will display pagination links, if applicable to the page ?>
 						</div><!-- the-content -->
-						
+
 					</article>
 
 				<?php endwhile; // OK, let's stop the page loop once we've displayed it ?>
 
 			<?php else : // Well, if there are no posts to display and loop through, let's apologize to the reader (also your 404 error) ?>
-				
+
 				<article class="post error">
 					<h1 class="404">Nothing posted yet</h1>
 				</article>

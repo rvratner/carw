@@ -97,3 +97,11 @@ function carw_scripts()  {
 
 }
 add_action( 'wp_enqueue_scripts', 'carw_scripts' ); // Register this fxn and allow Wordpress to call it automatcally in the header
+
+
+// custom image sizes
+add_action( 'after_setup_theme', 'image_sizes' );
+function image_sizes() {
+  add_image_size( 'small', 480, 480 ); // 480 max
+  add_image_size( 'larger', 2400, 0 ); // 2400 max width
+}

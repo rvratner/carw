@@ -18,15 +18,15 @@ a {
 }
 
 a:hover {
-  background-color: #f7c343; 
+  background-color: #f7c343;
 }
 
 a:focus{
-  background-color: #f7c343; 
+  background-color: #f7c343;
 }
 
 a:active, .current-menu-item a {
-  background-color: #f7c343; 
+  background-color: #f7c343;
 }
 
 .title {
@@ -45,6 +45,21 @@ p {
 	margin-top: .5em;
 }
 
+
+section {
+	position: relative;
+}
+.wrap {
+	display: block;
+	margin: 0 auto;
+	padding: 50px 100px;
+	&.text-wrap {
+		max-width: 600px;
+	}
+	&.centered {
+		text-align: center;
+	}
+}
 
 
 // toggle interaction

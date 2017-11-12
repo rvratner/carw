@@ -1,46 +1,93 @@
-<?php 
+<?php
 /**
  * 	Template Name: Home Page
- *
- *	This page template has a sidebar built into it, 
- * 	and can be used as a home page, in which case the title will not show up.
- *
 */
-?>
-<?php get_header(); // This fxn gets the header.php file and renders it ?>
-	<div id="primary" class="row-fluid">
-		<div id="content" role="main" class="span12">
-			<?php if ( have_posts() ) : 
-			// Do we have any posts/pages in the databse that match our query?
-			?>
 
-				<?php while ( have_posts() ) : the_post(); 
-				// If we have a page to show, start a loop that will display it
-				?>
+get_header();
 
-					<article class="post">
-			
-						<div class="the-content">
-							<?php the_content(); 
-							// This call the main content of the page, the stuff in the main text box while composing.
-							// This will wrap everything in paragraph tags
-							?>
-							
-							<?php wp_link_pages(); // This will display pagination links, if applicable to the page ?>
-						</div><!-- the-content -->
-						
-					</article>
+	while ( have_posts() ) : the_post();
 
-				<?php endwhile; // OK, let's stop the page loop once we've displayed it ?>
+	// get custom fields
+	$ctaTitle = get_field('cta_title');
+	$ctaLink = get_field('cta_link');
+	$ctaCopy = get_field('cta_copy');
+	$carwBrief = get_field('carw_brief');
+	$buttonText = get_field('button_text');
+	$buttonLink = get_field('button_link');
+	$fullScreenImage = get_field('full_screen_image');
+	$getInvolvedTitle = get_field('get_involved_title');
+	$getInvolvedText = get_field('get_involved_text');
+	?>
 
-			<?php else : // Well, if there are no posts to display and loop through, let's apologize to the reader (also your 404 error) ?>
-				
-				<article class="post error">
-					<h1 class="404">Nothing has been posted like that yet</h1>
-				</article>
+	<header id="masthead" class="site-header"<?php if ( has_post_thumbnail() ) :
+	$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-image' );
+	echo 'style="background-image: url('. esc_url( $thumbnail[0] ) .');"';
+	endif; ?>>
 
-			<?php endif; // OK, I think that takes care of both scenarios (having a page or not having a page to show) ?>
-		</div><!-- #content .site-content -->
-		
-	</div><!-- #primary .content-area -->
+		<div class="container">
+			<div id="brand">
+				<h1>
+					<img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo1.svg" alt="logo CARW Coalition for Anti Racist Whites" />
+				</h1>
+				<?php $description = get_bloginfo( 'description', 'display' );
+				if ( $description || is_customize_preview() ) : ?>
+					<p class="site-description desktop"><?php echo $description; ?></p>
+				<?php endif; ?>
+			</div><!-- /brand -->
+
+			<?php if ($ctaTitle && $ctaLink): ?>
+			<div class="header-widget" id="header-widget-home">
+				<h3><?php echo $ctaTitle; ?></h3>
+				<?php if ($ctaCopy) echo $ctaCopy; ?>
+				<p><a href="<?php echo $ctaLink; ?>">Learn More</a></p>
+			</div>
+			<?php endif; ?>
+		</div><!-- /container -->
+
+		<div id="scene" class="scene">
+			<div class="layer layer-1-dark" data-depth="0"><div style="background-image: url(<?php echo esc_url( $thumbnail[0] ); ?>);"></div></div>
+			<div class="layer layer-1" data-depth="0.1"><div style="background-image: url(<?php echo esc_url( $thumbnail[0] ); ?>);"></div></div>
+			<div class="layer layer-2-dark" data-depth="0.20"><div style="background-image: url(<?php echo esc_url( $thumbnail[0] ); ?>);"></div></div>
+			<div class="layer layer-2" data-depth="0.30"><div style="background-image: url(<?php echo esc_url( $thumbnail[0] ); ?>);"></div></div>
+			<div class="layer layer-3-dark" data-depth="0.50"><div style="background-image: url(<?php echo esc_url( $thumbnail[0] ); ?>);"></div></div>
+			<div class="layer layer-3" data-depth="0.10"><div style="background-image: url(<?php echo esc_url( $thumbnail[0] ); ?>);"></div></div>
+		</div>
+		<script>
+
+			// Pretty simple huh?
+			var scene = document.getElementById('scene');
+			var parallax = new Parallax(scene);
+
+		</script>
+	</header><!-- #masthead .site-header -->
+
+	<?php $description = get_bloginfo( 'description', 'display' );
+	if ( $description || is_customize_preview() ) : ?>
+		<p class="site-description mobile"><?php echo $description; ?></p>
+	<?php endif; ?>
+
+
+	<main class="main-fluid"><!-- start the page containter -->
+
+		<section class="quote">
+			<div class="wrap text-wrap centered">
+				<h2><?php echo $carwBrief; ?></h2>
+				<div class="button-wrap">
+					<a href="<?php echo buttonLink; ?>"><?php echo $buttonText; ?></a>
+				</div>
+			</div>
+		</section>
+
+		<section class="full-image">
+			<img src="<?php echo $fullScreenImage['sizes']['larger']; ?>" />
+		</section>
+
+		<section class="text">
+			<div class="wrap text-wrap centered">
+				<h2><?php echo $getInvolvedTitle; ?></h2>
+				<?php echo $getInvolvedText; ?>
+			</div>
+		</section>
+
+<?php endwhile; // OK, let's stop the page loop once we've displayed it ?>
 <?php get_footer(); // This fxn gets the footer.php file and renders it ?>

@@ -19,22 +19,12 @@ get_header();
 	$getInvolvedText = get_field('get_involved_text');
 	?>
 
-	<header id="masthead" class="site-header"<?php if ( has_post_thumbnail() ) :
+	<header id="masthead" class="site-header homepage"<?php if ( has_post_thumbnail() ) :
 	$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-image' );
 	echo 'style="background-image: url('. esc_url( $thumbnail[0] ) .');"';
 	endif; ?>>
 
 		<div class="container">
-			<div id="brand">
-				<h1>
-					<img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo1.svg" alt="logo CARW Coalition for Anti Racist Whites" />
-				</h1>
-				<?php $description = get_bloginfo( 'description', 'display' );
-				if ( $description || is_customize_preview() ) : ?>
-					<p class="site-description desktop"><?php echo $description; ?></p>
-				<?php endif; ?>
-			</div><!-- /brand -->
-
 			<?php if ($ctaTitle && $ctaLink): ?>
 			<div class="header-widget" id="header-widget-home">
 				<h3><?php echo $ctaTitle; ?></h3>
@@ -61,19 +51,21 @@ get_header();
 		</script>
 	</header><!-- #masthead .site-header -->
 
-	<?php $description = get_bloginfo( 'description', 'display' );
+	<?php /*
+$description = get_bloginfo( 'description', 'display' );
 	if ( $description || is_customize_preview() ) : ?>
 		<p class="site-description mobile"><?php echo $description; ?></p>
-	<?php endif; ?>
+	<?php endif;
+*/ ?>
 
 
 	<main class="main-fluid"><!-- start the page containter -->
 
-		<section class="quote">
+		<section class="quote gold">
 			<div class="wrap text-wrap centered">
 				<h2><?php echo $carwBrief; ?></h2>
 				<div class="button-wrap">
-					<a href="<?php echo buttonLink; ?>"><?php echo $buttonText; ?></a>
+					<a href="<?php echo $buttonLink; ?>"><?php echo $buttonText; ?></a>
 				</div>
 			</div>
 		</section>
@@ -86,6 +78,12 @@ get_header();
 			<div class="wrap text-wrap centered">
 				<h2><?php echo $getInvolvedTitle; ?></h2>
 				<?php echo $getInvolvedText; ?>
+				<?php $getInvolvedURL = get_the_permalink( 10 ); ?>
+				<p><?php while (have_rows('sections', 10)): the_row();
+					$title = get_sub_field('section_title');
+					$anchor = get_sub_field('section_anchor'); ?>
+					<a href="<?php echo $getInvolvedURL.'#'.$anchor; ?>"><?php echo $title; ?></a>
+				<?php endwhile; ?></p>
 			</div>
 		</section>
 

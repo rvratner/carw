@@ -1,0 +1,305 @@
+$easeQuart: cubic-bezier(0.77, 0, 0.175, 1);
+$easeCubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+$easeInCubic: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+
+$width-min450: 450px;
+$width-min600: 600px;
+$width-max768: 768px;
+$width-min769: 769px;
+$width-min930: 930px;
+$width-min1024: 1024px;
+$width-min1200: 1200px;
+$width-min1600: 1600px;
+$height-min600: 600px;
+$height-min769: 769px;
+
+@mixin responsive($size) {
+	@if $size==min450 {
+		@media only screen and (min-width: $width-min450) {
+			@content;
+		}
+	}
+	@else if $size==min600 {
+		@media only screen and (min-width: $width-min600) {
+			@content;
+		}
+	}
+	@else if $size==max768 {
+		@media only screen and (max-width: $width-max768) {
+			@content;
+		}
+	}
+	@else if $size==min769 {
+		@media only screen and (min-width: $width-min769) {
+			@content;
+		}
+	}
+	@else if $size==min930 {
+		@media only screen and (min-width: $width-min930) {
+			@content;
+		}
+	}
+	@else if $size==min1024 {
+		@media only screen and (min-width: $width-min1024) {
+			@content;
+		}
+	}
+	@else if $size==min1200 {
+		@media only screen and (min-width: $width-min1200) {
+			@content;
+		}
+	}
+	@else if $size==min1600 {
+		@media only screen and (min-width: $width-min1600) {
+			@content;
+		}
+	}
+	@else if $size==min600h {
+		@media only screen and (min-height: $height-min600) {
+			@content;
+		}
+	}
+	@else if $size==min769h {
+		@media only screen and (min-height: $height-min769) {
+			@content;
+		}
+	}
+}
+
+@mixin nospace {
+	letter-spacing: -0.65em;
+	text-rendering: optimizeLegibility;
+}
+
+@mixin inline-block {
+	letter-spacing: normal;
+	display: -moz-inline-stack;
+	display: inline-block;
+	zoom: 1;
+	*display: inline;
+}
+
+@mixin hide-text {
+	text-indent: 1500%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+@mixin background-size($bgsize) {
+	-webkit-background-size: $bgsize;
+	-moz-background-size: $bgsize;
+	-o-background-size: $bgsize;
+	background-size: $bgsize;
+}
+
+@mixin columns($num, $space) {
+	-webkit-column-count: $num;
+	-moz-column-count: $num;
+	column-count: $num;
+	-webkit-column-gap: $space;
+	-moz-column-gap: $space;
+	column-gap: $space;
+}
+
+@mixin box-shadow($shadow) {
+	-webkit-box-shadow: $shadow;
+	-moz-box-shadow: $shadow;
+	box-shadow: $shadow;
+}
+
+@mixin gray {
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	filter: gray;
+	filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale");
+}
+
+@mixin hiConGray {
+	-webkit-filter: grayscale(100%) contrast(2);
+	filter: grayscale(100%) contrast(2);
+	filter: gray;
+	filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale");
+}
+
+@mixin color {
+	-webkit-filter: grayscale(0%);
+	filter: none;
+}
+
+@mixin transform($transform) {
+	-webkit-transform: $transform;
+	-moz-transform: $transform;
+	-ms-transform: $transform;
+	-o-transform: $transform;
+	transform: $transform;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	backface-visibility: hidden;
+	//	filter: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><filter id="gaussian_blur"><feGaussianBlur in="SourceGraphic" stdDeviation="0" /></filter></defs></svg>#gaussian_blur');
+	/* FF Hack for sharper renders */
+}
+
+@mixin transform-origin($origin) {
+	-webkit-transform-origin: $origin;
+	-moz-transform-origin: $origin;
+	-ms-transform-origin: $origin;
+	-o-transform-origin: $origin;
+	transform-origin: $origin;
+}
+
+@mixin transition($trans,$transtime) {
+	@if $trans==all {
+		will-change: auto;
+	}
+	@else {
+		will-change: $trans;
+	}
+	-webkit-transition: $trans $transtime;
+	-moz-transition: $trans $transtime;
+	-o-transition: $trans $transtime;
+	transition: $trans $transtime;
+}
+
+@mixin transition-delay($delay) {
+	-webkit-transition-delay: $delay;
+	-moz-transition-delay: $delay;
+	-o-transition-delay: $delay;
+	transition-delay: $delay;
+}
+
+@mixin invisible($vistime: 0) {
+	visibility: hidden;
+	opacity: 0;
+	@if $vistime != 0 {
+		transition: visibility 0s linear $vistime, opacity $vistime linear;
+		will-change: visibility, opacity;
+	}
+}
+
+@mixin visible {
+	visibility: visible;
+	opacity: 0.99999;
+	transition-delay: 0s;
+}
+
+@mixin filter($filters) {
+	-webkit-filter: $filters;
+	-moz-filter: $filters;
+	-ms-filter: $filters;
+	-o-filter: $filters;
+	filter: $filters;
+}
+
+@mixin firefox {
+	@-moz-document url-prefix() {
+		@content;
+	}
+}
+
+@mixin devblock($color) {
+	border: 1px solid $color;
+}
+
+@mixin retina {
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+		@content;
+	}
+}
+
+@mixin clear() {
+	&:before {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		content: " ";
+		display: table;
+		clear: both;
+	}
+	*zoom: 1;
+}
+
+@mixin fill-bg {
+	background-position: 50% 50%;
+	@include background-size(cover);
+}
+
+@mixin v-center {
+	display: table;
+	width: 100%;
+	height: 100%;
+	>* {
+		display: table-cell;
+		width: 100%;
+		height: 100%;
+		vertical-align: middle;
+	}
+}
+
+@mixin v-top {
+	display: table;
+	width: 100%;
+	height: 100%;
+	>* {
+		display: table-cell;
+		width: 100%;
+		height: 100%;
+		vertical-align: top;
+	}
+}
+
+.hidden {
+	display: none;
+	visibility: hidden;
+}
+
+@mixin flex {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+@mixin blend($mode) {
+	background-blend-mode: $mode, normal;
+	-webkit-background-blend-mode: $mode, normal;
+}
+
+@mixin mix-blend($mix) {
+	mix-blend-mode: $mix;
+	-webkit-mix-blend-mode: $mix;
+}
+
+@mixin explorer {
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		@content;
+	}
+}
+
+@mixin fancyLink($fancyBg,$fancyColor) {
+	padding-bottom: 2px;
+	background: -webkit-linear-gradient($fancyBg, $fancyBg), -webkit-linear-gradient($fancyBg, $fancyBg), -webkit-linear-gradient($fancyColor, $fancyColor);
+	background: -moz-linear-gradient($fancyBg, $fancyBg), -moz-linear-gradient($fancyBg, $fancyBg), -moz-linear-gradient($fancyColor, $fancyColor);
+	background: -o-linear-gradient($fancyBg, $fancyBg), -o-linear-gradient($fancyBg, $fancyBg), -o-linear-gradient($fancyColor, $fancyColor);
+	background: -ms-linear-gradient($fancyBg, $fancyBg), -ms-linear-gradient($fancyBg, $fancyBg), -ms-linear-gradient($fancyColor, $fancyColor);
+	background: linear-gradient($fancyBg, $fancyBg), linear-gradient($fancyBg, $fancyBg), linear-gradient($fancyColor, $fancyColor);
+	-webkit-background-size: .05em 1px, .05em 1px, 1px 1px;
+	-moz-background-size: .05em 1px, .05em 1px, 1px 1px;
+	background-size: .05em 1px, .05em 1px, 1px 1px;
+	background-repeat: no-repeat, no-repeat, repeat-x;
+	text-shadow: .03em 0 $fancyBg, -.03em 0 $fancyBg, 0 .03em $fancyBg, 0 -.03em $fancyBg, .06em 0 $fancyBg, -.06em 0 $fancyBg, .09em 0 $fancyBg, -.09em 0 $fancyBg, .12em 0 $fancyBg, -.12em 0 $fancyBg, .15em 0 $fancyBg, -.15em 0 $fancyBg;
+	background-position: 0 85.2%, 100% 85.2%, 0 85.2%;
+}
+
+@mixin bg-gradient-lr($start,$stop) {
+	background: $start;
+	background: -moz-linear-gradient(left, $start 0%, $stop 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, $start), color-stop(100%, $stop));
+	background: -webkit-linear-gradient(left, $start 0%, $stop 100%);
+	background: -o-linear-gradient(left, $start 0%, $stop 100%);
+	background: -ms-linear-gradient(left, $start 0%, $stop 100%);
+	background: linear-gradient(to right, $start 0%, $stop 100%);
+	// filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='$start', endColorstr='$stop', GradientType=1);
+}

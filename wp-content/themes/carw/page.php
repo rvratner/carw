@@ -9,21 +9,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 	<header id="masthead" class="site-header"<?php if ( has_post_thumbnail() ) :
 	$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-image' );
 	echo 'style="background-image: url('. esc_url( $thumbnail[0] ) .');"';
-	endif; ?>>
-		<div class="container">
-			<div id="brand">
-				<h1>
-					<a href="<?php echo esc_url( home_url( '/' ) ); // Link to the home page ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); // Title it with the blog name ?>" rel="home">
-					<img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo.svg" alt="logo CARW Coalition for Anti Racist Whites" />
-					</a>
-				</h1>
-			</div><!-- /brand -->
-
-			<div class="header-widget" id="header-widget-home">
-
-			</div>
-		</div><!-- /container -->
-	</header>
+	endif; ?>></header>
 
 	<div id="primary" class="<?php the_title();?> row-fluid">
 		<div id="content" role="main" class="span12">

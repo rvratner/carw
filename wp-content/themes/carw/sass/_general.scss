@@ -1,14 +1,20 @@
 /*
 Theme Name: CARW
 Author: rvratner
+*/
 
 
-
-$font-stack:    Helvetica, sans-serif;
-$primary-color: #333;
+$white: #f9f6f4;
+$black: #2f2b37;
+$gray: #c2c2c2;
+$gold: #f7c343;
 
 /* styles
 -------------------------------------------------------------- */
+
+body {
+  color: #2F2B37;
+}
 
 body,
 button,
@@ -32,7 +38,6 @@ h5,
 h6 {
   clear: both;
   font-family: "Nunito", Helvetica, sans-serif;
-  color: #2F2B37;
 }
 
 h1 {
@@ -177,10 +182,10 @@ pre {
     width: 50%;
     max-width: 500px;
   }
-  
+
   &#header-widget-home {
     background-color: #f7c343;
-    top: 45px;
+    top: 95px;
     width: 320px;
     height: 189px;
     color: #2f2b27;
@@ -265,15 +270,25 @@ pre {
 }
 
 .site-header{
-    height: 640px;
-    background-size: 100%;
+	padding-top: 60px;
+	background-position: 50% 50%;
+    background-size: cover;
     overflow: hidden;
     position: relative;
     background-repeat: no-repeat;
     &.homepage {
       background-size: 0;
-      height: 900px;
-      // background-size: 1000px;
+		height: 100%;
+	    height: 100vh;
+    }
+    section {
+	    background: transparent;
+		menu {
+			display: inline-block;
+			background-image: url(img/ricepaper2.png);
+			padding: 25px;
+			font-size: small;
+		}
     }
 
     #brand {
@@ -282,8 +297,8 @@ pre {
     margin-right: 20px;
     padding-top: 20px;
     img {
-      width: 264px; 
-    } 
+      width: 264px;
+    }
     h1 {
       margin: 0;
       a {
@@ -299,18 +314,18 @@ pre {
 
 .main-navigation{
   font-family: "Nunito-Bold", Helvetica, sans-serif;
-  display: inline-block; 
+  display: inline-block;
   width: 100%;
   text-align: center;
   ul {
     list-style: none;
-    margin: 0; 
+    margin: 0;
     display: inline-block;
     li {
       float: left;
       margin: 2px 25px 0 0;
       a {
-        font-size: 20px; 
+        font-size: 20px;
         text-transform: lowercase;
       }
     }

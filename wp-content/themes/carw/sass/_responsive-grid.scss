@@ -16,7 +16,7 @@
     #Tablet (Portrait)
     #Mobile (Portrait)
     #Mobile (Landscape)
-    #Clearing 
+    #Clearing
      */
 
 /* #Fluid Grid (Inspired by Bootstrap)
@@ -211,10 +211,10 @@
   clear: both;
 }
 .main-fluid {
-  margin-right: auto;
-  margin-left: auto;
-  padding: 0 20px;
-  max-width: 1300px;
+//   margin-right: auto;
+//   margin-left: auto;
+//   padding: 0 20px;
+//   max-width: 1300px;
   *zoom: 1;
 }
 .main-fluid:before,
@@ -405,7 +405,7 @@
         .row-fluid [class*="span"],
         .row-fluid [class*="span"]:first-child { width: 96%; margin-left:2%;}
 
-        .row-fluid [class*="offset"], 
+        .row-fluid [class*="offset"],
         .row-fluid [class*="offset"]:first-child { margin-left: 2%; }
 
         .container .one.column,
@@ -460,9 +460,9 @@
         .container .columns,
         .container .column { padding-left: 0; padding-right: 0; }
 
-        .row-fluid [class*="span"] { width: 96%; margin-left: 2%;} 
+        .row-fluid [class*="span"] { width: 96%; margin-left: 2%;}
 
-        .row-fluid [class*="offset"], .row-fluid [class*="offset"]:first-child { margin-left: 2%; }       
+        .row-fluid [class*="offset"], .row-fluid [class*="offset"]:first-child { margin-left: 2%; }
 
         .container .one.column,
         .container .one.columns,

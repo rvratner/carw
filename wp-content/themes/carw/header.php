@@ -43,6 +43,12 @@
 	?>
 >
 
+	<?php if (!is_front_page()): ?><a href="<?php echo site_url(); ?>"><?php endif; ?>
+	<h1 class="logo">
+		<img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo1.svg" alt="logo CARW Coalition for Anti Racist Whites" />
+	</h1>
+	<?php if (!is_front_page()): ?></a><?php endif; ?>
+
 	<nav class="site-navigation main-navigation">
 		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); // Display the user-defined menu in Appearance > Menus ?>
 

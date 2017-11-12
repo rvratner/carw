@@ -4,7 +4,9 @@ wp-includes
 wp-content/upgrade
 wp-content/uploads
 wp-content/plugins
+wp-content/ai1wm-backups
 wp-config.php
-wp theme
 *.map
 *.codekit3
+wp-content/.DS_Store
+wp-content/.DS_Store

@@ -26,11 +26,11 @@ add_theme_support( 'post-thumbnails' );
 /*-----------------------------------------------------------------------------------*/
 /* Register main menu for Wordpress use
 /*-----------------------------------------------------------------------------------*/
-register_nav_menus( 
+register_nav_menus(
 	array(
 		'primary'	=>	__( 'Primary Menu', 'carw' ), // Register the Primary menu
 		'footer'	=>	__( 'Footer Menu', 'carw' ),
-		// Copy and paste the line above right here if you want to make another menu, 
+		// Copy and paste the line above right here if you want to make another menu,
 		// just change the 'primary' to another name
 	)
 );
@@ -48,7 +48,7 @@ function carw_register_sidebars() {
 		'before_title' => '<h3 class="side-title">',	// What to display before each widget's title
 		'after_title' => '</h3>',		// What to display following each widget's title
 		'empty_title'=> '',					// What to display in the case of no title defined for a widget
-		// Copy and paste the lines above right here if you want to make another sidebar, 
+		// Copy and paste the lines above right here if you want to make another sidebar,
 		// just change the values of id and name to another word/name
 	));
 	register_sidebar( array(
@@ -78,7 +78,7 @@ function carw_register_sidebars() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
-} 
+}
 // adding sidebars to Wordpress (these are created in functions.php)
 add_action( 'widgets_init', 'carw_register_sidebars' );
 
@@ -86,7 +86,7 @@ add_action( 'widgets_init', 'carw_register_sidebars' );
 /* Enqueue Styles and Scripts
 /*-----------------------------------------------------------------------------------*/
 
-function carw_scripts()  { 
+function carw_scripts()  {
 
 	// get the theme directory style.css and link to it in the header
 	wp_enqueue_style('style.css', get_stylesheet_directory_uri() . '/style.css');
@@ -94,6 +94,6 @@ function carw_scripts()  {
 	wp_enqueue_script('parallax.min.js', get_stylesheet_directory_uri() . '/js/parallax.min.js');
 	wp_enqueue_script('scrollPollyfill.js', get_stylesheet_directory_uri() . '/js/scrollPollyfill.js');
 	wp_enqueue_script('custom.js', get_stylesheet_directory_uri() . '/js/custom.js');
-	  
+
 }
 add_action( 'wp_enqueue_scripts', 'carw_scripts' ); // Register this fxn and allow Wordpress to call it automatcally in the header

@@ -44,9 +44,11 @@ get_header();
 		</div>
 		<script>
 
+/*
 			// Pretty simple huh?
 			var scene = document.getElementById('scene');
 			var parallax = new Parallax(scene);
+*/
 
 		</script>
 	</header><!-- #masthead .site-header -->
@@ -70,7 +72,7 @@ $description = get_bloginfo( 'description', 'display' );
 			</div>
 		</section>
 
-		<section class="full-image">
+		<section class="full-image dark">
 			<img src="<?php echo $fullScreenImage['sizes']['larger']; ?>" />
 		</section>
 

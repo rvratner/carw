@@ -78,6 +78,7 @@ h1.logo {
 
 // quick basic sections
 section {
+	display: block;
 	position: relative;
 	background-image: url(img/ricepaper2.png);
 	@include blend(multiply);
@@ -105,16 +106,32 @@ section {
 	&.full-image {
 		width: 100%;
 		width: 100vw;
-		height: 80%;
-		height: 80vh;
+		height: 90%;
+		height: 90vh;
 		img {
+			position: absolute;
+			top: 0;
+			left: 0;
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
 			@include mix-blend(multiply);
 		}
+		&.dark img {
+			@include mix-blend(lighten);
+		}
 	}
 }
+// curved section dividers
+section + section,
+footer {
+	width: 100%;
+	-webkit-clip-path: url(#section-path);
+			clip-path: url(#section-path);
+	margin-top: -30px;
+	padding-top: 41px;
+}
+
 .wrap {
 	display: block;
 	margin: 0 auto;
@@ -137,7 +154,9 @@ footer .land {
 		}
 	}
 }
-
+.mask {
+	display: none;
+}
 
 // toggle interaction
 

@@ -152,6 +152,9 @@ section {
 			@include mix-blend(lighten);
 		}
 	}
+	&.admin-edit {
+		background-color: palevioletred;
+	}
 }
 
 .wrap {

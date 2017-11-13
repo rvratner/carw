@@ -146,8 +146,7 @@ section {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
-		&.natural {
-			@include mix-blend(multiply);
+// 			@include mix-blend(multiply);
 		}
 		&.dark img {
 			@include mix-blend(lighten);
@@ -158,7 +157,10 @@ section {
 .wrap {
 	display: block;
 	margin: 0 auto;
-	padding: 80px 120px;
+	padding: 40px 20px 60px;
+	@media only screen and (min-width: 1281px) {
+		padding: 80px 120px;
+	}
 	&.text-wrap {
 		max-width: 720px;
 	}

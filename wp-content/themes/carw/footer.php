@@ -3,6 +3,9 @@
 	/* This template will be called by all other template files to finish
 	/* rendering the page and display the footer area/content
 	/*-----------------------------------------------------------------------------------*/
+
+
+	edit_post_link('Admin: Edit', '<section class="admin-edit"><div class="wrap centered">', '</div></section>');
 ?>
 
 	<section class="mailing-list gold">

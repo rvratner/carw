@@ -64,11 +64,7 @@ while ( have_posts() ) : the_post();
 				<?php endif; ?>
 			</div>
 		</section>
-		<?php if ($image):
-			$i++;
-			$color = 'natural';
-			if ($i % 2 === 0) $color = 'gray'; // alternating natural/gray, making all even rows natural
-			?>
+		<?php if ($image): ?>
 		<section class="natural full-image">
 			<img src="<?php echo $image['sizes']['larger']; ?>" />
 		</section>

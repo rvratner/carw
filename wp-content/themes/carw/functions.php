@@ -105,3 +105,13 @@ function image_sizes() {
   add_image_size( 'small', 480, 480 ); // 480 max
   add_image_size( 'larger', 2400, 0 ); // 2400 max width
 }
+
+// Add ACF Options page
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page();
+}
+// Change the Options Page title
+if( function_exists('acf_set_options_page_title') ) {
+	acf_set_options_page_title( __('Sitewide Options') );
+}
+

@@ -159,10 +159,10 @@ section {
 	margin: 0 auto;
 	padding: 40px 20px 60px;
 	@media only screen and (min-width: 1281px) {
-		padding: 80px 120px;
+		padding: 80px 120px 120px;
 	}
 	&.text-wrap {
-		max-width: 720px;
+		max-width: 800px;
 	}
 	&.centered {
 		text-align: center;

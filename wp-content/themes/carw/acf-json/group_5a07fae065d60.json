@@ -1,13 +1,139 @@
 {
     "key": "group_5a07fae065d60",
     "title": "Groups & Campaigns",
-    "fields": false,
+    "fields": [
+        {
+            "key": "field_5a092b1ee5b03",
+            "label": "Intro",
+            "name": "intro",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_59f68283a4c4d",
+            "label": "Sections",
+            "name": "sections",
+            "type": "repeater",
+            "instructions": "Add \/ organize sections of prompts.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "row_min": "",
+            "row_limit": "",
+            "layout": "row",
+            "button_label": "Add Section",
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_59f672e1c8dbb",
+                    "label": "Section Title",
+                    "name": "section_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "ie: Become a Member, Attend a Workshop",
+                    "prepend": "",
+                    "append": "",
+                    "formatting": "none",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_59f67322c8dbc",
+                    "label": "Section Anchor",
+                    "name": "section_anchor",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "ie: #membership, #workshop",
+                    "prepend": "#",
+                    "append": "",
+                    "formatting": "none",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_59f67344c8dbd",
+                    "label": "Section Text",
+                    "name": "section_text",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "toolbar": "full",
+                    "media_upload": 0,
+                    "tabs": "all",
+                    "delay": 0
+                },
+                {
+                    "key": "field_59f6735cc8dbe",
+                    "label": "Section Image",
+                    "name": "section_image",
+                    "type": "image",
+                    "instructions": "Full-width section separator. Ideally 2160px wide +",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "preview_size": "medium",
+                    "library": "all",
+                    "return_format": "array",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": ""
+                }
+            ]
+        }
+    ],
     "location": [
         [
             {
-                "param": "page",
+                "param": "page_template",
                 "operator": "==",
-                "value": "97"
+                "value": "page-groups.php"
             }
         ]
     ],
@@ -16,8 +142,11 @@
     "style": "seamless",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [],
+    "hide_on_screen": [
+        "the_content",
+        "custom_fields"
+    ],
     "active": 1,
     "description": "",
-    "modified": 1510472416
+    "modified": 1510550372
 }

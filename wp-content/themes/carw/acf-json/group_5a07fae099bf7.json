@@ -1,7 +1,125 @@
 {
     "key": "group_5a07fae099bf7",
     "title": "Sitewide",
-    "fields": false,
+    "fields": [
+        {
+            "key": "field_59f666509f3d9",
+            "label": "Footer",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_59f666689f3da",
+            "label": "Mailing List Signup Title",
+            "name": "signup_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "ie: Stay Informed",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": ""
+        },
+        {
+            "key": "field_59f6677b9f3db",
+            "label": "Mailing List Signup Text",
+            "name": "mailing_list_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Sign up for CARW’s mailing list for events, campaigns, and actions.",
+            "placeholder": "ie: Sign up for CARW’s mailing list for events, campaigns, and actions.",
+            "prepend": "",
+            "append": "",
+            "formatting": "html",
+            "maxlength": ""
+        },
+        {
+            "key": "field_59f667939f3dc",
+            "label": "Duwamish Land Text",
+            "name": "land_text",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "toolbar": "full",
+            "media_upload": 0,
+            "tabs": "all",
+            "delay": 0
+        },
+        {
+            "key": "field_59f668309f3dd",
+            "label": "Duwamish Land Link Title",
+            "name": "land_link_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Learn More",
+            "placeholder": "ie: Learn More",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": ""
+        },
+        {
+            "key": "field_59f6684a9f3de",
+            "label": "Duwamish Land Link",
+            "name": "land_link",
+            "type": "page_link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "post",
+                "page"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "taxonomy": [],
+            "allow_archives": 1
+        }
+    ],
     "location": [
         [
             {
@@ -16,8 +134,8 @@
     "style": "seamless",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [],
+    "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1510472416
+    "modified": 1510550602
 }

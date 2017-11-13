@@ -33,7 +33,7 @@ get_header();
 		$image = get_sub_field('section_image');
 		$buttonText = get_sub_field('section_button_text');
 		$buttonLink = get_sub_field('section_button_link');
-		$color = 'neutral';
+		$color = 'natural';
 		if ($i === 1) $color = 'gold';
 		else if ($i % 2 !== 0) $color = 'gray';
 		?>

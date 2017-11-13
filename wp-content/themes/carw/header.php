@@ -53,7 +53,8 @@
 		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); // Display the user-defined menu in Appearance > Menus ?>
 
 		<div class="donate-button">
-			<a href="<?php the_field('donate_url', 337); ?>">Donate</a>
+			<a href="https://cash.me/$carw" target="_blanke">Donate</a>
+<!-- 			<a href="<?php the_field('donate_url', 337); ?>">Donate</a> -->
 		</div>
 	</nav><!-- .site-navigation .main-navigation -->
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * 	Template Name: Get Involved
+ * 	Template Name: Resources
 */
 
 get_header();
@@ -29,28 +29,28 @@ get_header();
 	while (have_rows('sections')): the_row();
 		$title = get_sub_field('section_title');
 		$anchor = get_sub_field('section_anchor');
-		$text = get_sub_field('section_text');
-		$image = get_sub_field('section_image');
-		$buttonText = get_sub_field('section_button_text');
-		$buttonLink = get_sub_field('section_button_link');
-		$color = 'neutral';
-		if ($i === 1) $color = 'gold';
-		else if ($i % 2 !== 0) $color = 'gray';
+		$color = 'natural';
+		if ($i === 1) $color = 'gold'; // first row gold
+		else if ($i % 2 !== 0) $color = 'gray'; // alternating natural/gray, making all even rows natural
 		?>
-		<section class="text-image <?php echo $color; ?>" id="<?php echo $anchor; ?>">
-			<div class="wrap">
-				<div class="content-wrap">
-					<div class="section-content">
-						<h2><?php echo $title; ?></h2>
-						<?php echo $text; ?>
-						<div class="button-wrap">
-							<a href="<?php echo $buttonLink; ?>"><?php echo $buttonText; ?></a>
+		<section class="<?php echo $color; ?>" id="<?php echo $anchor; ?>">
+			<div class="wrap text-wrap">
+				<h2><?php echo $title; ?></h2>
+				<?php echo $text; ?>
+				<?php if (have_rows('rows')): ?>
+				<div class="accordion">
+				<?php while (have_rows('rows')): the_row();
+					$rowTitle = get_sub_field('title');
+					$rowContent = get_sub_field('content'); ?>
+					<div class="accordion-section">
+						<h3 class="accordion-title"><?php echo $rowTitle; ?></h3>
+						<div class="accordion-content">
+							<?php echo $rowContent; ?>
 						</div>
 					</div>
-					<div class="section-image">
-						<img src="<?php echo $image['sizes']['small']; ?>" />
-					</div>
+					<?php endwhile; ?>
 				</div>
+				<?php endif; ?>
 			</div>
 		</section>
 		<?php $i++;

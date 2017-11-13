@@ -44,24 +44,12 @@ get_header();
 		</div>
 		<script>
 
-/*
 			// Pretty simple huh?
 			var scene = document.getElementById('scene');
 			var parallax = new Parallax(scene);
-*/
 
 		</script>
 	</header><!-- #masthead .site-header -->
-
-	<?php /*
-$description = get_bloginfo( 'description', 'display' );
-	if ( $description || is_customize_preview() ) : ?>
-		<p class="site-description mobile"><?php echo $description; ?></p>
-	<?php endif;
-*/ ?>
-
-
-	<main class="main-fluid"><!-- start the page containter -->
 
 		<section class="quote gold">
 			<div class="wrap text-wrap centered">
@@ -72,7 +60,7 @@ $description = get_bloginfo( 'description', 'display' );
 			</div>
 		</section>
 
-		<section class="full-image dark">
+		<section class="full-image">
 			<img src="<?php echo $fullScreenImage['sizes']['larger']; ?>" />
 		</section>
 

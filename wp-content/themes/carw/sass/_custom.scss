@@ -48,16 +48,21 @@ p {
 
 h1.logo {
 	position: absolute;
-	padding: 50px;
+	padding: 0 50px;
 	z-index: 99;
     img {
       width: 264px;
     }
-    h1 {
-      margin: 0;
-      a {
-        border: none;
-      }
+}
+a h1.logo {
+	position: fixed;
+	top: 0;
+	padding: 10px 20px;
+	height: 28px;
+	overflow: hidden;
+	z-index: 99;
+    img {
+      width: 132px;
     }
 }
 
@@ -73,6 +78,11 @@ h1.logo {
 		position: fixed;
 		top: 10px;
 		right: 20px;
+		background: $gold;
+		border: 0;
+		padding: 10px;
+		font-size: 20px;
+		line-height: 1;
 	}
 }
 
@@ -82,6 +92,11 @@ section {
 	position: relative;
 	background-image: url(img/ricepaper2.png);
 	@include blend(multiply);
+	width: 100%;
+	-webkit-clip-path: url(#section-path);
+			clip-path: url(#section-path);
+	margin-top: -30px;
+	padding: 30px 0;
 	&.gold {
 		background-color: $gold;
 	}
@@ -98,16 +113,22 @@ section {
 	&.text-image {
 		.content-wrap {
 			@include flex;
+			div {
+				padding: 0 15px;
+			}
 			img {
 				width: 25vw;
 			}
+		}
+		&.natural .content-wrap {
+			flex-direction: row-reverse;
 		}
 	}
 	&.full-image {
 		width: 100%;
 		width: 100vw;
-		height: 90%;
-		height: 90vh;
+		height: 80%;
+		height: 80vh;
 		img {
 			position: absolute;
 			top: 0;
@@ -122,41 +143,70 @@ section {
 		}
 	}
 }
-// curved section dividers
-section + section,
-footer {
-	width: 100%;
-	-webkit-clip-path: url(#section-path);
-			clip-path: url(#section-path);
-	margin-top: -30px;
-	padding-top: 41px;
-}
 
 .wrap {
 	display: block;
 	margin: 0 auto;
 	padding: 80px 120px;
 	&.text-wrap {
-		max-width: 600px;
+		max-width: 720px;
 	}
 	&.centered {
 		text-align: center;
 	}
 }
-footer .land {
-	background: url(img/Footer.jpg) 50% 50% no-repeat;
-	background-size: cover;
+section.land {
+	margin-bottom: -40px;
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: url(img/Footer.jpg) 50% 50% no-repeat;
+		@include background-size(cover);
+		@include mix-blend(multiply);
+		z-index: 0;
+	}
 	.land-text {
+		position: relative;
+		z-index: 1;
 		background: rgba($black, 0.9);
 		color: $white;
+		padding: 20px;
+		font-size: 16px;
+		line-height: 1.4;
 		a {
 			color: $white;
 		}
 	}
 }
-.mask {
-	display: none;
+
+
+.accordion-section {
+	position: relative;
+	border-bottom: 2px solid;
+	.accordion-title {
+		padding: 20px 40px 20px 0;
+		cursor: pointer;
+		&:after {
+			content: '✚';
+			position: absolute;
+			right: 0;
+			top: 20px;
+			@include transition(all, 0.5s);
+		}
+		&.open:after {
+			@include transform(rotate(-45deg));
+		}
+	}
+	.accordion-content {
+		padding-bottom: 20px;
+	}
 }
+
+
 
 // toggle interaction
 

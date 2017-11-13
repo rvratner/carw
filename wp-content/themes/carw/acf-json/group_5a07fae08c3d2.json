@@ -15,13 +15,11 @@
                 "class": "",
                 "id": ""
             },
-            "row_min": "",
-            "row_limit": "",
-            "layout": "row",
-            "button_label": "Add Section",
+            "collapsed": "field_59f67ad92f3c1",
             "min": 0,
             "max": 0,
-            "collapsed": "",
+            "layout": "row",
+            "button_label": "Add Section",
             "sub_fields": [
                 {
                     "key": "field_59f67ad92f3c1",
@@ -131,9 +129,9 @@
     "location": [
         [
             {
-                "param": "page",
+                "param": "page_template",
                 "operator": "==",
-                "value": "17"
+                "value": "page-resources.php"
             }
         ]
     ],
@@ -142,8 +140,11 @@
     "style": "seamless",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content",
+        "custom_fields"
+    ],
     "active": 1,
     "description": "",
-    "modified": 1510480987
+    "modified": 1510536408
 }

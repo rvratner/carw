@@ -1,13 +1,220 @@
 {
     "key": "group_5a07fae03de2d",
     "title": "About",
-    "fields": false,
+    "fields": [
+        {
+            "key": "field_5a091d2222dc5",
+            "label": "Vision Title",
+            "name": "vision_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Vision",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5a091cfd22dc4",
+            "label": "Vision Copy",
+            "name": "vision_copy",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_59f68604f3c16",
+            "label": "About Sections",
+            "name": "sections",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "row_min": "",
+            "row_limit": "",
+            "layout": "row",
+            "button_label": "Add Section",
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_59f67ad92f3c1",
+                    "label": "Section Title",
+                    "name": "section_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "ie: Core Readings, FAQs",
+                    "prepend": "",
+                    "append": "",
+                    "formatting": "none",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_59f67b042f3c2",
+                    "label": "Section Anchor",
+                    "name": "section_anchor",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "ie: #readings, #faq",
+                    "prepend": "#",
+                    "append": "",
+                    "formatting": "none",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_59f686c34e699",
+                    "label": "Section Intro",
+                    "name": "section_intro",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "toolbar": "full",
+                    "media_upload": 0,
+                    "tabs": "all",
+                    "delay": 0
+                },
+                {
+                    "key": "field_59f67b1e2f3c3",
+                    "label": "Expandable Rows",
+                    "name": "rows",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "row_min": "",
+                    "row_limit": "",
+                    "layout": "row",
+                    "button_label": "Add Row",
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "",
+                    "sub_fields": [
+                        {
+                            "key": "field_59f67b472f3c4",
+                            "label": "Row Title \/ Question",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "formatting": "html",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_59f67b612f3c5",
+                            "label": "Row Content \/ Answer",
+                            "name": "content",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "toolbar": "full",
+                            "media_upload": 0,
+                            "tabs": "all",
+                            "delay": 0
+                        }
+                    ]
+                },
+                {
+                    "key": "field_59f687344e69a",
+                    "label": "Section Image",
+                    "name": "section_image",
+                    "type": "image",
+                    "instructions": "Full-width section separator. Ideally 2160px wide +",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "preview_size": "medium",
+                    "library": "all",
+                    "return_format": "array",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": ""
+                }
+            ]
+        }
+    ],
     "location": [
         [
             {
-                "param": "page",
+                "param": "page_template",
                 "operator": "==",
-                "value": "23"
+                "value": "page-about.php"
             }
         ]
     ],
@@ -16,8 +223,11 @@
     "style": "seamless",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [],
+    "hide_on_screen": [
+        "the_content",
+        "custom_fields"
+    ],
     "active": 1,
     "description": "",
-    "modified": 1510472416
+    "modified": 1510546763
 }

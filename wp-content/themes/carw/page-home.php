@@ -6,13 +6,16 @@
 get_header();
 
 	while ( have_posts() ) : the_post();
+	
 
 	// get custom fields
+	$heroBack = get_field('image_back');
+	$heroMid = get_field('image_middle');
+	$heroFront = get_field('image_front');
 	$ctaTitle = get_field('cta_title');
 	$ctaLink = get_field('cta_link');
 	$ctaCopy = get_field('cta_copy');
 	$carwBrief = get_field('carw_brief');
-	$buttonText = get_field('button_text');
 	$buttonLink = get_field('button_link');
 	$fullScreenImage = get_field('full_screen_image');
 	$getInvolvedTitle = get_field('get_involved_title');
@@ -20,7 +23,7 @@ get_header();
 	?>
 
 	<header id="masthead" class="site-header homepage"<?php if ( has_post_thumbnail() ) :
-	$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-image' );
+	$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'larger' );
 	echo 'style="background-image: url('. esc_url( $thumbnail[0] ) .');"';
 	endif; ?>>
 
@@ -29,18 +32,29 @@ get_header();
 			<div class="header-widget" id="header-widget-home">
 				<h3><?php echo $ctaTitle; ?></h3>
 				<?php if ($ctaCopy) echo $ctaCopy; ?>
-				<p><a href="<?php echo $ctaLink; ?>">Learn More</a></p>
+				<?php if ($ctaLink): ?>
+				<p><a href="<?php echo $ctaLink['url']; ?>"><?php echo $ctaLink['title']; ?></a></p>
+				<?php endif; ?>
 			</div>
 			<?php endif; ?>
 		</div><!-- /container -->
 
 		<div id="scene" class="scene">
+			<?php if ($heroBack): ?>
+			<div class="layer layer-1-dark" data-depth="0"><div style="background-image: url(<?php echo $heroBack['sizes']['larger'] ?>);"></div></div>
+			<div class="layer layer-1" data-depth="0.1"><div style="background-image: url(<?php echo $heroBack['sizes']['larger']; ?>);"></div></div>
+			<div class="layer layer-2-dark" data-depth="0.20"><div style="background-image: url(<?php echo $heroMid['sizes']['larger']; ?>);"></div></div>
+			<div class="layer layer-2" data-depth="0.30"><div style="background-image: url(<?php echo $heroMid['sizes']['larger']; ?>)"></div></div>
+			<div class="layer layer-3-dark" data-depth="0.50"><div style="background-image: url(<?php echo $heroFront['sizes']['larger']; ?>);"></div></div>
+			<div class="layer layer-3" data-depth="0.10"><div style="background-image: url(<?php echo $heroFront['sizes']['larger']; ?>)"></div></div>
+			<?php else: ?>
 			<div class="layer layer-1-dark" data-depth="0"><div style="background-image: url(<?php echo esc_url( $thumbnail[0] ); ?>);"></div></div>
 			<div class="layer layer-1" data-depth="0.1"><div style="background-image: url(<?php echo esc_url( $thumbnail[0] ); ?>);"></div></div>
 			<div class="layer layer-2-dark" data-depth="0.20"><div style="background-image: url(<?php echo esc_url( $thumbnail[0] ); ?>);"></div></div>
 			<div class="layer layer-2" data-depth="0.30"><div style="background-image: url(<?php echo esc_url( $thumbnail[0] ); ?>);"></div></div>
 			<div class="layer layer-3-dark" data-depth="0.50"><div style="background-image: url(<?php echo esc_url( $thumbnail[0] ); ?>);"></div></div>
 			<div class="layer layer-3" data-depth="0.10"><div style="background-image: url(<?php echo esc_url( $thumbnail[0] ); ?>);"></div></div>
+			<?php endif; ?>
 		</div>
 		<script>
 
@@ -54,9 +68,11 @@ get_header();
 		<section class="quote gold">
 			<div class="wrap text-wrap centered">
 				<h2><?php echo $carwBrief; ?></h2>
+				<?php if ($buttonLink): ?>
 				<div class="button-wrap">
-					<a href="<?php echo $buttonLink; ?>"><?php echo $buttonText; ?></a>
+					<a href="<?php echo $buttonLink['url']; ?>"><?php echo $buttonLink['title']; ?></a>
 				</div>
+				<?php endif; ?>
 			</div>
 		</section>
 

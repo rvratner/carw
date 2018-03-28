@@ -135,8 +135,8 @@ a.wp-helpdesk-logo:focus {
   margin:4px 0;
 }
 
-select.goog-te-combo { 
-  width:143px !important;
+#google_language_translator select.goog-te-combo { 
+  width:143px;
   background:#fff;
   box-shadow:none !important; 
   -moz-box-shadow:none !important; 
@@ -148,6 +148,10 @@ select.goog-te-combo {
   -webkit-border-radius:0px; 
   -moz-border-radius:0px !important;
   -o-border-radius:0px !important;
+}
+
+#google_language_translator select.goog-te-combo:focus {
+  outline:none !important;
 }
 
 #flags {
@@ -175,6 +179,7 @@ select.goog-te-combo {
 
 #flags a,
 .tool-container .tool-items a {
+  display:inline-block;
   cursor:pointer;
 }
 

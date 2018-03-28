@@ -3,6 +3,41 @@
     "title": "Sitewide",
     "fields": [
         {
+            "key": "field_5a94d17c1b2d5",
+            "label": "Header",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5a94d1841b2d6",
+            "label": "Donate URL",
+            "name": "donate_url",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "https:\/\/cash.me\/$carw",
+            "placeholder": "https:\/\/",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_59f666509f3d9",
             "label": "Footer",
             "name": "",
@@ -78,46 +113,57 @@
             "delay": 0
         },
         {
-            "key": "field_59f668309f3dd",
-            "label": "Duwamish Land Link Title",
-            "name": "land_link_title",
+            "key": "field_59f6684a9f3de",
+            "label": "Duwamish Land Link",
+            "name": "land_link",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_5a94d96f94bcd",
+            "label": "Artist Credit",
+            "name": "artist_credit",
             "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
-            "default_value": "Learn More",
-            "placeholder": "ie: Learn More",
+            "default_value": "",
+            "placeholder": "Illustrations by ...",
             "prepend": "",
             "append": "",
-            "formatting": "none",
             "maxlength": ""
         },
         {
-            "key": "field_59f6684a9f3de",
-            "label": "Duwamish Land Link",
-            "name": "land_link",
-            "type": "page_link",
+            "key": "field_5a94d98594bce",
+            "label": "Artist Link",
+            "name": "artist_link",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "post",
-                "page"
-            ],
-            "allow_null": 0,
-            "multiple": 0,
-            "taxonomy": [],
-            "allow_archives": 1
+            "default_value": "",
+            "placeholder": "http:\/\/",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -137,5 +183,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1510550602
+    "modified": 1519704866
 }

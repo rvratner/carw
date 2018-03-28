@@ -48,15 +48,25 @@
 					}
 				?>
 			</div>
-			<p class="copywrite">© CARW 2017</p>
+			<h6>© CARW 2017
+				<?php $artistText = get_field('artist_credit', 'options');
+					$artistLink = get_field('artist_link', 'options');
+
+				if ($artistText): ?>
+				<br /><?php if ($artistLink): ?><a href="<?php echo $artistLink; ?>"><?php endif; echo $artistText; if ($artistLink): ?></a><?php endif; ?>
+				<?php endif; ?></h6>
 		</div>
 	</section>
 
 	<section class="land">
 		<div class="wrap text-wrap centered">
 			<div class="land-text">
-				<?php the_field('land_text', 'options'); ?>
-				<p><a href="<?php the_field('land_link', 'options'); ?>"><?php the_field('land_link_title', 'options'); ?></a></p>
+				<?php the_field('land_text', 'options');
+					$landLink = get_field('land_link', 'options');
+
+				if ($landLink): ?>
+				<p><a href="<?php echo $landLink['url']; ?>"><?php echo $landLink['title']; ?></a></p>
+				<?php endif; ?>
 			</div>
 		</div>
 	</section>

@@ -135,43 +135,18 @@
 				$url = 'http://public.newsharecounts.com/count.json?url=' . $page_url ;
 				break;
 
-			case 'google-plus':
-
-				$args = array(
-					'timeout' => 30,
-					'headers' => 'Content-type: application/json\r\n',
-					'body' => json_encode(
-						array(
-							'method' => 'pos.plusones.get', 
-							'id' => 'p', 
-							'params' => array(
-								'nolog' => true,
-								'id' => urldecode( $page_url ),
-								'source' => 'widget',
-								'userId' => '@viewer',
-								'groupId' => '@self'
-							), 
-							'jsonrpc' => '2.0', 
-							'key' => 'p', 
-							'apiVersion' => 'v1'
-						)
-					)
-				);
-
-				$url = 'https://clients6.google.com/rpc/?key=AIzaSyCKSbrvQasunBoV16zDH9R33D88CeLr9gQ';
-				break;
-
 			case 'pinterest':
 				$url = 'http://widgets.pinterest.com/v1/urls/count.json?source=6&url=' . $page_url;
+				break;
+
+			case 'linkedin':
+				$url = 'https://www.linkedin.com/countserv/count/share?format=json&url=' . $page_url;
 				break;
 
 		}
 
 		// Get response from the api call
-		if( $network_slug == 'google-plus' )
-			$response = wp_remote_post( $url, $args );
-		else
-			$response = wp_remote_get( $url, $args );
+		$response = wp_remote_get( $url, $args );
 
 
 		// Continue only if response code is 200
@@ -184,10 +159,6 @@
 
 				case 'facebook':
 					$share_count = isset( $body['share']['share_count'] ) ? $body['share']['share_count'] : false;
-					break;
-
-				case 'google-plus':
-					$share_count = isset( $body['result']['metadata']['globalCounts']['count'] ) ? (int)$body['result']['metadata']['globalCounts']['count'] : false;
 					break;
 
 				case 'pinterest':

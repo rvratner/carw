@@ -4,8 +4,8 @@ Donate link: http://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id
 Plugin link: http://wp-studio.net/how-it-works
 Tags: language translator, google translator, language translate, translate wordpress, google language translator, translation, translate, multi language
 Requires at least: 2.9
-Tested up to: 4.8.1
-Stable tag: 5.0.33
+Tested up to: 4.9.2
+Stable tag: 5.0.48
 
 Welcome to Google Language Translator! This plugin allows you to insert the Google Language Translator tool anywhere on your website using shortcode.
 
@@ -45,6 +45,54 @@ Q: Can I exclude certain areas of my website from being translated?
 A: Yes! Add the "notranslate" class to the HTML element containing your text. For example, the following text will be excluded from translation: <span class="notranslate">Hello World!</span>
 
 == Changelog ==
+
+5.0.48
+- Added new setting: Floating Widget Text Color.
+
+5.0.47
+- Fixed an undefined index error in google-language-translator.php.
+
+5.0.46
+- Added new setting: Language Switcher Background Color.
+
+5.0.45
+- Added new setting: Floating Widget background color.
+- Removed border-radius from the floating widget for a more standard look and feel. Please email me if you need the CSS to add back rounded edges.
+
+5.0.44
+- Added new setting: Language Switcher Text Color.
+
+5.0.43
+- Added new setting: Floating Widget position.
+
+5.0.42
+- Added new setting: langauge switcher width.
+- Removed most javascript away from the document body, and into an external javascript file, scripts.js.
+- Added plugin version information to be appended to script and stylesheet files.
+
+5.0.41
+- Re-factored code in google-language-translator.php to remove the duplicate id "flags".
+
+5.0.40
+- Fixed a minor 'undefined index' error in google-language-translator.php
+
+5.0.39
+- Fixed a CSS issue associated with the settings panel changes from the previous update.
+
+5.0.38
+- Fixed a CSS issue associated with the settings panel changes from the previous update. Flags were not aligning properly with align left/right settings.
+
+5.0.37
+- Made some additional adjustments in code for the settings page.
+
+5.0.36
+- Removed undefined variable PHP errors. 
+
+5.0.35
+- Updated the plugin to delete an unused option from the database, used in the settings panel.
+
+5.0.34
+- Updated the settings panel to function more logically. Now users choose the languages they want, and can turn on/off flags associated with those langauges.
 
 5.0.33
 - Removed a deprecated jQuery function, and replaced with updated code in the footer_script() function.

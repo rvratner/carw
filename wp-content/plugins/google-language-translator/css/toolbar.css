@@ -1,4 +1,7 @@
-#glt-toolbar { display:none; }
+#glt-toolbar { 
+	display:none; 
+}
+
 #glt-translate-trigger {
     position:fixed;
     bottom:0px;
@@ -13,13 +16,7 @@
     text-shadow:0px -1px 0px rgba(0,0,0,0.25);
     text-decoration:none;
     text-align:center;
-    border-top-left-radius:5px;
-    border-top-right-radius:5px;
-    -webkit-border-top-left-radius:5px;
-    -webkit-border-top-right-radius:5px;
-    -moz-border-top-left-radius:5px;
-    -moz-border-top-right-radius:5px;
-    box-shadow:0px 0px 9px rgba(0,0,0,0.3)
+    box-shadow:0px 0px 9px rgba(0,0,0,0.3);
     -webkit-box-shadow:0px 0px 9px rgba(0,0,0,0.3);
     -moz-box-shadow:0px 0px 9px rgba(0,0,0,0.3);
     box-sizing:content-box !important;
@@ -32,7 +29,7 @@
     background: -o-linear-gradient(#fbb450, #f89406);
     background: -ms-linear-gradient(#fbb450, #f89406);
     background: linear-gradient(#fbb450, #f89406);
-    background: -o-linear-gradientcenter (center top, #fbb450, #f89406); /* For Opera 11.1 to 12.0 */
+    background: -o-linear-gradientcenter(center top, #fbb450, #f89406); 
 }
 
 .tool-container {

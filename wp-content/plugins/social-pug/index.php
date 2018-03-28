@@ -3,9 +3,11 @@
  * Plugin Name: Social Pug
  * Plugin URI: http://www.devpups.com/social-pug/
  * Description: Add beautiful social sharing buttons to your posts, pages and custom post types.
- * Version: 1.3.8
+ * Version: 1.4.3
  * Author: DevPups, Mihai Iova
  * Author URI: http://www.devpups.com/
+ * Text Domain: social-pug
+ * Domain Path: /translations/
  * License: GPL2
  *
  * == Copyright ==
@@ -35,7 +37,7 @@ Class Social_Pug {
 	public function __construct() {
 
 		// Defining constants
-		define('DPSP_VERSION', '1.3.8');
+		define('DPSP_VERSION', '1.4.3');
 		define('DPSP_PLUGIN_DIR', WP_PLUGIN_DIR . '/' . dirname( plugin_basename(__FILE__) ) );
 		define('DPSP_PLUGIN_DIR_URL', plugin_dir_url( __FILE__ ) );
 		define('DPSP_TRANSLATION_DIR', DPSP_PLUGIN_DIR . '/translations' );

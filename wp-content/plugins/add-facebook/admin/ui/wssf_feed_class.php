@@ -139,7 +139,7 @@ function wssf_other_version_metabox($post){
 	if ($screen_id->post_type === 'wssf_social_feed') {
 		$fbfeed = 'add-instagram';
   		$fbfeed_install_link =  esc_url( network_admin_url('plugin-install.php?tab=plugin-information&plugin=' . $fbfeed . '&TB_iframe=true&width=950&height=800' ) );
-		$twfeed = 'all-twitter';
+		$twfeed = 'page-builder-add';
   		$twfeed_install_link =  esc_url( network_admin_url('plugin-install.php?tab=plugin-information&plugin=' . $twfeed . '&TB_iframe=true&width=950&height=800' ) );
 
 		?>
@@ -150,10 +150,10 @@ function wssf_other_version_metabox($post){
 		<a style='text-decoration: none;' href="<?php  echo $fbfeed_install_link; ?>" target='_blank'><div id='rate_button' style='background-image:linear-gradient(-135deg,#1400c8,#b900b4,#f50000); border: 0; '>Install Instagram Feed</div></a>
 		<br>
 		<br>
-		Install the Free Twitter feed plugin.
+		Install the Page builder premium plugin for free (Limited Time Only).
 		<br>
 		<br>
-		<a style='text-decoration: none;' href="<?php  echo $twfeed_install_link; ?>" target='_blank'><div id='rate_button' style='background: #55ACEF; border: 0;'>Install Twitter Feed</div></a>
+		<a style='text-decoration: none;' href="<?php  echo $twfeed_install_link; ?>" target='_blank'><div id='rate_button' style='background: #55ACEF; border: 0;'>Install Page Builder</div></a>
 		<?php
 	}
 

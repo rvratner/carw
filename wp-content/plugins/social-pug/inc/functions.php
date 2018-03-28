@@ -190,7 +190,8 @@
 			'facebook'		=> 'Facebook',
 			'twitter'		=> 'Twitter',
 			'google-plus'	=> 'Google+',
-			'pinterest'		=> 'Pinterest'
+			'pinterest'		=> 'Pinterest',
+			'linkedin'		=> 'LinkedIn'
 		);
 
 		return apply_filters( 'dpsp_get_networks', $nerworks );
@@ -210,8 +211,8 @@
 
 		$networks = array(
 			'facebook',
-			'google-plus',
-			'pinterest'
+			'pinterest',
+			'linkedin'
 		);
 
 		// Twitter share counts are handled through New Share Counts ( http://www.newsharecounts.com/ )
@@ -408,6 +409,10 @@
 				return '#';
 				break;
 
+			case 'linkedin':
+				return sprintf( 'https://www.linkedin.com/shareArticle?url=%1$s&title=%2$s&mini=true', $post_url, $post_title );
+				break;
+
 			default:
 				return '';
 				break;
@@ -438,7 +443,7 @@
 			$location_settings = array(
 				'networks' 			=> array(),
 				'button_style'		=> 1,
-				'display' 			=> array( 'shape'	=> 'rectangular' ),
+				'display' 			=> array( 'shape'	=> 'rounded' ),
 				'post_type_display' => array( 'post' )
 			);
 
@@ -453,6 +458,7 @@
 					$location_settings['display']['position'] 	  = 'top';
 					$location_settings['display']['column_count'] = 'auto';
 					$location_settings['display']['show_labels']  = 'yes';
+					$location_settings['display']['spacing']	  = 'yes';
 					break;
 
 			}

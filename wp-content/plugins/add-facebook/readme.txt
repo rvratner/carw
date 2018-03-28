@@ -1,9 +1,9 @@
 === Facebook Feed ===
 Contributors: umarbajwa
 Requires at least: 3.7
-Tested up to: 4.8
+Tested up to: 4.9
 Tags: Facebook, Facebook feed, Facebook gallery, facebook share, facebook photos, facebook videos
-Stable tag: 1.5.1
+Stable tag: 1.5.2
 Donate Link: http://web-settler.com/wordpress-facebook-feed/
 License: Gpl V2 or latest
 License URI: http://www.gnu.org/licenses/gpl-2.0.html

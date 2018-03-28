@@ -10,7 +10,7 @@ while ( have_posts() ) : the_post();
 	?>
 
 	<header id="masthead" class="site-header"<?php if ( has_post_thumbnail() ) :
-	$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-image' );
+	$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'larger' );
 	echo 'style="background-image: url('. esc_url( $thumbnail[0] ) .');"';
 	endif; ?>>
 		<section class="text">
@@ -40,7 +40,7 @@ while ( have_posts() ) : the_post();
 		<section class="<?php echo $color; ?>" id="<?php echo $anchor; ?>">
 			<div class="wrap text-wrap">
 				<h2><?php echo $title; ?></h2>
-				<?php if ($intro) echo $intro; ?>
+				<?php if ($text) echo $text; ?>
 			</div>
 		</section>
 		<?php if ($image): ?>

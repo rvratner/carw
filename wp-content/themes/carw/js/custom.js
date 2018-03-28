@@ -20,13 +20,12 @@ const anchorScroll = function(){
 
 
 const navScroll = function() {
-	var nav = jQuery('.menu-main-container');
 	jQuery(window).on( 'scroll', function(){
 		var scrollTop = jQuery(window).scrollTop();
-		if (scrollTop > 640) {
-		    nav.addClass("fixed");
+		if (scrollTop > 320) {
+		    jQuery('h1.logo').addClass("fixed");
 		} else {
-		    nav.removeClass("fixed");
+		    jQuery('h1.logo').removeClass("fixed");
 		}
 
 	});

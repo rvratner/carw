@@ -107,30 +107,10 @@
                     "mime_types": ""
                 },
                 {
-                    "key": "field_59f67373c8dbf",
-                    "label": "Section Button Text",
-                    "name": "section_button_text",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "ie: Sign Up",
-                    "prepend": "",
-                    "append": "",
-                    "formatting": "none",
-                    "maxlength": ""
-                },
-                {
                     "key": "field_59f6739ec8dc0",
                     "label": "Section Button Link",
                     "name": "section_button_link",
-                    "type": "page_link",
+                    "type": "link",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -139,14 +119,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "post_type": [
-                        "post",
-                        "page"
-                    ],
-                    "allow_null": 1,
-                    "multiple": 0,
-                    "taxonomy": [],
-                    "allow_archives": 1
+                    "return_format": "array"
                 }
             ]
         }
@@ -171,5 +144,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1510536418
+    "modified": 1519703025
 }

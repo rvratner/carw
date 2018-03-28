@@ -57,6 +57,9 @@ jQuery( function($) {
 	 */
 	$(document).on( 'click', '.dpsp-network-btn', function(e) {
 
+		if( $(this).hasClass('dpsp-twitter') && typeof window.twttr != 'undefined' )
+			return;
+
 		e.preventDefault();
 
 		if( $(this).attr('href') == '#' )

@@ -42,7 +42,7 @@ $CPostId = $post->ID;
           </tr>
 
       <tr valign="top">
-        <th scope="row"><?php _e(' Facebook Profile/Page Id'); ?></th>
+        <th scope="row"><?php _e(' Facebook Page Id / Page Name'); ?> <span style="font-size:10px;">(Without Spaces)</span></th>
         <td><label for="wssf_fb_profile_id">
           <input placeholder="Enter Facebook Profile/Page Id" type="text" id="wssf_fb_profile_id"  name="wssf_fb_profile_id" size="40" value="<?php echo get_post_meta($post->ID, 'wssf_fb_profile_id' , true ); ?>"/>
           <p class="description"><?php _e( ''); ?></p>
@@ -160,8 +160,8 @@ $CPostId = $post->ID;
             <td>
 
 
-              <div  style="float:left;">
-              <p class="pp"style='padding:0px 0px 0px 20px ;'>Default  <input type="radio" name="wssf_select_layout" id="layout"  value="layout" <?php  checked('layout', get_post_meta($post->ID,'wssf_select_layout',true)); true ?> /></p> 
+              <div  style="float:left; border: 5px solid #2196F3; border-radius: 5px;">
+              <p class="pp"style='padding:0px 0px 0px 20px ;'>Default  <input type="radio" name="wssf_select_layout" id="layout"  value="layout" checked="checked" <?php  checked('layout', get_post_meta($post->ID,'wssf_select_layout',true)); true ?> /></p> 
               <label for='layout'><img style='padding:0px 30px 30px 0px' width='300px' height ='400px'  src='<?php echo plugins_url( '/images/default.png', __FILE__); ?>' /> </label>
               </div>
 

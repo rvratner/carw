@@ -20,7 +20,7 @@
 
 		<!-- Networks Selectable and Sortable Panels -->
 		<div id="dpsp-social-platforms-wrapper" class="dpsp-section">
-			<h3 class="dpsp-section-title"><?php _e( 'Social Networks', 'social-pug' ); ?><a id="dpsp-select-networks" class="add-new-h2" href="#">Select networks</a></h3>
+			<h3 class="dpsp-section-title"><?php _e( 'Social Networks', 'social-pug' ); ?><a id="dpsp-select-networks" class="add-new-h2" href="#"><?php echo __( 'Select networks', 'social-pug' ) ?></a></h3>
 
 			<?php echo dpsp_output_selectable_networks( $dpsp_location_content['networks'] ); ?>
 

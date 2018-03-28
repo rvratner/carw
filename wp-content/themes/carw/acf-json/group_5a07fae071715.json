@@ -42,7 +42,7 @@
             "key": "field_59f6617f4b2ec",
             "label": "CTA Link",
             "name": "cta_link",
-            "type": "page_link",
+            "type": "link",
             "instructions": "Where should the CTA click through to?",
             "required": 0,
             "conditional_logic": 0,
@@ -51,14 +51,7 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "post",
-                "page"
-            ],
-            "allow_null": 1,
-            "multiple": 0,
-            "taxonomy": [],
-            "allow_archives": 1
+            "return_format": "array"
         },
         {
             "key": "field_59f6619d4b2ed",
@@ -79,6 +72,94 @@
             "append": "",
             "formatting": "html",
             "maxlength": ""
+        },
+        {
+            "key": "field_5a94de6a433d1",
+            "label": "Hero",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5a94de46433d0",
+            "label": "Back (Top) Image",
+            "name": "image_back",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "small",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5a94de84433d2",
+            "label": "Middle Image",
+            "name": "image_middle",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "small",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5a94de90433d3",
+            "label": "Front (Bottom) Image",
+            "name": "image_front",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "small",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         },
         {
             "key": "field_59f661f04b2ee",
@@ -116,30 +197,10 @@
             "new_lines": "br"
         },
         {
-            "key": "field_59f6622b4b2f0",
-            "label": "Button Text",
-            "name": "button_text",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "ie: Learn More",
-            "prepend": "",
-            "append": "",
-            "formatting": "html",
-            "maxlength": ""
-        },
-        {
             "key": "field_59f6624b4b2f1",
             "label": "Button Link",
             "name": "button_link",
-            "type": "page_link",
+            "type": "link",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -148,14 +209,7 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "post",
-                "page"
-            ],
-            "allow_null": 0,
-            "multiple": 0,
-            "taxonomy": [],
-            "allow_archives": 1
+            "return_format": "array"
         },
         {
             "key": "field_59f6627f4b2f2",
@@ -274,5 +328,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1510536404
+    "modified": 1519705779
 }

@@ -76,6 +76,7 @@
         <option value='elastic-r' disabled data-subtext='[PRO]'>Elastic Reverse -</option>
         <option value='emphatic' disabled data-subtext='[PRO]'>Emphatic -</option>
         <option value='emphatic-r' disabled data-subtext='[PRO]'>Emphatic Reverse -</option>
+        <option value='minus' disabled data-subtext='[PRO]'>Minus -</option>
         <option value='slider' disabled data-subtext='[PRO]'>Slider -</option>
         <option value='slider-r' disabled data-subtext='[PRO]'>Slider Reverse -</option>
         <option value='spin' disabled data-subtext='[PRO]'>Spin -</option>
@@ -135,6 +136,12 @@
             {% endif %}
         </td>
         <td class='col-right {% if pro %} {{ pro }}{% endif %}'>
+            {% if pro == 'pro' %}
+                <div class="responsive-menu-pro-overlay">
+                    <a href="https://responsive.menu?utm_source=free-plugin&utm_medium=option&utm_campaign=free-plugin-option-upgrade#pricing"
+                       target="_blank">Click to upgrade now to use</a>
+                </div>
+            {% endif %}
             {% if type == 'checkbox' %}
                 {{ macros.checkbox(name, options[name]) }}
             {% elseif type == 'colour' %}
@@ -174,11 +181,19 @@
                         'right': 'Right'
                     } %}
                     {{ macros.select(name, options[name], choices) }}
+                {% elseif select_type == 'left_right_centre_with_none' %}
+                    {% set choices = {
+                        '': 'None',
+                        'left': 'Left',
+                        'right': 'Right',
+                        'centre': 'Centre'
+                    } %}
+                    {{ macros.select(name, options[name], choices) }}
                 {% elseif select_type == 'position' %}
                     <select id='responsive-menu-{{ name|replace({'_': '-'}) }}' class='selectpicker show-tick' name='menu[{{ name }}]'>
                         <option data-subtext='Will stay in position as you scroll down the page.' value='fixed' {% if options[name] == 'fixed' %}selected='selected'{% endif %}>Fixed</option>
                         <option data-subtext='Will disappear as you scroll down the page.' value='absolute' {% if options[name] == 'absolute' %}selected='selected'{% endif %}>Absolute</option>
-                        <option data-subtext='Will stay in a specific position on your page.' value='relative' {% if options[name] == 'Fixed' %}selected='selected'{% endif %} >Relative</option>
+                        <option data-subtext='Will stay in a specific position on your page.' value='relative' {% if options[name] == 'relative' %}selected='selected'{% endif %} >Relative</option>
                     </select>
                 {% elseif select_type == 'animation' %}
                     {{ macros.animation_select(name, options[name]) }}

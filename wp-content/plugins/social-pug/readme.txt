@@ -1,17 +1,17 @@
 === Social Share Buttons - Social Pug ===
 Contributors: iova.mihai
 Donate link: https://www.devpups.com/social-pug/
-Tags: social, social share, social sharing buttons, social network, social share buttons, share buttons, share button, facebook button, pin button, share counter, social network share, floating sidebar, floating share buttons, content share buttons, share counts, social share icon
+Tags: social, social share, social sharing, social sharing buttons, social network, social share buttons, share buttons, share button, facebook button, pin button, share counter, social network share, floating share buttons, content share buttons, share counts, social share icon
 Requires at least: 3.1
-Tested up to: 4.8.2
-Stable tag: 1.3.8
+Tested up to: 4.9.4
+Stable tag: 1.4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Social sharing buttons with style that will increase your social share count and user interaction on your website.
 
 == Description ==
-**Social Shareing Buttons with Style**
+**Social Sharing Buttons with Style**
 
 Add highly customizable social share buttons to your website to increase the interaction on your website. Place the social sharing buttons before and after the post content or have them follow your readers as they scroll up and down the page, in the form of a social media floating sidebar.
 
@@ -78,6 +78,23 @@ You can place both the inline share buttons and the floating sidebar sharing but
 
 
 == Changelog ==
+
+= 1.4.3 =
+* Fixed: Issue with Twitter opening two pop-up share windows when Twitter's script is added to the page.
+
+= 1.4.2 =
+* Misc: Added translation support for strings that were missing it.
+
+= 1.4.1 =
+* Misc: Removed Google+ social share count support, due to Google removing it also.
+
+= 1.4.0 =
+* Misc: New design for social media buttons labels fields in admin panel to make them more visible
+
+= 1.3.9 =
+* New: Added LinkedIn button as a social sharing option
+* Misc: Stylised the total social sharing counts for the inline content buttons
+
 = 1.3.8 =
 * Fixed: Display issues of the social sharing buttons on different themes
 * Misc: Improved accessibility of the admin interface

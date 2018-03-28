@@ -34,6 +34,7 @@
 .dpsp-icon-twitter:before { content: '\e801'; }
 .dpsp-icon-google-plus:before { content: '\e802'; }
 .dpsp-icon-pinterest:before { content: '\e803'; }
+.dpsp-icon-linkedin:before { content: '\e804'; }
 
 
 /**********************************************/
@@ -147,8 +148,8 @@ h1.dpsp-page-title {
 .dpsp-page-header nav a .dashicons { font-size: 14px; height: auto; width: auto; margin-right: 5px; margin-top: -2px; }
 .dpsp-page-header nav a:hover { background: rgba(255,255,255,0.30); }
 
-#dpsp-to-premium { display: inline-block; color: #fff; background: #e74c3c; text-decoration: none; font-size: 0.9em; line-height: 1; border-radius: 3px; font-weight: bold; box-shadow: 0 0 2px 2px rgba(52,152,219,0.15); }
-#dpsp-to-premium .dashicons { font-size: 14px; height: auto; width: auto; margin-right: 5px; }
+#dpsp-to-premium { display: inline-block; line-height: 14px; padding: 9px 15px; color: #fff; background: #e74c3c; text-decoration: none; font-size: 0.9em; border-radius: 3px; font-weight: bold; }
+#dpsp-to-premium .dashicons { font-size: 14px; height: auto; width: auto; margin-right: 8px; }
 #dpsp-to-premium:hover { background: #ea6153; }
 
 
@@ -276,6 +277,10 @@ h1.dpsp-page-title {
 	background: #c92228;
 }
 
+.dpsp-social-platforms-sort-list li .dpsp-list-icon.dpsp-icon-linkedin {
+	background: #0077b5;
+}
+
 .dpsp-social-platforms-sort-list li a.dpsp-list-remove {
 	float: right;
 	text-decoration: none;
@@ -292,7 +297,7 @@ h1.dpsp-page-title {
 .dpsp-social-platforms-sort-list li .dpsp-list-input-wrapper {
 	position: relative;
 	float: left;
-	padding: 10px 9px;
+	padding: 10px;
 	width: 70%;
 }
 
@@ -308,19 +313,24 @@ h1.dpsp-page-title {
 	margin: 0;
 	outline: 0;
 	padding-right: 23px;
-	width: 170px;
+	width: 200px;
 	background: #fff;
+	border-radius: 2px;
+}
+
+.dpsp-social-platforms-sort-list li .dpsp-list-input-wrapper input {
+	border-color: #f1f1f1;
 }
 
 .dpsp-page-sidebar .dpsp-social-platforms-sort-list li .dpsp-list-input-wrapper input,
 .dpsp-page-mobile .dpsp-social-platforms-sort-list li .dpsp-list-input-wrapper input {
 	cursor: default;
+	border-color: #fff !important;
 }
 
 .dpsp-social-platforms-sort-list li .dpsp-list-input-wrapper input:focus, 
 .dpsp-social-platforms-sort-list li .dpsp-list-input-wrapper:hover input {
 	background: #f7f7f7;
-	border-radius: 2px;
 	border: 1px solid #e6e6e6;
 }
 
@@ -330,14 +340,17 @@ h1.dpsp-page-title {
 	display: inline-block;
 	position: absolute;
 	top: 12px;
-	left: 160px;
+	left: 190px;
 	color: #a9a9a9;
 	font-size: 13px;
-	opacity: 0;
+	opacity: 1;
 }
 
-.dpsp-social-platforms-sort-list li .dpsp-list-input-wrapper:hover .dpsp-icon {
-	opacity: 1;
+.dpsp-page-sidebar .dpsp-social-platforms-sort-list li .dpsp-icon,
+.dpsp-page-mobile .dpsp-social-platforms-sort-list li .dpsp-icon,
+.dpsp-page-sidebar .dpsp-social-platforms-sort-list li:hover .dpsp-icon,
+.dpsp-page-mobile .dpsp-social-platforms-sort-list li:hover .dpsp-icon {
+ 	opacity: 0 !important;
 }
 
 .dpsp-social-platforms-sort-list.empty li {
@@ -471,6 +484,10 @@ h1.dpsp-page-title {
 
 .dpsp-network-pinterest {
 	background: #c92228;
+}
+
+.dpsp-network-linkedin {
+	background: #0077b5;
 }
 
 

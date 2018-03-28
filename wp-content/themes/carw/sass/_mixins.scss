@@ -2,68 +2,8 @@ $easeQuart: cubic-bezier(0.77, 0, 0.175, 1);
 $easeCubic: cubic-bezier(0.645, 0.045, 0.355, 1);
 $easeInCubic: cubic-bezier(0.550, 0.055, 0.675, 0.190);
 
-$width-min450: 450px;
-$width-min600: 600px;
-$width-max768: 768px;
-$width-min769: 769px;
-$width-min930: 930px;
-$width-min1024: 1024px;
-$width-min1200: 1200px;
-$width-min1600: 1600px;
-$height-min600: 600px;
-$height-min769: 769px;
-
-@mixin responsive($size) {
-	@if $size==min450 {
-		@media only screen and (min-width: $width-min450) {
-			@content;
-		}
-	}
-	@else if $size==min600 {
-		@media only screen and (min-width: $width-min600) {
-			@content;
-		}
-	}
-	@else if $size==max768 {
-		@media only screen and (max-width: $width-max768) {
-			@content;
-		}
-	}
-	@else if $size==min769 {
-		@media only screen and (min-width: $width-min769) {
-			@content;
-		}
-	}
-	@else if $size==min930 {
-		@media only screen and (min-width: $width-min930) {
-			@content;
-		}
-	}
-	@else if $size==min1024 {
-		@media only screen and (min-width: $width-min1024) {
-			@content;
-		}
-	}
-	@else if $size==min1200 {
-		@media only screen and (min-width: $width-min1200) {
-			@content;
-		}
-	}
-	@else if $size==min1600 {
-		@media only screen and (min-width: $width-min1600) {
-			@content;
-		}
-	}
-	@else if $size==min600h {
-		@media only screen and (min-height: $height-min600) {
-			@content;
-		}
-	}
-	@else if $size==min769h {
-		@media only screen and (min-height: $height-min769) {
-			@content;
-		}
-	}
+@mixin responsive($minmax, $size, $dimension: width) {
+	@media only screen and (#{$minmax}-#{$dimension}: #{$size}px) { @content; }
 }
 
 @mixin nospace {
@@ -261,6 +201,37 @@ $height-min769: 769px;
 	display: -webkit-flex;
 	display: flex;
 }
+
+@mixin flex-flow($flow) {
+	-webkit-flex-flow: $flow; /* Safari 7.0+ */
+	flex-flow: $flow;
+}
+
+@mixin flex-direction($direction) {
+	-webkit-flex-direction: $direction;
+	flex-direction: $direction;
+}
+
+@mixin justify-content($justify) {
+	-webkit-justify-content: $justify; /* Safari 7.0+ */
+	justify-content: $justify;
+}
+
+@mixin align-content($alignContent) {
+	-webkit-align-content: $alignContent; /* Safari 7.0+ */
+	align-content: $alignContent;
+}
+
+@mixin align-items($alignItems) {
+	-webkit-align-items: $alignItems; /* Safari 7.0+ */
+	align-items: $alignItems;
+}
+
+@mixin align-self($alignSelf) {
+	-webkit-align-self: $alignSelf; /* Safari 7.0+ */
+	align-self: $alignSelf;
+}
+
 
 @mixin blend($mode) {
 	background-blend-mode: $mode, normal;

@@ -34,22 +34,15 @@
 
 </head>
 
-<body
-	<?php body_class();
-	// This will display a class specific to whatever is being loaded by Wordpress
-	// i.e. on a home page, it will return [class="home"]
-	// on a single post, it will return [class="single postid-{ID}"]
-	// and the list goes on. Look it up if you want more.
-	?>
->
+<body <?php body_class(); ?>>
 
-	<?php if (!is_front_page()): ?><a href="<?php echo site_url(); ?>"><?php endif; ?>
-	<h1 class="logo">
+	<h1 class="logo<?php if (!is_front_page()) echo ' ready fixed'; ?>">
+	<?php if (!is_front_page()) echo '<a href="'.site_url().'">'; ?>
 		<img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo1.svg" alt="logo CARW Coalition for Anti Racist Whites" />
+	<?php if (!is_front_page()) echo '</a>'; ?>
 	</h1>
-	<?php if (!is_front_page()): ?></a><?php endif; ?>
 
-	<nav class="site-navigation main-navigation">
+	<nav class="site-navigation main-navigation<?php if (is_front_page()) echo ' no-shadow'; ?>">
 		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); // Display the user-defined menu in Appearance > Menus ?>
 
 		<div class="donate-button">

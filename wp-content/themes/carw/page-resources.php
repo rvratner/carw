@@ -15,11 +15,11 @@ get_header();
 			<div class="wrap text-wrap centered">
 				<menu>
 					<h2><?php the_title(); ?></h2>
-					<p><?php while (have_rows('sections')): the_row();
+					<ul class="page-links"><?php while (have_rows('sections')): the_row();
 						$title = get_sub_field('section_title');
 						$anchor = get_sub_field('section_anchor'); ?>
-						<a href="#<?php echo $anchor; ?>"><?php echo $title; ?></a>
-					<?php endwhile; ?></p>
+						<li><a href="#<?php echo $anchor; ?>"><?php echo $title; ?></a></li>
+					<?php endwhile; ?></ul>
 				</menu>
 			</div>
 		</section>

@@ -13,7 +13,7 @@ $gold: #f7c343;
 -------------------------------------------------------------- */
 
 body {
-  color: #2F2B37;
+  color: $black;
 }
 
 body,
@@ -43,28 +43,40 @@ h6 {
 h1 {
   line-height: 71px;
   font-size: 48px;
-  font-size: 4.8rem;
+//   font-size: 4.8rem;
 }
 
 h2 {
-  line-height: 50px;
   font-size: 34px;
-  font-size: 4rem;
+	line-height: 1.2;
   font-family: "Knewave-Regular", Helvetica, sans-serif;
+  @include responsive(min, 769) {
+  font-size: 4rem;
+  }
 }
 
 h3 {
   line-height: 41px;
   font-size: 28px;
-  font-size: 2.8rem;
+//   font-size: 2.8rem;
   font-family: "Knewave-Regular", Helvetica, sans-serif;
 
 }
 
 h4 {
   line-height: 26px;
-  font-size: 18px;
+//   font-size: 18px;
   font-size: 2.3rem;
+}
+
+h5 {
+  font-size: 1.3rem;
+  line-height: 1.2;
+}
+
+h6 {
+  font-size: 1.1rem;
+  line-height: 1.2;
 }
 
 hr {
@@ -186,9 +198,19 @@ pre {
   &#header-widget-home {
     background-color: $gold;
     top: 25px;
-    width: 320px;
-    height: 189px;
+    width: 100%;
+    max-width: 400px;
+//     height: 189px;
     color: #2f2b27;
+    padding: 25px;
+    z-index: 97;
+    box-shadow: 5px -5px 1px rgba(0,0,0,0.25);
+    p {
+	    margin: 0;
+	    + p {
+		    margin-top: 10px;
+	    }
+    }
     .widget_text {
       width: 240px;
       padding: 35px;
@@ -216,56 +238,45 @@ pre {
   position: absolute;
   top: 0;
   .layer {
-    width: 200%;
+    width: 150%;
+    margin-left: -25%;
     overflow: visible;
-    margin-left: -300px;
     div {
       width: 100%;
       background-repeat: repeat-x;
       background-color: transparent;
-      min-height: 600px;
+	  background-size: 1000px;
+      height: 100vh;
     }
   }
   .layer-1 div {
-    padding-top: 125px;
-    background-position: -730px bottom;
-    background-size: 1000px;
+    background-position: -730px 30%;
   }
   .layer-1-dark div{
-    padding-top: 115px;
-    background-position: -715px bottom;
-    background-size: 1000px;
+    background-position: -715px 30%;
     -webkit-filter: brightness(0) blur(1px);
     filter: brightness(0) blur(1px);
     opacity: 0.5;
   }
   .layer-2-dark div {
-    padding-top: 245px;
-    background-position: 605px bottom;
-    background-size: 1000px;
+    background-position: 605px 85%;
     -webkit-filter: brightness(0) blur(1px);
     filter: brightness(0) blur(1px);
     opacity: 0.5;
   }
 
   .layer-2 div {
-    padding-top: 250px;
-    background-position: 600px bottom;
-    background-size: 1000px;
+    background-position: 600px 85%;
   }
 
   .layer-3-dark div {
-    padding-top: 425px;
-    background-position: 100px bottom;
-    background-size: 1000px;
+    background-position: 100px 85%;
     -webkit-filter: brightness(0) blur(1px);
     filter: brightness(0) blur(1px);
     opacity: 0.5;
   }
   .layer-3 div {
-    padding-top: 430px;
-    background-position: 100px bottom;
-    background-size: 1000px;
+    background-position: 100px 85%;
   }
 }
 
@@ -319,6 +330,7 @@ pre {
   display: inline-block;
   width: 100%;
   text-align: center;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.25);
   ul {
     list-style: none;
     margin: 0;
@@ -570,10 +582,6 @@ footer {
   ul, li {
     text-decoration: none;
     list-style: none;
-
-    a{
-      color: #fff;
-    }
   }
 }
 
@@ -682,8 +690,8 @@ footer {
   .header-widget#header-widget-home {
     background-color: #f7c343;
     top: 135px;
-    width: 240px;
-    height: 109px;
+//     width: 240px;
+//     height: 109px;
     color: #2f2b27;
   }
   .header-widget#header-widget-home .widget-title {
@@ -695,9 +703,11 @@ footer {
   .header-widget#header-widget-home .widget_text {
     padding: 5px;
   }
+/*
   .scene {
     display: none;
   }
+*/
   .container {
     width: 100%;
   }
@@ -729,8 +739,8 @@ footer {
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
   body, article .post-meta{
-    font-size: 1.2em;
-    line-height: 1.5em;
+//     font-size: 1.2em;
+//     line-height: 1.5em;
   }
 
   article .title{
@@ -749,8 +759,8 @@ footer {
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width: 479px) {
   body, article .post-meta{
-    font-size: 1.2em;
-    line-height: 1.5em;
+//     font-size: 1.2em;
+//     line-height: 1.5em;
   }
   article .title{
     font-size: 2em;

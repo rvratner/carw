@@ -19,15 +19,22 @@ const anchorScroll = function(){
 };
 
 
+var scrollPos;
 const navScroll = function() {
 	jQuery(window).on( 'scroll', function(){
-		var scrollTop = jQuery(window).scrollTop();
-		if (scrollTop > 320) {
-		    jQuery('h1.logo').addClass("fixed");
-		} else {
-		    jQuery('h1.logo').removeClass("fixed");
+		scrollPos = jQuery(window).scrollTop();
+// 		console.log('Log: ',scrollPos);
+		if (jQuery('body').is('.home')) {
+			if (scrollPos > 240) {
+			    jQuery('h1.logo').addClass("fixed");
+			} else if (scrollPos > 160) {
+			    jQuery('h1.logo').addClass("ready");
+			    jQuery('.main-navigation').removeClass("no-shadow");
+			} else {
+			    jQuery('h1.logo').removeClass("fixed ready");
+			    jQuery('.main-navigation').addClass("no-shadow");
+			}
 		}
-
 	});
 }
 
@@ -42,25 +49,17 @@ document.onready = function() {
 		var targetId = this.hash;
 		var theTarget = jQuery(targetId);
 		var customOffset = 0;
-		switch( targetId ) {
-			case '#target1':
-			case '#target2':
-			customOffset = 0;
-			break;
-			default:
-			customOffset = 0;
-		}
 
 		// if the target #id exists
 		if (theTarget.length) {
-			var targetOffset = (theTarget.offset().top) + customOffset;
+			var targetOffset = (theTarget.offset().top);
 			var stateData = {
 				path: window.location.href,
 				scrollTop: targetOffset
 			};
 			window.history.replaceState(stateData, '', targetId);
 			window.history.pushState(stateData, '', targetId);
-			htmlBody.animate({scrollTop: targetOffset}, 1000);
+			jQuery('html, body').animate({scrollTop: targetOffset}, 1000);
 
 			return false;
 		}
@@ -72,11 +71,15 @@ document.onready = function() {
 			if (jQuery(this).hasClass('open')) {
 				jQuery(this).removeClass('open').next('.accordion-content').slideUp(500).removeClass('open');
 			} else {
+/*
 				jQuery('.accordion .accordion-title').removeClass('open');
 				jQuery('.accordion .accordion-content').slideUp(500);
-// 				var rowOffset = jQuery(this).parent('.accordion-section').offset().top;
+*/
 				jQuery(this).addClass('open').next('.accordion-content').slideDown(500).addClass('open');
-// 				jQuery('html, body').animate({scrollTop: rowOffset-85}, 500);
+/*
+				var rowOffset = jQuery(this).parent('.accordion-section').offset().top;
+				jQuery('html, body').animate({scrollTop: rowOffset-85}, 500);
+*/
 			}
 		});
 	}

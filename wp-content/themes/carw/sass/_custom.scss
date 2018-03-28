@@ -9,29 +9,22 @@ body {
 /* Links */
 a {
   color: $black;
-  @include transition (all, 0.25s);
+//   @include transition (all, 0.25s);
   border-bottom: 4px solid $gold;
   text-decoration: none;
 }
 
-a:hover {
-  background-color: $gold;
-}
-
-a:focus{
-  background-color: $gold;
-}
-
-a:active, .current-menu-item a {
+a:hover,
+a:focus,
+a:active,
+.current-menu-item a {
+	padding: 4px 4px 0;
+	margin: -4px -4px 0;
   background-color: $gold;
 }
 
 .title {
 	display: none;
-}
-
-h2 {
-	line-height: 65px;
 }
 
 #primary img.social-share {
@@ -73,8 +66,37 @@ h1.logo {
     img {
       width: 264px;
     }
+    a {
+	    border: 0;
+	    &:hover,
+	    &:focus,
+	    &:active {
+		    background: 0;
+		    padding: 0;
+		    margin: 0;
+	    }
+    }
+    &.ready {
+		position: fixed;
+		top: 0;
+		padding: 10px 20px;
+		height: 50px;
+		overflow: hidden;
+		z-index: 99;
+		@include transform(translateY(-56px));
+	    img {
+	      width: 132px;
+	    }
+		@include responsive(min, 1281) {
+			padding: 18px 20px;
+			height: 56px;
+		}
+    }
+    &.fixed {
+		@include transform(translateY(0));
+		@include transition(transform, 0.5s);
+    }
 }
-h1.logo.fixed
 a h1.logo {
 	position: fixed;
 	top: 0;
@@ -95,15 +117,25 @@ a h1.logo {
 	z-index: 98;
 	padding: 10px;
 	background-image: url(img/ricepaper2.png);
+	  @include transition(all, 0.25s);
+	  &.no-shadow {
+		  background-image: none;
+		  box-shadow: none;
+	  }
 	.donate-button {
 		position: fixed;
 		top: 10px;
 		right: 20px;
 		background: $gold;
-		border: 0;
-		padding: 10px;
+		padding: 0 10px;
 		font-size: 20px;
-		line-height: 1;
+		line-height: 35px;
+		a {
+			border: 0;
+		}
+		@include responsive(min, 1281) {
+			top: 18px;
+		}
 	}
 }
 
@@ -162,30 +194,53 @@ section {
 		}
 		a {
 			color: $white;
+		      &:hover,
+		      &:focus,
+		      &:active {
+			      color: $black;
+		      }
 		}
 	}
 	&.text-image {
 		.content-wrap {
 			@include flex;
+			@include flex-direction(column-reverse);
+			justify-content: center;
+			align-content: center;
+			align-items: center;
+			text-align: center;
 			div {
 				padding: 0 15px;
 			}
 			img {
-				width: 25vw;
+				width: 50vw;
 			}
 		}
-		&.natural .content-wrap {
-			flex-direction: row-reverse;
+		@include responsive(min, 769) {
+			.content-wrap {
+				@include flex-direction(row);
+				img {
+					width: 25vw;
+				}
+			}
+			&.natural .content-wrap {
+				@include flex-direction(row-reverse);
+			}
 		}
 	}
 	&.full-image {
 		width: 100%;
 		width: 100vw;
 		height: 80%;
-		height: 42vw;
 		margin-top: -7vw;
 	-webkit-clip-path: url(#image-curve);
 			clip-path: url(#image-curve);
+		@media (orientation: landscape) {
+			height: 42vw;
+		}
+		@media (orientation: portrait) {
+			height: 56vw;
+		}
 		&:before {
 			content: none;
 		}
@@ -247,15 +302,18 @@ section {
 .wrap {
 	display: block;
 	margin: 0 auto;
-	padding: 40px 20px 100px;
-	@media only screen and (min-width: 1281px) {
-		padding: 60px 120px 120px;
-	}
+	padding: 40px 20px;
 	&.text-wrap {
-		max-width: 800px;
+		max-width: 1000px;
 	}
 	&.centered {
 		text-align: center;
+	}
+	@include responsive(min, 769) {
+		padding: 40px 20px 100px;
+	}
+	@include responsive(min, 1281) {
+		padding: 60px 120px 120px;
 	}
 }
 
@@ -338,6 +396,17 @@ section {
 
 .social-share {
   margin: 0;
+}
+
+ul.page-links {
+	list-style: none;
+	@include nospace;
+	padding: 0;
+	margin: 1rem 0;
+}
+li {
+	@include inline-block;
+	margin: 0 8px;
 }
 
 

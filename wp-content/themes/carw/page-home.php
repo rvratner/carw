@@ -6,7 +6,7 @@
 get_header();
 
 	while ( have_posts() ) : the_post();
-	
+
 
 	// get custom fields
 	$heroBack = get_field('image_back');
@@ -31,7 +31,7 @@ get_header();
 			<?php if ($ctaTitle && $ctaLink): ?>
 			<div class="header-widget" id="header-widget-home">
 				<h3><?php echo $ctaTitle; ?></h3>
-				<?php if ($ctaCopy) echo $ctaCopy; ?>
+				<p><?php if ($ctaCopy) echo $ctaCopy; ?></p>
 				<?php if ($ctaLink): ?>
 				<p><a href="<?php echo $ctaLink['url']; ?>"><?php echo $ctaLink['title']; ?></a></p>
 				<?php endif; ?>
@@ -40,21 +40,23 @@ get_header();
 		</div><!-- /container -->
 
 		<div id="scene" class="scene">
-			<?php if ($heroBack): ?>
-			<div class="layer layer-1-dark" data-depth="0"><div style="background-image: url(<?php echo $heroBack['sizes']['larger'] ?>);"></div></div>
+			<?php // if ($heroBack): ?>
+			<div class="layer layer-1-dark" data-depth="0.15"><div style="background-image: url(<?php echo $heroBack['sizes']['larger'] ?>);"></div></div>
 			<div class="layer layer-1" data-depth="0.1"><div style="background-image: url(<?php echo $heroBack['sizes']['larger']; ?>);"></div></div>
-			<div class="layer layer-2-dark" data-depth="0.20"><div style="background-image: url(<?php echo $heroMid['sizes']['larger']; ?>);"></div></div>
-			<div class="layer layer-2" data-depth="0.30"><div style="background-image: url(<?php echo $heroMid['sizes']['larger']; ?>)"></div></div>
-			<div class="layer layer-3-dark" data-depth="0.50"><div style="background-image: url(<?php echo $heroFront['sizes']['larger']; ?>);"></div></div>
-			<div class="layer layer-3" data-depth="0.10"><div style="background-image: url(<?php echo $heroFront['sizes']['larger']; ?>)"></div></div>
-			<?php else: ?>
+			<div class="layer layer-2-dark" data-depth="0.25"><div style="background-image: url(<?php echo $heroMid['sizes']['larger']; ?>);"></div></div>
+			<div class="layer layer-2" data-depth="0.2"><div style="background-image: url(<?php echo $heroMid['sizes']['larger']; ?>)"></div></div>
+			<div class="layer layer-3-dark" data-depth="0.35"><div style="background-image: url(<?php echo $heroFront['sizes']['larger']; ?>);"></div></div>
+			<div class="layer layer-3" data-depth="0.3"><div style="background-image: url(<?php echo $heroFront['sizes']['larger']; ?>)"></div></div>
+			<?php/*
+ else: ?>
 			<div class="layer layer-1-dark" data-depth="0"><div style="background-image: url(<?php echo esc_url( $thumbnail[0] ); ?>);"></div></div>
 			<div class="layer layer-1" data-depth="0.1"><div style="background-image: url(<?php echo esc_url( $thumbnail[0] ); ?>);"></div></div>
 			<div class="layer layer-2-dark" data-depth="0.20"><div style="background-image: url(<?php echo esc_url( $thumbnail[0] ); ?>);"></div></div>
 			<div class="layer layer-2" data-depth="0.30"><div style="background-image: url(<?php echo esc_url( $thumbnail[0] ); ?>);"></div></div>
 			<div class="layer layer-3-dark" data-depth="0.50"><div style="background-image: url(<?php echo esc_url( $thumbnail[0] ); ?>);"></div></div>
 			<div class="layer layer-3" data-depth="0.10"><div style="background-image: url(<?php echo esc_url( $thumbnail[0] ); ?>);"></div></div>
-			<?php endif; ?>
+			<?php endif;
+*/ ?>
 		</div>
 		<script>
 
@@ -85,11 +87,11 @@ get_header();
 				<h2><?php echo $getInvolvedTitle; ?></h2>
 				<?php echo $getInvolvedText; ?>
 				<?php $getInvolvedURL = get_the_permalink( 10 ); ?>
-				<p><?php while (have_rows('sections', 10)): the_row();
+				<ul class="page-links"><?php while (have_rows('sections', 10)): the_row();
 					$title = get_sub_field('section_title');
 					$anchor = get_sub_field('section_anchor'); ?>
-					<a href="<?php echo $getInvolvedURL.'#'.$anchor; ?>"><?php echo $title; ?></a>
-				<?php endwhile; ?></p>
+					<li><a href="<?php echo $getInvolvedURL.'#'.$anchor; ?>"><?php echo $title; ?></a></li>
+				<?php endwhile; ?></ul>
 			</div>
 		</section>
 

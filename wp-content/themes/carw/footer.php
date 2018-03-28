@@ -48,13 +48,12 @@
 					}
 				?>
 			</div>
-			<h6>© CARW 2017
-				<?php $artistText = get_field('artist_credit', 'options');
-					$artistLink = get_field('artist_link', 'options');
-
+			<h6>© CARW 2017</h6>
+			<?php $artistText = get_field('artist_credit', 'options');
+				$artistLink = get_field('artist_link', 'options');
 				if ($artistText): ?>
-				<br /><?php if ($artistLink): ?><a href="<?php echo $artistLink; ?>"><?php endif; echo $artistText; if ($artistLink): ?></a><?php endif; ?>
-				<?php endif; ?></h6>
+				<h6><?php if ($artistLink): ?><a href="<?php echo $artistLink; ?>"><?php endif; echo $artistText; if ($artistLink): ?></a><?php endif; ?></h6>
+			<?php endif; ?></h6>
 		</div>
 	</section>
 

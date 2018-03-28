@@ -259,6 +259,9 @@ section {
 	}
 	&.admin-edit {
 		background-color: palevioletred;
+		&:before {
+			background-color: palevioletred;
+		}
 	}
 	&.land {
 		margin-top: -7vw;

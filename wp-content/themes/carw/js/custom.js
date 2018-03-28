@@ -26,7 +26,8 @@ const navScroll = function() {
 // 		console.log('Log: ',scrollPos);
 		if (jQuery('body').is('.home')) {
 			if (scrollPos > 240) {
-			    jQuery('h1.logo').addClass("fixed");
+			    jQuery('h1.logo').addClass("fixed ready");
+			    jQuery('.main-navigation').removeClass("no-shadow");
 			} else if (scrollPos > 160) {
 			    jQuery('h1.logo').addClass("ready");
 			    jQuery('.main-navigation').removeClass("no-shadow");

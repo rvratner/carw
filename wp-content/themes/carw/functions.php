@@ -89,11 +89,11 @@ add_action( 'widgets_init', 'carw_register_sidebars' );
 function carw_scripts()  {
 
 	// get the theme directory style.css and link to it in the header
-	wp_enqueue_style('style.css', get_stylesheet_directory_uri() . '/style.css?v=20180226');
+	wp_enqueue_style('style.css', get_stylesheet_directory_uri() . '/style.css?v=20180707b');
 	wp_enqueue_style('style.css', 'https://fonts.googleapis.com/css?family=Nunito');
 	wp_enqueue_script('parallax.min.js', get_stylesheet_directory_uri() . '/js/parallax.min.js');
 	wp_enqueue_script('scrollPollyfill.js', get_stylesheet_directory_uri() . '/js/scrollPollyfill.js');
-	wp_enqueue_script('custom.js', get_stylesheet_directory_uri() . '/js/custom.js?v=20180129');
+	wp_enqueue_script('custom.js', get_stylesheet_directory_uri() . '/js/custom.js?v=20180528');
 
 }
 add_action( 'wp_enqueue_scripts', 'carw_scripts' ); // Register this fxn and allow Wordpress to call it automatcally in the header
@@ -115,3 +115,6 @@ if( function_exists('acf_set_options_page_title') ) {
 	acf_set_options_page_title( __('Sitewide Options') );
 }
 
+// cookie login error fix
+setcookie(TEST_COOKIE, 'WP Cookie check', 0, COOKIEPATH, COOKIE_DOMAIN);
+if ( SITECOOKIEPATH != COOKIEPATH ) setcookie(TEST_COOKIE, 'WP Cookie check', 0, SITECOOKIEPATH, COOKIE_DOMAIN);

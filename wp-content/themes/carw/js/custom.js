@@ -26,17 +26,28 @@ const navScroll = function() {
 // 		console.log('Log: ',scrollPos);
 		if (jQuery('body').is('.home')) {
 			if (scrollPos > 240) {
-			    jQuery('h1.logo').addClass("fixed ready");
+			    jQuery('h1.logo, .menu-button').addClass("fixed ready");
 			    jQuery('.main-navigation').removeClass("no-shadow");
 			} else if (scrollPos > 160) {
-			    jQuery('h1.logo').addClass("ready");
+			    jQuery('h1.logo, .menu-button').addClass("ready");
 			    jQuery('.main-navigation').removeClass("no-shadow");
 			} else {
-			    jQuery('h1.logo').removeClass("fixed ready");
+			    jQuery('h1.logo, .menu-button').removeClass("fixed ready");
 			    jQuery('.main-navigation').addClass("no-shadow");
 			}
 		}
 	});
+}
+
+// mobile menu
+var menuOpen = false;
+function openMenu() {
+	jQuery('body').addClass('menu-open');
+	menuOpen = true;
+}
+function closeMenu() {
+	jQuery('body').removeClass('menu-open');
+	menuOpen = false;
 }
 
 document.onready = function() {
@@ -44,6 +55,12 @@ document.onready = function() {
 	toggleList();
 	anchorScroll();
 	navScroll();
+
+	// hide/show mobile menu
+	jQuery('#menu-button').on('click focus', function() {
+		if (menuOpen) closeMenu();
+		else openMenu();
+	});
 
 	// smooth scroll with #hash and history update
 	jQuery('a[href*=#]:not([href=#])').click(function() {

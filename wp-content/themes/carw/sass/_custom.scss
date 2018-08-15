@@ -10,8 +10,11 @@ body {
 a {
   color: $black;
 //   @include transition (all, 0.25s);
-  border-bottom: 4px solid $gold;
+  border-bottom: 2px solid $gold;
   text-decoration: none;
+  @include responsive(min, 769) {
+	  border-width: 4px;
+  }
 }
 
 a:hover,
@@ -46,6 +49,10 @@ textarea {
 	font: inherit;
 }
 
+img.colorized {
+	@include mix-blend(luminosity);
+}
+
 .button-wrap {
 	margin-top: 30px;
 	text-align: center;
@@ -61,8 +68,11 @@ textarea {
 
 h1.logo {
 	position: absolute;
-	padding: 0 50px;
+	padding: 25px 50px;
 	z-index: 99;
+	@include responsive(min, 769) {
+		padding-top: 0;
+	}
     img {
       width: 264px;
     }
@@ -109,6 +119,92 @@ a h1.logo {
     }
 }
 
+.menu-button {
+	z-index: 100;
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 6.1rem;
+	padding: 2rem 2.1rem 1.8rem;
+	display: block;
+	cursor: pointer;
+	@include transition(all, 0.5s);
+	@include transform(translateY(-56px));
+	@include responsive(min, 769) {
+		display: none;
+		}
+	i {
+		display: block;
+		width: 2.1rem;
+		height: 3px;
+		background-color: $black;
+		@include transition(all, 0.5s);
+		+ i {
+			margin-top: 5px;
+		}
+	}
+    body:not(.page-template-page-home) &,
+    &.fixed {
+		@include transform(translateY(0));
+		@include transition(transform, 0.5s);
+    }
+}
+
+@include responsive(max, 768) {
+	.main-navigation {
+// 		@include invisible(0.5s);
+		height: 56px;
+		.donate-button,
+		.menu-main-container {
+			display: none !important;
+		}
+		&.no-shadow {
+			@include transform(translateY(-56px));
+		}
+	}
+	body.menu-open {
+		.menu-button i {
+			@include transform(rotate(45deg) translate3d(0,0,0));
+			margin-top: 6px;
+			+ i {
+				@include transform(rotate(-45deg) translate3d(0,0,0));
+				margin-top: -3px;
+				+ i {
+					@include transform(scale(0));
+					margin: 0;
+				}
+			}
+		}
+		.main-navigation {
+			height: 100vh;
+// 			@include visible;
+		}
+		.menu-main-container {
+		    width: 100%;
+		    height: 100%;
+		    display: flex !important;
+		    align-items: center;
+		    justify-content: center;
+		    ul {
+				@include transform(scale(1.5));
+		    }
+		    li {
+			    float: none;
+			    display: block;
+			    margin: 1rem auto;
+		    }
+		}
+		.donate-button {
+			position: absolute;
+		    display: block !important;
+			bottom: 10vh;
+			top: auto;
+			right: 50%;
+			@include transform(translateX(50%) scale(1.5));
+		}
+	}
+}
+
 .main-navigation {
 	position: fixed;
 	top: 0;
@@ -118,10 +214,12 @@ a h1.logo {
 	padding: 10px;
 	background-image: url(img/ricepaper2.png);
 	  @include transition(all, 0.25s);
+	@include responsive(min, 769) {
 	  &.no-shadow {
 		  background-image: none;
 		  box-shadow: none;
 	  }
+	}
 	.donate-button {
 		position: fixed;
 		top: 10px;
@@ -233,6 +331,7 @@ section {
 		width: 100vw;
 		height: 80%;
 		margin-top: -7vw;
+		background-color: rgba($black, 0.125);
 	-webkit-clip-path: url(#image-curve);
 			clip-path: url(#image-curve);
 		@media (orientation: landscape) {
@@ -251,7 +350,7 @@ section {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
-// 			@include mix-blend(multiply);
+// 			@include mix-blend(luminosity);
 		}
 		&.dark img {
 			@include mix-blend(lighten);
@@ -275,14 +374,13 @@ section {
 		&:before {
 			content: none;
 		}
-		&:after {
-			content: '';
+		.land-image {
 			position: absolute;
 			top: 0;
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background: url(img/Footer.jpg) 50% 50% no-repeat;
+			background-position: 50% 50%;
 			@include background-size(cover);
 			@include mix-blend(multiply);
 			z-index: 0;
@@ -318,6 +416,10 @@ section {
 	@include responsive(min, 1281) {
 		padding: 60px 120px 120px;
 	}
+}
+
+body > section .text-wrap ul li {
+	display: list-item;
 }
 
 .accordion-section {

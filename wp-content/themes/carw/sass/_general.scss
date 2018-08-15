@@ -51,16 +51,18 @@ h2 {
 	line-height: 1.2;
   font-family: "Knewave-Regular", Helvetica, sans-serif;
   @include responsive(min, 769) {
-  font-size: 4rem;
+	  font-size: 4rem;
   }
 }
 
 h3 {
-  line-height: 41px;
-  font-size: 28px;
+  font-size: 20px;
+  line-height: 1.3;
 //   font-size: 2.8rem;
   font-family: "Knewave-Regular", Helvetica, sans-serif;
-
+  @include responsive(min, 769) {
+	  font-size: 28px;
+  }
 }
 
 h4 {
@@ -93,7 +95,10 @@ p {
 
 ul,
 ol {
-  margin: 0 0 1.5em 3em;
+  margin: 0 0 1.5em 0;
+  @include responsive(min, 769) {
+	  margin: 0 0 1.5em 3em;
+ }
 }
 
 ul {
@@ -109,6 +114,7 @@ ol ol,
 ul ol,
 ol ul {
   margin-bottom: 0;
+
   margin-left: 1.5em;
 }
 
@@ -185,6 +191,10 @@ pre {
   right: 0;
   font-family: "Nunito-sans", sans-serif;
   line-height: 1;
+  font-size: 1.5rem;
+  @include responsive(max, 769) {
+	  display: none;
+  }
   .textwidget {
       font-family: "Nunito-Bold";
       font-size: 2.6rem;
@@ -197,14 +207,15 @@ pre {
 
   &#header-widget-home {
     background-color: $gold;
-    top: 25px;
+	border: 2px solid;
+    top: 35px;
     width: 100%;
-    max-width: 400px;
+    max-width: 300px;
 //     height: 189px;
     color: #2f2b27;
     padding: 25px;
     z-index: 97;
-    box-shadow: 5px -5px 1px rgba(0,0,0,0.25);
+    box-shadow: 5px -5px 5px rgba(0,0,0,0.25);
     p {
 	    margin: 0;
 	    + p {
@@ -222,6 +233,7 @@ pre {
     }
     a {
       font-size: 1.5rem;
+      text-decoration: underline;
     }
   }
 }
@@ -245,39 +257,57 @@ pre {
       width: 100%;
       background-repeat: repeat-x;
       background-color: transparent;
-	  background-size: 1000px;
+	  background-size: 200vw;
       height: 100vh;
+      @include responsive(min, 769) {
+	      background-size: 1000px;
+      }
     }
   }
   .layer-1 div {
-    background-position: -730px 30%;
+    background-position: 250% 30%;
   }
   .layer-1-dark div{
-    background-position: -715px 30%;
+    background-position: 245% 30%;
     -webkit-filter: brightness(0) blur(1px);
     filter: brightness(0) blur(1px);
     opacity: 0.5;
+  }
+  .layer-2 div {
+    background-position: 55% 75%;
   }
   .layer-2-dark div {
-    background-position: 605px 85%;
-    -webkit-filter: brightness(0) blur(1px);
-    filter: brightness(0) blur(1px);
-    opacity: 0.5;
-  }
-
-  .layer-2 div {
-    background-position: 600px 85%;
-  }
-
-  .layer-3-dark div {
-    background-position: 100px 85%;
+    background-position: 50% 75%;
     -webkit-filter: brightness(0) blur(1px);
     filter: brightness(0) blur(1px);
     opacity: 0.5;
   }
   .layer-3 div {
-    background-position: 100px 85%;
+    background-position: 155% 82%;
   }
+  .layer-3-dark div {
+    background-position: 150% 82%;
+    -webkit-filter: brightness(0) blur(1px);
+    filter: brightness(0) blur(1px);
+    opacity: 0.5;
+  }
+
+  @include responsive(min, 769) {
+	  .layer-1 div,
+	  .layer-1-dark div{
+	    background-position: 51.5% 30%;
+	  }
+
+	  .layer-2 div,
+	  .layer-2-dark div {
+	    background-position: 25% 80%;
+	  }
+
+	  .layer-3 div,
+	  .layer-3-dark div {
+	    background-position: 50% 88%;
+	  }
+   }
 }
 
 .site-header{
@@ -288,6 +318,9 @@ pre {
     overflow: hidden;
     position: relative;
     background-repeat: no-repeat;
+    &:not(.homepage) {
+	    background-color: rgba($black, 0.125);
+	}
     &.homepage {
       background-size: 0;
 		height: 90%;
@@ -301,6 +334,10 @@ pre {
 			background-image: url(img/ricepaper2.png);
 			padding: 25px;
 			font-size: small;
+			line-height: 1.5;
+			li {
+				margin: 4px 8px;
+			}
 		}
     }
 
@@ -366,8 +403,10 @@ pre {
     margin: 20px;
   }
 }
-.post {
-    margin-top: 90px;
+@include responsive(min, 769) {
+	.post {
+    	margin-top: 90px;
+	}
 }
 article {
   background: transparent;
@@ -648,7 +687,7 @@ footer {
 }
 
 /* All Mobile Sizes (devices and browser) */
-@media only screen and (max-width: 767px) {
+@include responsive(max, 768) {
   img {
     max-width: 100%;
     height: auto;
@@ -676,10 +715,14 @@ footer {
   }
   .site-header {
     position: relative;
-    background-size: 100%;
-    height: 360px;
+//     background-size: 100%;
+    min-height: 360px;
     margin-top: 0px;
-    background-position: 0px 200px;
+    padding-top: 56px;
+//     background-position: 0px 200px;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
   }
   .site-description {
     width: 100%;
@@ -710,9 +753,6 @@ footer {
 */
   .container {
     width: 100%;
-  }
-  .main-navigation {
-    display: none;
   }
 
   .desktop {

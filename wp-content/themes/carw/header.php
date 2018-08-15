@@ -50,3 +50,8 @@
 		</div>
 	</nav><!-- .site-navigation .main-navigation -->
 
+	<div class="menu-button" id="menu-button">
+		<i></i>
+		<i></i>
+		<i></i>
+	</div>

@@ -42,6 +42,7 @@ while ( have_posts() ) : the_post();
 		$title = get_sub_field('section_title');
 		$intro = get_sub_field('section_intro');
 		$image = get_sub_field('section_image');
+		$colorize = get_sub_field('colorize_image');
 		$anchor = get_sub_field('section_anchor');
 		$color = 'gray';
 		if ($i === 1) $color = 'gold'; // alternating natural/gray, making all even rows natural
@@ -69,7 +70,7 @@ while ( have_posts() ) : the_post();
 		</section>
 		<?php if ($image): ?>
 		<section class="natural full-image">
-			<img src="<?php echo $image['sizes']['larger']; ?>" />
+			<img src="<?php echo $image['sizes']['larger']; ?>"<?php if ($colorize) echo ' class="colorized"'; ?> />
 		</section>
 		<?php endif;
 		$i++;

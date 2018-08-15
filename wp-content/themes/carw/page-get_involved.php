@@ -31,6 +31,7 @@ get_header();
 		$anchor = get_sub_field('section_anchor');
 		$text = get_sub_field('section_text');
 		$image = get_sub_field('section_image');
+		$colorize = get_sub_field('colorize_image');
 // 		$buttonText = get_sub_field('section_button_text');
 		$buttonLink = get_sub_field('section_button_link');
 		$color = 'natural';
@@ -50,7 +51,7 @@ get_header();
 						<?php endif; ?>
 					</div>
 					<div class="section-image">
-						<img src="<?php echo $image['sizes']['small']; ?>" />
+						<img src="<?php echo $image['sizes']['small']; ?>"<?php if ($colorize) echo ' class="colorized"'; ?> />
 					</div>
 				</div>
 			</div>

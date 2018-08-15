@@ -12,6 +12,7 @@
 		<div class="wrap text-wrap centered">
 			<h2><?php the_field('signup_title', 'options'); ?></h2>
 			<p><?php the_field('mailing_list_text', 'options'); ?></p>
+<!--
 			<form>
 				<div class="input-wrap">
 					<input type="text" placeholder="First Name" />
@@ -22,6 +23,7 @@
 					<button>Sign Up</button>
 				</div>
 			</form>
+-->
 		</div>
 	</section>
 
@@ -59,10 +61,11 @@
 
 	<section class="land">
 		<div class="wrap text-wrap centered">
+			<?php $landImage = get_field('land_image', 'options'); ?>
+			<div class="land-image" style="background-image: url(<?php echo $landImage['sizes']['larger']; ?>)"></div>
 			<div class="land-text">
-				<?php the_field('land_text', 'options');
-					$landLink = get_field('land_link', 'options');
-
+			<?php the_field('land_text', 'options');
+				$landLink = get_field('land_link', 'options');
 				if ($landLink): ?>
 				<p><a href="<?php echo $landLink['url']; ?>"><?php echo $landLink['title']; ?></a></p>
 				<?php endif; ?>

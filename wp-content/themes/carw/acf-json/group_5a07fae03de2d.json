@@ -3,44 +3,6 @@
     "title": "About",
     "fields": [
         {
-            "key": "field_5a091d2222dc5",
-            "label": "Vision Title",
-            "name": "vision_title",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Vision",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5a091cfd22dc4",
-            "label": "Vision Copy",
-            "name": "vision_copy",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 0,
-            "delay": 0
-        },
-        {
             "key": "field_59f68604f3c16",
             "label": "About Sections",
             "name": "sections",
@@ -191,20 +153,39 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "80",
                         "class": "",
                         "id": ""
                     },
+                    "return_format": "array",
                     "preview_size": "medium",
                     "library": "all",
-                    "return_format": "array",
-                    "min_width": 0,
-                    "min_height": 0,
-                    "min_size": 0,
-                    "max_width": 0,
-                    "max_height": 0,
-                    "max_size": 0,
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
                     "mime_types": ""
+                },
+                {
+                    "key": "field_5b4148ff2662f",
+                    "label": "Colorize Image",
+                    "name": "colorize_image",
+                    "type": "true_false",
+                    "instructions": "Section color tint",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
                 }
             ]
         }
@@ -229,5 +210,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1510546763
+    "modified": 1531005377
 }

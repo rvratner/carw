@@ -626,6 +626,10 @@ footer {
 
 .footer-widget {
 
+  h6 + h6 {
+    margin-top: 1em;
+  }
+
   h3 {
     font-size: 18px;
     font-size: 1.4rem;

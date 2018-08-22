@@ -89,7 +89,7 @@ add_action( 'widgets_init', 'carw_register_sidebars' );
 function carw_scripts()  {
 
 	// get the theme directory style.css and link to it in the header
-	wp_enqueue_style('style.css', get_stylesheet_directory_uri() . '/style.css?v=20180821');
+	wp_enqueue_style('style.css', get_stylesheet_directory_uri() . '/style.css?v=20180822c');
 	wp_enqueue_script('jquery', site_url() . '/wp-includes/js/jquery/jquery.js');
 	wp_enqueue_script('parallax.min.js', get_stylesheet_directory_uri() . '/js/parallax.min.js');
 	wp_enqueue_script('scrollPollyfill.js', get_stylesheet_directory_uri() . '/js/scrollPollyfill.js');

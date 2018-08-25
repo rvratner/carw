@@ -12,9 +12,11 @@ while ( have_posts() ) : the_post();
 	<header id="masthead" class="site-header"<?php if ( has_post_thumbnail() ) :
 	$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'larger' );
 	echo 'style="background-image: url('. esc_url( $thumbnail[0] ) .');"';
-	endif; ?>>
-		<section class="text">
-			<div class="wrap text-wrap centered">
+	endif; ?>></header>
+
+
+		<section class="gold page-intro">
+			<div class="wrap centered">
 				<menu>
 					<h2><?php the_title(); ?></h2>
 					<?php if ($intro) echo $intro; ?>
@@ -26,8 +28,7 @@ while ( have_posts() ) : the_post();
 				</menu>
 			</div>
 		</section>
-	</header>
-
+	
 	<?php $i = 1; // start a counter
 	while (have_rows('sections')): the_row();
 		$title = get_sub_field('section_title');
@@ -37,6 +38,8 @@ while ( have_posts() ) : the_post();
 		$colorize = get_sub_field('colorize_image');
 		$color = 'natural';
 		if ($i % 2 === 0) $color = 'gray'; // alternating natural/gray, making all even rows natural
+		// if ($i === 1) $color = 'gold'; // first row gold
+		// else if ($i % 2 !== 0) $color = 'gray'; // alternating natural/gray, making all even rows natural
 		?>
 		<section class="<?php echo $color; ?>" id="<?php echo $anchor; ?>">
 			<div class="wrap text-wrap">

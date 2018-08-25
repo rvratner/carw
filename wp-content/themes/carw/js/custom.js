@@ -1,4 +1,17 @@
 
+// is ios safari?
+var ua = window.navigator.userAgent;
+var iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i);
+var webkit = !!ua.match(/WebKit/i);
+var iOSSafari = iOS && webkit && !ua.match(/CriOS/i);
+var iOSversion = 0;
+if (iOS) {
+	iOSversion = parseFloat(
+		('' + (/CPU.*OS ([0-9_]{1,5})|(CPU like).*AppleWebKit.*Mobile/i.exec(window.navigator.userAgent) || [0,''])[1])
+		.charAt(0)
+	) || false;
+}
+
 const toggleList = function(){
 	var toggleList = document.querySelectorAll('.toggle-list');
 	toggleList.forEach(function(item){
@@ -51,6 +64,8 @@ function closeMenu() {
 }
 
 document.onready = function() {
+
+	if (iOSSafari) jQuery('html').addClass('iOSSafari');
 
 	toggleList();
 	anchorScroll();

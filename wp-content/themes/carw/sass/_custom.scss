@@ -400,6 +400,42 @@ section {
 			}
 		}
 	}
+	&.page-intro {
+		padding: 0;
+		.page-links li {
+			line-height: 2;
+		}
+		.page-links li + li:before {
+			content: '/ ';
+			display: inline;
+		}
+	}
+	&.land-text {
+		padding: 0;
+		margin-bottom: -4rem;
+		font-size: 16px;
+		line-height: 1.4;
+		@media only screen and (min-width: 769px) {
+			.wrap {
+				padding: 40px 20px;
+			}			
+		}
+	}
+}
+
+html.iOSSafari {
+	section.gray {
+		background: $gray !important;
+		&:before {
+			background: $gray !important;
+		}
+	}
+	section.dark {
+		background: $black !important;
+		&:before {
+			background: $black !important;
+		}
+	}
 }
 
 .wrap {

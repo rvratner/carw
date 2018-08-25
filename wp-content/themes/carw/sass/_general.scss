@@ -274,19 +274,19 @@ pre {
     opacity: 0.5;
   }
   .layer-2 div {
-    background-position: 55% 75%;
+    background-position: 55% 83%;
   }
   .layer-2-dark div {
-    background-position: 50% 75%;
+    background-position: 50% 83%;
     -webkit-filter: brightness(0) blur(1px);
     filter: brightness(0) blur(1px);
     opacity: 0.5;
   }
   .layer-3 div {
-    background-position: 155% 82%;
+    background-position: 155% 95%;
   }
   .layer-3-dark div {
-    background-position: 150% 82%;
+    background-position: 150% 95%;
     -webkit-filter: brightness(0) blur(1px);
     filter: brightness(0) blur(1px);
     opacity: 0.5;
@@ -313,14 +313,18 @@ pre {
 .site-header{
 	margin-top: 60px;
 	padding-bottom: 30px;
-	background-position: 50% 50%;
+	background-position: 50% 50%; 
     background-size: cover;
     overflow: hidden;
     position: relative;
     background-repeat: no-repeat;
     &:not(.homepage) {
-	    background-color: rgba($black, 0.125);
-	}
+      background-color: rgba($black, 0.125);
+      height: 36vw;
+      @include responsive(min, 1281) {
+        height: 28vw;
+      }
+    }
     &.homepage {
       background-size: 0;
 		height: 90%;

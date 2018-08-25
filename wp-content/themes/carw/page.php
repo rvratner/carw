@@ -12,13 +12,7 @@ while ( have_posts() ) : the_post();
 	<header id="masthead" class="site-header"<?php if ( has_post_thumbnail() ) :
 	$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'larger' );
 	echo 'style="background-image: url('. esc_url( $thumbnail[0] ) .');"';
-	endif; ?>>
-		<section class="text">
-			<div class="wrap text-wrap centered">
-				<p>&nbsp;</p>
-			</div>
-		</section>
-	</header>
+	endif; ?>></header>
 
 	<section>
 		<div class="wrap text-wrap">

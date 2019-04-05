@@ -87,7 +87,10 @@
 /*
 <script>
 
-	// generate polygon points relative 0-1 for responsive mask
+    // this script will generate polygon points relative 0-1 for responsive clippath mask!
+    // by Shaun Kardinal (shaunkardinal.com)
+
+    // enter width and height of SVG
 	var svgWidth = 1002;
 	var svgHeight = 424.2;
 
